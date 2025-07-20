@@ -30,7 +30,7 @@ const ScrambleHeader: React.FC<ScrambleHeaderProps> = ({
     const interval = setInterval(() => {
       el.innerText = text
         .split("")
-        .map((char, i) => {
+        .map((_, i) => {
           if (i < iteration) return text[i];
           return chars[Math.floor(Math.random() * chars.length)];
         })
