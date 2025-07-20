@@ -1,0 +1,330 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+#hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #141414;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+/* Hero Header */
+.hero-header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+  color: white;
+}
+
+.hero-header h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-header p {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  opacity: 0.8;
+  font-weight: 300;
+}
+
+/* Animated Icons Container */
+.animated-icons {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 5;
+}
+
+/* Individual Animated Icons */
+.animated-icon {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.animated-icon img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.animated-icon:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+/* Animated Text */
+.animated-text {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  z-index: 15;
+}
+
+/* Text Segments */
+.text-segment {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Placeholder Icons */
+.placeholder-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.5rem;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.placeholder-icon::after {
+  content: '';
+  width: 24px;
+  height: 24px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+/* Duplicate Icons */
+.duplicate-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 20;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.duplicate-icon img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  filter: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1000px) {
+  .animated-icons {
+    gap: 1rem;
+  }
+  
+  .animated-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .hero-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-header p {
+    font-size: 1.2rem;
+  }
+  
+  .animated-text {
+    font-size: 1.8rem;
+    gap: 0.5rem;
+  }
+  
+  .placeholder-icon {
+    width: 30px;
+    height: 30px;
+    margin: 0 0.25rem;
+  }
+  
+  .placeholder-icon::after {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .animated-icons {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  
+  .animated-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .animated-text {
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .text-segment {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-header h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-header p {
+    font-size: 1rem;
+  }
+  
+  .animated-text {
+    font-size: 1.2rem;
+    bottom: 15%;
+  }
+  
+  .placeholder-icon {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .placeholder-icon::after {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* Smooth transitions for background changes */
+.hero.light-mode {
+  background-color: #e3e3db;
+}
+
+.hero.light-mode .hero-header {
+  color: #333;
+}
+
+.hero.light-mode .animated-icon {
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.hero.light-mode .animated-icon img {
+  filter: none;
+}
+
+/* Loading states and performance optimizations */
+.animated-icon,
+.duplicate-icon,
+.text-segment {
+  will-change: transform, opacity;
+}
+
+.animated-icons {
+  will-change: transform, scale;
+}
+
+.hero-header {
+  will-change: transform, opacity;
+}
+
+/* Additional utility classes */
+.fade-in {
+  opacity: 1 !important;
+}
+
+.fade-out {
+  opacity: 0 !important;
+}
+
+/* Ensure proper stacking */
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Prevent text selection during animations */
+.hero {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: Add some visual feedback for icon interactions */
+@media (hover: hover) {
+  .animated-icon:hover {
+    cursor: pointer;
+  }
+}
+
+/* Print styles - hide animations */
+@media print {
+  .hero {
+    height: auto;
+    background: white !important;
+  }
+  
+  .animated-icons,
+  .duplicate-icon {
+    display: none;
+  }
+  
+  .text-segment {
+    opacity: 1 !important;
+  }
+}

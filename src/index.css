@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-lightGray text-carbonGray; /* change as needed */
+}
+
+/* Liquid hover animation for primary button */
+.btn-primary {
+  @apply relative overflow-hidden bg-appleBlue text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 ease-in-out;
+}
+
+.btn-primary::before {
+  content: "";
+  @apply absolute top-0 left-0 w-full h-full bg-white transition-transform duration-300 ease-in-out z-0;
+  transform: translateY(-100%);
+}
+
+.btn-primary:hover::before {
+  transform: translateY(0%);
+}
+
+.btn-primary span {
+  @apply relative z-10 text-[1rem] transition-colors duration-300 ease-in-out;
+}
+
+.btn-primary:hover span {
+  @apply text-jetBlack;
+}
+
+/* Secondary Button */
+.btn-secondary {
+  @apply border border-carbonGray text-carbonGray bg-transparent px-6 py-3 rounded-xl font-medium transition-all duration-300 ease-in-out;
+}
+
+.btn-secondary:hover {
+  @apply bg-white60 border-gray-400;
+}
+
+/* Primary Card Button */
+.btn-card-primary {
+  @apply bg-lightGray text-jetBlack px-4 py-2 rounded-md transition-all duration-300 ease-in-out;
+}
+
+.btn-card-primary:hover {
+  @apply bg-gray-300 text-carbonGray;
+}
+
+/* Secondary Card Button */
+.btn-card-secondary {
+  @apply border border-white text-white bg-transparent px-4 py-2 rounded-md transition-all duration-300 ease-in-out;
+}
+
+.btn-card-secondary:hover {
+  @apply border-gray-300 bg-white60;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar styling (optional) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #0071fe;
+  border-radius: 9999px;
+}
+
+.color-wipe-bg {
+  background: #ecf0f8; /* default bg */
+  background-size: 200% 100%;
+  background-position: 0% 0;
+  transition: background-position 0s;
+}
+
+.color-wipe-bg:hover {
+  background: linear-gradient(
+    to right,
+    #0071fe 0%,
+    #0071fe 50%,
+    #ecf0f8 50%,
+    #ecf0f8 100%
+  );
+  animation: colorWipe 2s forwards ease-out;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.btn-contact {
+  @apply relative overflow-hidden bg-appleBlue text-white px-5 py-2.5 rounded-lg font-medium transition-all duration-300 ease-in-out;
+}
+
+.btn-contact::before {
+  content: "";
+  @apply absolute top-0 left-0 w-full h-full bg-carbonGray text-white transition-transform duration-300 ease-in-out z-0;
+  transform: translateY(-100%);
+}
+
+.btn-contact:hover::before {
+  transform: translateY(0%);
+}
+
+/* Text stays white and above overlay */
+.btn-contact span {
+  @apply relative z-10 transition-colors duration-300 text-white;
+}
+
+.btn-contact:hover span {
+  @apply text-white;
+}
+
+
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite linear;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-smoothing: antialiased;
+}
+
+
+.btn-liquid {
+  position: relative;
+  overflow: hidden;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(to top right, #000, #2e2e2e);
+  transition: background 0.3s ease;
+  z-index: 0;
+}
+
+.btn-liquid::before {
+  content: "";
+  position: absolute;
+  top: var(--y, 50%);
+  left: var(--x, 50%);
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, #0071fe55 0%, transparent 60%);
+  opacity: 0.6;
+  transition: width 0.5s ease, height 0.5s ease;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.btn-liquid:hover {
+  background: linear-gradient(to top right, #0071fe, #000);
+}
+
+.btn-liquid:hover::before {
+  width: 200%;
+  height: 500%;
+}
+
+.card-hover:hover .card-reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.cta-wrapper {
+  @apply relative z-20 cursor-pointer inline-block;
+}
+
+.cta-button {
+  @apply px-6 py-4 rounded-lg font-semibold relative overflow-hidden transition-all duration-300;
+
+  /* Sliding fill background */
+  --fill-height: 0%;
+  background-image: linear-gradient(to top, #0071fe 100%, transparent 0%);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% var(--fill-height);
+}
+
+/* On hover, fill slides up */
+.cta-button:hover {
+  --fill-height: 100%;
+  transition: background-size 0.4s ease;
+}
+
+/* Text sliding up effect */
+.cta-button > span {
+  @apply inline-block;
+  transition: transform 0.4s ease;
+}
+
+.cta-button:hover > span {
+  transform: translateY(-4px);
+}
+
+
+.altcta-wrapper {
+  @apply relative z-20 inline-block;
+}
+
+.altcta-button {
+  @apply px-8 py-4 rounded-xl font-medium relative overflow-hidden transition-all duration-300;
+
+  /* Sliding fill background */
+  --fill-height: 0%;
+  background-image: linear-gradient(to top, var(--fill-color, #ffffff40) 100%, transparent 0%);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 100% var(--fill-height);
+}
+
+.altcta-button:hover {
+  --fill-height: 100%;
+  transition: background-size 0.4s ease;
+}
+
+.altcta-button > span {
+  @apply inline-block;
+  transition: transform 0.4s ease;
+}
+
+.altcta-button:hover > span {
+  transform: translateY(-4px);
+}
+
+.blinking-cursor {
+  animation: blink 1s step-end infinite;
+  color: #eb4646; 
+}
+
+@keyframes blink {
+  from,
+  to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+
+/* why choose us cards  */
+.stack-card {
+  transform: translateY(0);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
