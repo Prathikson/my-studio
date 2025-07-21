@@ -86,65 +86,88 @@ export const TabsShowcase = ({
     <section
       ref={sectionRef}
       style={{ minHeight: "600px" }}
-  className="w-full max-w-[90vw] mx-auto bg-smoothBlack rounded-2xl py-24 px-10 mb-28"
+      className="w-full max-w-[95vw] mx-auto bg-gradient-to-tr from-[carbonGray] to-[smoothBlack] rounded-3xl py-20 px-6 md:px-16 mt-16 md:mt-20 mb-24 relative overflow-hidden"
     >
-  <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      {/* Floating dots */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        {[...Array(25)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1.5 h-1.5 bg-lightGray rounded-full opacity-30"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -30, 0],
+              opacity: [0.3, 0.8, 0.3],
+            }}
+            transition={{
+              duration: 5 + Math.random() * 5,
+              repeat: Infinity,
+              delay: Math.random() * 3,
+            }}
+          />
+        ))}
+      </div>
+
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        {/* Tabs & Text */}
         <div className="flex flex-col justify-center">
           <LayoutGroup>
-            <div className="flex flex-wrap gap-3 mb-8">
-  {tabs.map((tab) => {
-    const isActive = activeTabKey === tab.key;
-    return (
-
-      <motion.button
-        key={tab.key}
-        whileHover={{ scale: 1.02 }}
-        whileTap={{ scale: 0.97 }}
-        onClick={() => setActiveTabKey(tab.key)}
-        className={`relative px-4 py-2 text-sm transition-all duration-200 border rounded-md flex items-center gap-2 font-medium tracking-tight
-          ${
-            isActive
-              ? "text-white border-white shadow-md"
-              : "bg-gray-100 text-gray-600 border-transparent hover:bg-lightGray"
-          }`}
-      >
-        <AnimatePresence>
-          {isActive && (
-            <motion.div
-              key="highlight"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="absolute inset-0 z-[-1] bg-black rounded-md shadow-md filter blur-sm"
-            />
-          )}
-        </AnimatePresence>
-
-        <span className="bg-white text-black text-xs px-2 py-1 rounded select-none">
-          {tab.shortcut}
-        </span>
-        {tab.label}
-      </motion.button>
-    );
-  })}
-</div>
-
+            <div className="flex flex-wrap gap-4 mb-10 mt-10">
+              {tabs.map((tab) => {
+                const isActive = activeTabKey === tab.key;
+                return (
+                  <motion.button
+                    key={tab.key}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.97 }}
+                    onClick={() => setActiveTabKey(tab.key)}
+                    className={`relative px-5 py-3 text-sm font-semibold rounded-lg flex items-center gap-3 tracking-wide transition-all duration-250 border
+                      ${
+                        isActive
+                          ? "bg-white text-smoothBlack  border-white shadow-lg"
+                          : "bg-lightGray text-smoothBlack border-transparent hover:bg-gray-300"
+                      }`}
+                  >
+                    <AnimatePresence>
+                      {isActive && (
+                        <motion.div
+                          key="highlight"
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.9 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                          className="absolute inset-0 rounded-lg bg-gradient-to-r from-appleBlue via-purple-500 to-zoroRed shadow-md filter blur-md"
+                          style={{ zIndex: -1 }}
+                        />
+                      )}
+                    </AnimatePresence>
+                    <span className="bg-white text-black text-xs px-2 py-1 rounded select-none font-mono">
+                      {tab.shortcut}
+                    </span>
+                    {tab.label}
+                  </motion.button>
+                );
+              })}
+            </div>
           </LayoutGroup>
 
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab.key}
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
+              exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.3 }}
+              className="max-w-lg"
             >
               <motion.h2
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -25 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.1 }}
-                className="text-5xl font-semibold mb-4 tracking-tight text-white"
+                className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight text-white drop-shadow-lg"
               >
                 {activeTab.title}
               </motion.h2>
@@ -152,7 +175,7 @@ export const TabsShowcase = ({
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-lightGray text-base leading-relaxed max-w-lg"
+                className="text-gray-300 text-base md:text-lg leading-relaxed"
               >
                 {activeTab.description}
               </motion.p>
@@ -160,46 +183,26 @@ export const TabsShowcase = ({
           </AnimatePresence>
         </div>
 
+        {/* Image */}
         <motion.div
           ref={imageRef}
           key={activeTab.imageUrl}
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-          className="w-full"
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="w-full rounded-3xl overflow-hidden shadow-xl"
+          style={{ minHeight: "300px" }}
         >
           {activeTab.imageUrl && (
             <img
               src={activeTab.imageUrl}
               alt={activeTab.title}
-              className="w-full h-[70dvh] object-cover rounded-2xl"
+              className="w-full h-[50vh] md:h-[70vh] object-cover rounded-3xl"
+              draggable={false}
             />
           )}
         </motion.div>
-
-         <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-                {[...Array(25)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    className="absolute w-1 h-1 bg-lightGray rounded-full opacity-30"
-                    style={{
-                      left: `${Math.random() * 100}%`,
-                      top: `${Math.random() * 100}%`,
-                    }}
-                    animate={{
-                      y: [0, -100, 0],
-                      opacity: [0.3, 0.8, 0.3],
-                    }}
-                    transition={{
-                      duration: 4 + Math.random() * 4,
-                      repeat: Infinity,
-                      delay: Math.random() * 2,
-                    }}
-                  />
-                ))}
-              </div>
       </div>
-      
     </section>
   );
 };
@@ -232,4 +235,4 @@ const defaultTabs: TabType[] = [
       "Apply branding across products and touchpoints with consistency and purpose to ensure an impactful experience.",
     imageUrl: "/assets/home2.png",
   },
-]
+];

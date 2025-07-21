@@ -263,3 +263,16 @@ html {
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
+@keyframes tapeFlow {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-tapeFlow {
+  animation: tapeFlow 30s linear infinite;
+}
