@@ -9,7 +9,7 @@ interface ParticleWordProps {
   holdDuration?: number;
   fontFamily?: string;
   fontWeight?: string | number;
-  baseFontSize?: number; // A scaling base instead of fixed size
+  baseFontSize?: number; 
 }
 
 interface Particle {
@@ -98,7 +98,7 @@ const ParticleWord: React.FC<ParticleWordProps> = ({
     if (!ctx) return;
 
     const { width, height } = dimensions;
-    const fontSize = height * baseFontSize;
+    // const fontSize = height * baseFontSize;
 
     if (!startTimeRef.current) startTimeRef.current = time;
     const elapsed = time - startTimeRef.current;
