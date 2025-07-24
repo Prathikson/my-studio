@@ -1,20 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import Button from "../../../components/ui/Button";
 import AltButton from "../../../components/ui/AltButton";
 import ParticleWord from "../components/ParticleWord";
+import OrbCursor from "../components/OrbCursor";
 
 const words = ["Digital", "Modern", "Stunning", "Beautiful"];
 
 const HeroSection: React.FC = () => {
   const [mounted, setMounted] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
   return (
-    <section className="relative w-full min-h-screen overflow-x-hidden bg-lightGray">
+    <section className="relative w-full min-h-screen overflow-x-hidden bg-lightGray  cursor-none">
+      <div ref={containerRef} className="relative w-full h-full overflow-hidden">
+
+      <OrbCursor containerRef={containerRef}/>
       {/* Subtle Grid Background */}
       <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(#0071fe,transparent_0.5px),linear-gradient(90deg,#0071ff,transparent_0.5px)] bg-[size:60px_60px]" />
 
@@ -75,6 +80,7 @@ const HeroSection: React.FC = () => {
           style={{ transitionDelay: "500ms" }}
         >
           <Button
+          data-cursor='button'
             bgColor="bg-black"
             hoverBgColor="hover:bg-gray-900"
             textSize="text-lg"
@@ -84,6 +90,7 @@ const HeroSection: React.FC = () => {
             Start Your Project
           </Button>
           <AltButton
+          data-cursor='button'
             fillColor="#141414"
             borderColor="border-black/80"
             hoverTextColor="hover:text-white"
@@ -118,6 +125,7 @@ const HeroSection: React.FC = () => {
           ))}
         </div>
       </div>
+    </div>
     </section>
   );
 };

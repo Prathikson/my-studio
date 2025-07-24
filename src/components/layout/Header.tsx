@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { AnimatedLogo } from "../Navigation/AnimatedLogo";
 import { useScrollPosition } from "../Navigation/useScrollPosition";
 import { useEffect, useState } from "react";
+import FloatingNav from "../Navigation/FloatingNav";
 
 const Header = () => {
   const scrolled = useScrollPosition();
@@ -12,8 +13,7 @@ const Header = () => {
     setIsDarkBg(scrolled);
   }, [scrolled]);
 
-  // Decide logo color only, header bg unchanged
-  const logoColor = isDarkBg ? "#fff" : "#000"; // white or black logo
+  const logoColor = isDarkBg ? "#fff" : "#000"; 
 
   return (
     <motion.header
@@ -24,7 +24,7 @@ const Header = () => {
         fixed top-0 left-0 w-full px-8 py-4
         flex items-center justify-between z-50
         transition-colors duration-500
-        bg-transparent  /* or whatever your bg is */
+        bg-transparent 
       "
     >
       <Link
@@ -38,6 +38,7 @@ const Header = () => {
       >
         <AnimatedLogo iconOnly={scrolled} color={logoColor} />
       </Link>
+      <FloatingNav />
     </motion.header>
   );
 };

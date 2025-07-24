@@ -47,14 +47,14 @@ export const AnimatedLogo = ({ iconOnly, color = "#000" }: AnimatedLogoProps) =>
 
       {!iconOnly && (
         <motion.span
-          className="text-2xl font-bold tracking-tight select-none"
+          className="text-3xl font-bold tracking-tight select-none"
           initial={{ opacity: 0, x: -12 }}
           animate={{ opacity: 1, x: 0, color }}
           exit={{ opacity: 0, x: -12 }}
           transition={{ duration: 0.7 }}
           style={{ color }}
         >
-          ACE
+        XTOIC
         </motion.span>
       )}
     </motion.div>

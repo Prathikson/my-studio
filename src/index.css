@@ -8,6 +8,14 @@ body {
   @apply bg-lightGray text-carbonGray; /* change as needed */
 }
 
+
+@layer base {
+
+  @font-face {
+    font-family: "general";
+    src: url("/fonts/Neue Machina.woff2") format("woff2");
+  }
+}
 /* Liquid hover animation for primary button */
 .btn-primary {
   @apply relative overflow-hidden bg-appleBlue text-white px-6 py-3 rounded-xl font-medium transition-all duration-300 ease-in-out;

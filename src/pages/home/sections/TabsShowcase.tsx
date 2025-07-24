@@ -85,12 +85,11 @@ export const TabsShowcase = ({
   return (
     <section
       ref={sectionRef}
-      style={{ minHeight: "600px" }}
-      className="w-full max-w-[95vw] mx-auto bg-gradient-to-tr from-[carbonGray] to-[smoothBlack] rounded-3xl py-20 px-6 md:px-16 mt-16 md:mt-20 mb-24 relative overflow-hidden"
+      className="w-full max-w-[95vw] mx-auto bg-gradient-to-tr from-[carbonGray] to-[smoothBlack] rounded-3xl py-14 px-4 sm:px-6 md:px-16 mt-16 md:mt-20 mb-24 overflow-hidden"
     >
       {/* Floating dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        {[...Array(25)].map((_, i) => (
+        {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-1.5 h-1.5 bg-lightGray rounded-full opacity-30"
@@ -111,11 +110,11 @@ export const TabsShowcase = ({
         ))}
       </div>
 
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* Tabs & Text */}
-        <div className="flex flex-col justify-center">
+      <div className="relative z-10 flex flex-col-reverse md:grid md:grid-cols-2 gap-10 md:gap-14 items-center">
+        {/* Text & Tabs */}
+        <div className="flex flex-col justify-center w-full">
           <LayoutGroup>
-            <div className="flex flex-wrap gap-4 mb-10 mt-10">
+            <div className="flex flex-wrap gap-2 sm:gap-3 mb-8">
               {tabs.map((tab) => {
                 const isActive = activeTabKey === tab.key;
                 return (
@@ -124,10 +123,10 @@ export const TabsShowcase = ({
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.97 }}
                     onClick={() => setActiveTabKey(tab.key)}
-                    className={`relative px-5 py-3 text-sm font-semibold rounded-lg flex items-center gap-3 tracking-wide transition-all duration-250 border
+                    className={`relative px-3 py-2 sm:px-4 sm:py-2.5 text-xs sm:text-sm font-semibold rounded-lg flex items-center gap-2 tracking-wide transition-all duration-250 border
                       ${
                         isActive
-                          ? "bg-white text-smoothBlack  border-white shadow-lg"
+                          ? "bg-white text-smoothBlack border-white shadow-lg"
                           : "bg-lightGray text-smoothBlack border-transparent hover:bg-gray-300"
                       }`}
                   >
@@ -138,13 +137,13 @@ export const TabsShowcase = ({
                           initial={{ opacity: 0, scale: 0.9 }}
                           animate={{ opacity: 1, scale: 1 }}
                           exit={{ opacity: 0, scale: 0.9 }}
-                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                          transition={{ duration: 0.3 }}
                           className="absolute inset-0 rounded-lg bg-gradient-to-r from-appleBlue via-purple-500 to-zoroRed shadow-md filter blur-md"
                           style={{ zIndex: -1 }}
                         />
                       )}
                     </AnimatePresence>
-                    <span className="bg-white text-black text-xs px-2 py-1 rounded select-none font-mono">
+                    <span className="bg-white text-black text-[10px] px-1.5 py-0.5 rounded font-mono">
                       {tab.shortcut}
                     </span>
                     {tab.label}
@@ -161,13 +160,13 @@ export const TabsShowcase = ({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.3 }}
-              className="max-w-lg"
+              className="max-w-full"
             >
               <motion.h2
                 initial={{ opacity: 0, x: -25 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.1 }}
-                className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight text-white drop-shadow-lg"
+                className="text-3xl sm:text-4xl font-extrabold mb-3 tracking-tight text-white drop-shadow-lg"
               >
                 {activeTab.title}
               </motion.h2>
@@ -175,7 +174,7 @@ export const TabsShowcase = ({
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
-                className="text-gray-300 text-base md:text-lg leading-relaxed"
+                className="text-gray-300 text-sm sm:text-base leading-relaxed"
               >
                 {activeTab.description}
               </motion.p>
@@ -191,13 +190,12 @@ export const TabsShowcase = ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="w-full rounded-3xl overflow-hidden shadow-xl"
-          style={{ minHeight: "300px" }}
         >
           {activeTab.imageUrl && (
             <img
               src={activeTab.imageUrl}
               alt={activeTab.title}
-              className="w-full h-[50vh] md:h-[70vh] object-cover rounded-3xl"
+              className="w-full h-48 sm:h-64 md:h-[70vh] object-cover rounded-3xl"
               draggable={false}
             />
           )}

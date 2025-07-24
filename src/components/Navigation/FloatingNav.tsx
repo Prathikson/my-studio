@@ -4,20 +4,25 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 
 const navItems = [
+    {
+    id: "portfolio",
+    label: "Portfolio",
+    overview: "Explore our latest works, reports, and innovations.",
+    path: "/portfolio",
+  },
   {
-    id: "solutions",
-    label: "Solutions",
+    id: "services",
+    label: "services",
     overview: "Explore how we help industries innovate and thrive.",
     subLabel: "Industries",
     submenu: [
-      { label: "Technology", path: "/solutions/technology" },
-      { label: "Finance", path: "/solutions/finance" },
-      { label: "Healthcare", path: "/solutions/healthcare" },
-      { label: "Manufacturing", path: "/solutions/manufacturing" },
-      { label: "Commercial", path: "/solutions/commercial" },
-      { label: "Industrial", path: "/solutions/industrial" },
+      { label: "Web Design", path: "/services/webdesign" },
+      { label: "Web Development", path: "/services/webdevelopment" },
+      { label: "Branding", path: "/services/branding" },
+      { label: "Digital Marketing", path: "/services/digitalmarketing" },
+      { label: "SEO Optimization", path: "/services/seo" },
     ],
-    path: "/solutions",
+    path: "/services",
   },
   {
     id: "company",
@@ -26,24 +31,9 @@ const navItems = [
     subLabel: "About Us",
     submenu: [
       { label: "About", path: "/company/about" },
-      { label: "Careers", path: "/company/careers" },
       { label: "Newsroom", path: "/company/newsroom" },
-      { label: "Podcasts", path: "/company/podcast" },
     ],
     path: "/company",
-  },
-  {
-    id: "research",
-    label: "Research",
-    overview: "Explore our latest studies, reports, and innovations.",
-    path: "/research",
-  },
-  {
-    id: "login",
-    label: "Log In",
-    overview: "Access your dashboard and personalized insights.",
-    path: "/login",
-    isButton: true,
   },
   {
     id: "contact",
@@ -115,13 +105,7 @@ const FloatingNav = () => {
 
             {/* Right: Buttons */}
             <div className="flex gap-4 items-center">
-              <button
-            className="px-6 py-2 text-white bg-gradient-to-tr from-black to-gray-800 hover:from-appleBlue hover:to-black rounded-lg font-medium transition-all duration-300"
-                onClick={() => navigate("/login")}
-                onMouseEnter={() => setHovered("signin")}
-              >
-                Log In
-              </button>
+
               <button
                 className="px-5 py-2 rounded-lg bg-appleBlue text-white border  transition-all duration-300 hover:bg-black"
                 onClick={() => navigate("/contact")}
