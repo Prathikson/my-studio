@@ -6,7 +6,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 type FaceState = "neutral" | "smile" | "surprised" | "sleepy";
 
 type OrbCursorProps = {
-  containerRef: React.RefObject<HTMLDivElement> | null;
+  containerRef: React.RefObject<HTMLDivElement>;
 };
 
 const ease = { stiffness: 300, damping: 30 };

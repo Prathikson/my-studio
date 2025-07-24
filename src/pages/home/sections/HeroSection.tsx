@@ -9,17 +9,23 @@ const words = ["Digital", "Modern", "Stunning", "Beautiful"];
 
 const HeroSection: React.FC = () => {
   const [mounted, setMounted] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     setMounted(true);
+  }, []);
+
+    useEffect(() => {
+    if (!containerRef.current) {
+      console.warn("containerRef not set");
+    }
   }, []);
 
   return (
     <section className="relative w-full min-h-screen overflow-x-hidden bg-lightGray  cursor-none">
       <div ref={containerRef} className="relative w-full h-full overflow-hidden">
 
-      <OrbCursor containerRef={containerRef}/>
+      <OrbCursor containerRef={containerRef as React.RefObject<HTMLDivElement>}/>
       {/* Subtle Grid Background */}
       <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(#0071fe,transparent_0.5px),linear-gradient(90deg,#0071ff,transparent_0.5px)] bg-[size:60px_60px]" />
 
