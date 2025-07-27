@@ -1,17 +1,17 @@
 import Hero from "./experiment/Hero";
-import HeroSection from "./sections/HeroSection";
-import PunchSection from "./sections/PunchSection";
+import ServicesSection from "./sections/ServiceSection";
 import { TabsShowcase } from "./sections/TabsShowcase";
 import { TapeSection } from "./sections/Tape";
 
 const Home = () => {
   return (
     <main className="flex flex-col">
-        <HeroSection/>
-        <PunchSection />
+        <Hero/>
+        <ServicesSection/>
         <TapeSection/>
         <TabsShowcase />
-        <Hero/>
+
+
     </main>
   );
 };

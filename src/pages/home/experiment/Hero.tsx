@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import "./styles.css";
+import { motion } from 'framer-motion';
 
 // Register GSAP plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -349,38 +350,60 @@ const Hero: React.FC = () => {
   return (
     <section id="hero" className="hero">
       <div className="hero-header">
-        <h1 className='text-white text-5xl uppercase md:text-9xl'>Welcome to XTOIC Studio</h1>
-        <p className='text-white text-lg md:text-2xl'>The Gateway of Digital Experience</p>
+        <h1 className='text-white text-5xl uppercase md:text-[150px]'>XTOIC Studio</h1>
+        <p className='text-white text-lg md:text-2xl'>A next-gen studio for Branding, Design, Development & Marketing — where ideas transform into iconic digital experiences</p>
       </div>
       <div className="animated-icons">
         <div className="animated-icon icon-1">
-          <img src="/icon_1.png" alt="Coding icon" />
+          <img src="/icon_1.svg" alt="Coding icon" />
         </div>
         <div className="animated-icon icon-2">
-          <img src="/icon_2.png" alt="Development icon" />
+          <img src="/icon_2.svg" alt="Development icon" />
         </div>
         <div className="animated-icon icon-3">
-          <img src="/icon_3.png" alt="Tutorial icon" />
+          <img src="/icon_3.svg" alt="Tutorial icon" />
         </div>
         <div className="animated-icon icon-4">
-          <img src="/icon_4.png" alt="Learning icon" />
+          <img src="/icon_4.svg" alt="Learning icon" />
         </div>
         <div className="animated-icon icon-5">
-          <img src="/icon_5.png" alt="Code grid icon" />
+          <img src="/icon_5.svg" alt="Code grid icon" />
         </div>
       </div>
       <h1 className="animated-text">
         <div className="placeholder-icon"></div>
-        <span className="text-segment">Delve into Coding</span>
+        <span className="text-segment">Xtoic Studio</span>
         <div className="placeholder-icon"></div>
-        <span className="text-segment">Without Clutter.</span>
-        <span className="text-segment">Unlock Source code </span>
+        <span className="text-segment">We Don’t Just Build Brands, </span>
+        <span className="text-segment">We Create Obsessions</span>
         <div className="placeholder-icon"></div>
-        <span className="text-segment">for every tutorial</span>
+        <span className="text-segment">Digital Built </span>
         <div className="placeholder-icon"></div>
-        <span className="text-segment">Published on the codegrid</span>
+        <span className="text-segment">to Perform</span>
         <div className="placeholder-icon"></div>
       </h1>
+
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-lightGray rounded-full opacity-30"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -100, 0],
+              opacity: [0.3, 0.8, 0.3],
+            }}
+            transition={{
+              duration: 4 + Math.random() * 4,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+      </div>
     </section>
   );
 };

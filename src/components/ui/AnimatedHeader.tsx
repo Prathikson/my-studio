@@ -87,7 +87,7 @@ const AnimatedHeader = ({
   return (
     <motion.header
       ref={containerRef}
-      className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-white"
+      className="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden bg-lightGray"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}

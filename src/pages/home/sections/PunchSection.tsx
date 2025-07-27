@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useCallback  } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
+import ScrambleHeader from '../../../components/ui/ScrambleHeader';
 
 const PunchSection: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -63,10 +64,8 @@ const PunchSection: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-center mb-8"
         >
-          <span className="inline-flex items-center text-sm font-medium text-smoothBlack">
-            <span className="w-2 h-2 bg-black rounded-full mr-2" />
-            Unlocking Intelligence Together
-          </span>
+            <span className="w-3 h-3 bg-black rounded-full mr-2" />
+            <ScrambleHeader tagline='Unlocking Intelligence Together' className='text-lg'/>
         </motion.div>
 
         {/* Research Themed Headline Grid */}
@@ -100,7 +99,7 @@ const PunchSection: React.FC = () => {
           {createTextBlock("FOR AI", 4, "right")}
 
           <div className="floating-image relative w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 rounded-2xl overflow-hidden shadow-2xl mx-auto">
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-400">
+            <div className="absolute inset-0 bg-gradient-to-br from-lightGray to-gray-400">
               <div className="absolute inset-0 bg-white/30 flex items-center justify-center">
                 <div className="w-12 h-8 bg-gradient-to-r from-black to-gray-700 rounded opacity-80" />
               </div>

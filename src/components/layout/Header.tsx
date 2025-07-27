@@ -2,18 +2,9 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { AnimatedLogo } from "../Navigation/AnimatedLogo";
 import { useScrollPosition } from "../Navigation/useScrollPosition";
-import { useEffect, useState } from "react";
-import FloatingNav from "../Navigation/FloatingNav";
 
 const Header = () => {
   const scrolled = useScrollPosition();
-  const [isDarkBg, setIsDarkBg] = useState(false);
-
-  useEffect(() => {
-    setIsDarkBg(scrolled);
-  }, [scrolled]);
-
-  const logoColor = isDarkBg ? "#fff" : "#000"; 
 
   return (
     <motion.header
@@ -36,9 +27,9 @@ const Header = () => {
         }}
         className="z-50 select-none cursor-pointer"
       >
-        <AnimatedLogo iconOnly={scrolled} color={logoColor} />
+        <AnimatedLogo iconOnly={scrolled} color="#f1f1f1" />
       </Link>
-      <FloatingNav />
+      {/* <FloatingNav /> */}
     </motion.header>
   );
 };
