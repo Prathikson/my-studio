@@ -12,25 +12,20 @@ interface Sticker {
   rotation: number;
   createdAt: number;
   id: number;
-  imgIndex: number; // Index to pick image from the array
+  imgIndex: number;
 }
 
 const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
-  const [isVisible, setIsVisible] = useState(() => {
-    if (typeof window !== "undefined") {
-      return !sessionStorage.getItem("hasVisited");
-    }
-    return true;
-  });
-
+  const [isVisible, setIsVisible] = useState(true); // Always visible initially
   const [progress, setProgress] = useState(0);
   const [stickers, setStickers] = useState<Sticker[]>([]);
+
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationFrameRef = useRef<number>(0);
   const stickerIdRef = useRef(0);
   const imagesRef = useRef<HTMLImageElement[]>([]);
 
-  // Preload multiple images
+  // Preload high-quality images
   useEffect(() => {
     const imgPaths = ["/icon_1.svg", "/icon_2.svg", "/icon_3.svg", "/icon_4.svg", "/icon_5.svg"];
     const loadedImages: HTMLImageElement[] = [];
@@ -38,13 +33,17 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
     imgPaths.forEach((src) => {
       const img = new Image();
       img.src = src;
-      loadedImages.push(img);
+      img.crossOrigin = "anonymous"; // Allow for high DPI rendering
+      img.decode().then(() => {
+        loadedImages.push(img);
+      }).catch(() => {
+        loadedImages.push(img);
+      });
     });
 
     imagesRef.current = loadedImages;
   }, []);
 
-  // Mouse move handler to create stickers
   const handleMouseMove = useCallback((e: MouseEvent) => {
     if (!isVisible || imagesRef.current.length === 0) return;
 
@@ -68,7 +67,6 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
     setStickers(prev => [...prev, newSticker]);
   }, [isVisible]);
 
-  // Draw stickers with random image
   const drawStickers = useCallback(() => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext('2d');
@@ -113,11 +111,6 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   }, [drawStickers]);
 
   useEffect(() => {
-    if (!isVisible) {
-      onComplete?.();
-      return;
-    }
-
     const duration = 7000;
     const startTime = performance.now();
     const easeOutQuad = (t: number) => t * (2 - t);
@@ -133,15 +126,13 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
       } else {
         setTimeout(() => {
           setIsVisible(false);
-          if (typeof window !== "undefined") {
-            localStorage.setItem("hasVisited", "true");
-          }
           onComplete?.();
         }, 500);
       }
     };
+
     requestAnimationFrame(animateProgress);
-  }, [isVisible, onComplete]);
+  }, [onComplete]);
 
   useEffect(() => {
     if (!isVisible) return;
