@@ -70,7 +70,7 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
             className="w-6 h-0.5 bg-white origin-center"
           />
         </motion.button>
-        <audio ref={audioRef} loop src="/audio.mp3" />
+        <audio ref={audioRef} loop src="/audio/audio.mp3" />
 
         {/* CTA Button */}
         <motion.button
