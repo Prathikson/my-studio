@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { AnimatedLogo } from "../Navigation/AnimatedLogo";
 import { useScrollPosition } from "../Navigation/useScrollPosition";
+import FloatingNav from "../Navigation/FloatingHeader";
 
 const Header = () => {
   const scrolled = useScrollPosition();
@@ -30,6 +31,9 @@ const Header = () => {
         <AnimatedLogo iconOnly={scrolled} color="#f1f1f1" />
       </Link>
       {/* <FloatingNav /> */}
+            <FloatingNav
+        className="z-50"
+      />
     </motion.header>
   );
 };
