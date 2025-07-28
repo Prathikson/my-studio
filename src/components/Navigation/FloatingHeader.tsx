@@ -64,11 +64,33 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
           className="w-10 h-10 rounded-full bg-smoothBlack backdrop-blur-sm border border-white/20 flex items-center justify-center relative overflow-hidden"
           aria-label={isPlaying ? "Pause audio" : "Play audio"}
         >
-          <motion.div
-            animate={{ opacity: [1, 0.6, 1], scaleY: [1, 1.4, 1] }}
-            transition={{ duration: 1, repeat: Infinity }}
-            className="w-6 h-0.5 bg-white origin-center"
-          />
+<motion.svg
+  viewBox="0 0 100 20"
+  className="w-6 h-4"
+  preserveAspectRatio="none"
+>
+  <motion.path
+    fill="transparent"
+    stroke={isPlaying ? "white" : "white"}
+    strokeWidth="2"
+    initial={false}
+    animate={{
+      d: isPlaying
+        ? [
+            "M0 10 Q25 5, 50 10 T100 10",  // Wave up
+            "M0 10 Q25 15, 50 10 T100 10", // Wave down
+            "M0 10 Q25 5, 50 10 T100 10"   // Wave up again
+          ]
+        : "M0 10 H100", // Straight line
+    }}
+    transition={{
+      duration: 2.4, // Slow and smooth
+      ease: "easeInOut",
+      repeat: isPlaying ? Infinity : 0,
+    }}
+  />
+</motion.svg>
+
         </motion.button>
         <audio ref={audioRef} loop src="/audio/audio.mp3" />
 
