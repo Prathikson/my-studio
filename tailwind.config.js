@@ -22,6 +22,7 @@ export default {
       colors: {
         zoroRed: '#de0f3f',
         appleBlue: "#0071fe",
+        carbonBlack: '#1a1a1a',
         carbonGray: "#0A0A0A",
         smoothBlack: "#1e1e1e",
         jetBlack: "#000000",

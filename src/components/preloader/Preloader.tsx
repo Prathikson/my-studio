@@ -18,7 +18,7 @@ interface Sticker {
 const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   const [isVisible, setIsVisible] = useState(() => {
     if (typeof window !== "undefined") {
-      return !localStorage.getItem("hasVisited");
+      return !sessionStorage.getItem("hasVisited");
     }
     return true;
   });
