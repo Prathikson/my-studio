@@ -281,7 +281,7 @@ const PricingTabs: React.FC = () => {
           {activeService.pricingTiers.map((tier, index) => (
             <div
               key={index}
-              className={`group relative bg-carbonGray rounded-2xl p-6 md:p-8 border border-gray-800 transition-all duration-300 hover:border-gray-600 hover:shadow-2xl transform hover:-translate-y-1 ${tier.hoverBg} ${
+              className={`group relative bg-carbonGray rounded-2xl p-6 md:p-8 border border-carbonGray transition-all duration-300 hover:border-white hover:shadow-2xl transform hover:-translate-y-1 ${tier.hoverBg} ${
                 tier.popular ? 'ring-2 ring-blue-500 ring-offset-2 ring-offset-gray-50' : ''
               }`}
             >
@@ -305,7 +305,7 @@ const PricingTabs: React.FC = () => {
               </div>
 
               {/* Description */}
-              <p className={`text-gray-400 mb-6 leading-relaxed transition-colors duration-300 ${tier.textColor}`}>
+              <p className={`text-lightGray mb-6 leading-relaxed transition-colors duration-300 ${tier.textColor}`}>
                 {tier.description}
               </p>
 
@@ -314,7 +314,7 @@ const PricingTabs: React.FC = () => {
                 <h4 className={`text-3xl md:text-4xl font-bold text-white mb-1 transition-colors duration-300 ${tier.textColor}`}>
                   {tier.price}
                 </h4>
-                <p className="text-gray-500 text-sm">One-time payment</p>
+                <p className="text-lightGray text-sm">One-time payment</p>
               </div>
 
               {/* Features */}
@@ -322,7 +322,7 @@ const PricingTabs: React.FC = () => {
                 {tier.features.map((feature, i) => (
                   <li
                     key={i}
-                    className={`flex items-center gap-3 text-gray-300 transition-colors duration-300 ${tier.textColor}`}
+                    className={`flex items-center gap-3 text-gray-200 transition-colors duration-300 ${tier.textColor}`}
                   >
                     <div className="flex-shrink-0">
                       <BadgeCheck size={18} className="text-green-400" />
