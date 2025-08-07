@@ -243,7 +243,7 @@ const PricingTabs: React.FC = () => {
   const activeService = services.find((s) => s.name === activeTab)!;
 
   return (
-    <section className="w-full min-h-[1500px] bg-lightGray py-12 md:py-20">
+    <div className="w-full min-h-screen mb-16 bg-lightGray py-12 md:py-20">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 mb-12">
@@ -281,7 +281,7 @@ const PricingTabs: React.FC = () => {
           {activeService.pricingTiers.map((tier, index) => (
             <div
               key={index}
-              className={`group relative bg-gray-900 rounded-2xl p-6 md:p-8 border border-gray-800 transition-all duration-300 hover:border-gray-600 hover:shadow-2xl transform hover:-translate-y-1 ${tier.hoverBg} ${
+              className={`group relative bg-carbonGray rounded-2xl p-6 md:p-8 border border-gray-800 transition-all duration-300 hover:border-gray-600 hover:shadow-2xl transform hover:-translate-y-1 ${tier.hoverBg} ${
                 tier.popular ? 'ring-2 ring-blue-500 ring-offset-2 ring-offset-gray-50' : ''
               }`}
             >
@@ -340,7 +340,7 @@ const PricingTabs: React.FC = () => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
