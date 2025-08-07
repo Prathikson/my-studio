@@ -13,6 +13,7 @@ const services = [
     gradient: ['#10b981', '#059669'],
     items: [
       'Brand Strategy',
+      'SEO Optimization',
       '360° Creative',
       'Art Direction',
       'Copywriting',
@@ -98,7 +99,7 @@ export default function ServicesSection() {
   const handleCardHover = (index: number) => {
     setHoveredCard(index);
     gsap.to(cursorRef.current, {
-      scale: 2,
+      scale: 1.02,
       duration: 0.3,
       ease: 'back.out(1.7)',
     });
@@ -107,7 +108,7 @@ export default function ServicesSection() {
       if (!card) return;
       if (i === index) {
         gsap.to(card, {
-          scale: 1.1,
+          scale: 1.02,
           z: 50,
           duration: 0.4,
           ease: 'back.out(1.7)',

@@ -19,7 +19,7 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
   menuItems = [
     { name: "HOME" },
     { name: "ABOUT US" },
-    { name: "PROJECTS", hasArrow: true },
+    { name: "PROJECTS" },
     { name: "CONTACT" }
   ],
   ctaText = "LET'S TALK",
@@ -28,7 +28,7 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
   className = ""
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState("PROJECTS");
+  const [activeItem, setActiveItem] = useState("HOME");
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [email, setEmail] = useState("");
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -42,16 +42,23 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
     setEmail("");
   };
 
-  const handleAudioToggle = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
+const handleAudioToggle = async () => {
+  const audio = audioRef.current;
+  if (!audio) return;
+
+  try {
+    if (isPlaying) {
+      await audio.pause();
+      setIsPlaying(false);
+    } else {
+      await audio.play();
+      setIsPlaying(true);
     }
-  };
+  } catch (error) {
+    console.error("Audio toggle failed:", error);
+  }
+};
+
 
   return (
     <div className={`text-white relative overflow-hidden ${className}`}>
@@ -152,7 +159,40 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
               >
                 <AnimatedLogo iconOnly={true} color="#f1f1f1" />
               </motion.div>
+              <motion.button
+          onClick={handleAudioToggle}
+          whileHover={{ scale: 1.002 }}
+          className="w-10 h-10 rounded-full bg-smoothBlack backdrop-blur-sm border border-white/20 flex items-center justify-center relative overflow-hidden"
+          aria-label={isPlaying ? "Pause audio" : "Play audio"}
+        >
+<motion.svg
+  viewBox="0 0 100 20"
+  className="w-6 h-4"
+  preserveAspectRatio="none"
+>
+  <motion.path
+    fill="transparent"
+    stroke={isPlaying ? "white" : "white"}
+    strokeWidth="2"
+    initial={false}
+    animate={{
+      d: isPlaying
+        ? [
+            "M0 10 Q25 5, 50 10 T100 10",  // Wave up
+            "M0 10 Q25 15, 50 10 T100 10", // Wave down
+            "M0 10 Q25 5, 50 10 T100 10"   // Wave up again
+          ]
+        : "M0 10 H100", // Straight line
+    }}
+    transition={{
+      duration: 2.4, // Slow and smooth
+      ease: "easeInOut",
+      repeat: isPlaying ? Infinity : 0,
+    }}
+  />
+</motion.svg>
 
+        </motion.button>
               <motion.button
                 onClick={() => {
                   onCtaClick?.();
@@ -165,6 +205,7 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
                 {ctaText}
                 <span className="w-2 h-2 bg-black rounded-full"></span>
               </motion.button>
+              
 
               <motion.button
                 onClick={toggleMenu}
@@ -251,7 +292,7 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
                       <motion.button
                         type="submit"
                         whileHover={{ scale: 1.003 }}
-                        className="absolute right-2 top-1 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center text-xl"
+                        className="absolute right-1 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center text-xl"
                         aria-label="Submit email"
                       >
                         →
