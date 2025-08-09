@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { BadgeCheck, Flame, Rocket, Sparkles, Zap, Monitor, Palette, Megaphone } from "lucide-react";
 import MinimalHeader from "../../../components/ui/MinimalHeader";
+import {useNavigate } from "react-router-dom"; 
+
 
 type PricingTier = {
   title: string;
@@ -239,7 +241,7 @@ const services: ServicePricing[] = [
 
 const PricingTabs: React.FC = () => {
   const [activeTab, setActiveTab] = useState(services[0].name);
-
+  const navigate = useNavigate(); 
   const activeService = services.find((s) => s.name === activeTab)!;
 
   return (
@@ -333,7 +335,9 @@ const PricingTabs: React.FC = () => {
               </ul>
 
               {/* CTA Button */}
-              <button className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 ${tier.button} hover:shadow-lg transform hover:scale-105`}>
+              <button
+              onClick={() => navigate("/contact")}
+              className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 ${tier.button} hover:shadow-lg transform hover:scale-105`}>
                 Get Started
               </button>
             </div>

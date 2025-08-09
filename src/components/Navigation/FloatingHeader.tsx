@@ -4,6 +4,7 @@ import { AnimatedLogo } from "./AnimatedLogo";
 
 interface MenuItem {
   name: string;
+  path: string;
   hasArrow?: boolean;
 }
 
@@ -13,19 +14,22 @@ interface FloatingNavProps {
   onCtaClick?: () => void;
   showNewsletter?: boolean;
   className?: string;
+  onNavigate?: (path: string) => void; // Add navigation handler
 }
 
 const FloatingNav: React.FC<FloatingNavProps> = ({
   menuItems = [
-    { name: "HOME" },
-    { name: "ABOUT US" },
-    { name: "PROJECTS" },
-    { name: "CONTACT" }
+    { name: "HOME", path: "/" },
+    { name: "ABOUT US", path: "/about" },
+    { name: "PORTFOLIO", path: "/portfolio" },
+    { name: "SERVICES", path: "/services" },
+    { name: "CONTACT", path: "/contact" }
   ],
   ctaText = "LET'S TALK",
   onCtaClick,
   showNewsletter = true,
-  className = ""
+  className = "",
+  onNavigate
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState("HOME");
@@ -42,23 +46,39 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
     setEmail("");
   };
 
-const handleAudioToggle = async () => {
-  const audio = audioRef.current;
-  if (!audio) return;
+  const handleAudioToggle = async () => {
+    const audio = audioRef.current;
+    if (!audio) return;
 
-  try {
-    if (isPlaying) {
-      await audio.pause();
-      setIsPlaying(false);
-    } else {
-      await audio.play();
-      setIsPlaying(true);
+    try {
+      if (isPlaying) {
+        await audio.pause();
+        setIsPlaying(false);
+      } else {
+        await audio.play();
+        setIsPlaying(true);
+      }
+    } catch (error) {
+      console.error("Audio toggle failed:", error);
     }
-  } catch (error) {
-    console.error("Audio toggle failed:", error);
-  }
-};
+  };
 
+  const handleMenuItemClick = (item: MenuItem) => {
+    setActiveItem(item.name);
+    
+    // Handle navigation
+    if (onNavigate) {
+      onNavigate(item.path);
+    } else {
+      // Default behavior: use window.location or history API
+      if (typeof window !== 'undefined') {
+        window.location.href = item.path;
+      }
+    }
+    
+    // Close menu after navigation
+    setIsMenuOpen(false);
+  };
 
   return (
     <div className={`text-white relative overflow-hidden ${className}`}>
@@ -71,33 +91,32 @@ const handleAudioToggle = async () => {
           className="w-10 h-10 rounded-full bg-smoothBlack backdrop-blur-sm border border-white/20 flex items-center justify-center relative overflow-hidden"
           aria-label={isPlaying ? "Pause audio" : "Play audio"}
         >
-<motion.svg
-  viewBox="0 0 100 20"
-  className="w-6 h-4"
-  preserveAspectRatio="none"
->
-  <motion.path
-    fill="transparent"
-    stroke={isPlaying ? "white" : "white"}
-    strokeWidth="2"
-    initial={false}
-    animate={{
-      d: isPlaying
-        ? [
-            "M0 10 Q25 5, 50 10 T100 10",  // Wave up
-            "M0 10 Q25 15, 50 10 T100 10", // Wave down
-            "M0 10 Q25 5, 50 10 T100 10"   // Wave up again
-          ]
-        : "M0 10 H100", // Straight line
-    }}
-    transition={{
-      duration: 2.4, // Slow and smooth
-      ease: "easeInOut",
-      repeat: isPlaying ? Infinity : 0,
-    }}
-  />
-</motion.svg>
-
+          <motion.svg
+            viewBox="0 0 100 20"
+            className="w-6 h-4"
+            preserveAspectRatio="none"
+          >
+            <motion.path
+              fill="transparent"
+              stroke={isPlaying ? "white" : "white"}
+              strokeWidth="2"
+              initial={false}
+              animate={{
+                d: isPlaying
+                  ? [
+                      "M0 10 Q25 5, 50 10 T100 10",  // Wave up
+                      "M0 10 Q25 15, 50 10 T100 10", // Wave down
+                      "M0 10 Q25 5, 50 10 T100 10"   // Wave up again
+                    ]
+                  : "M0 10 H100", // Straight line
+              }}
+              transition={{
+                duration: 2.4, // Slow and smooth
+                ease: "easeInOut",
+                repeat: isPlaying ? Infinity : 0,
+              }}
+            />
+          </motion.svg>
         </motion.button>
         <audio ref={audioRef} loop src="/audio/audio.mp3" />
 
@@ -160,39 +179,38 @@ const handleAudioToggle = async () => {
                 <AnimatedLogo iconOnly={true} color="#f1f1f1" />
               </motion.div>
               <motion.button
-          onClick={handleAudioToggle}
-          whileHover={{ scale: 1.002 }}
-          className="w-10 h-10 rounded-full bg-smoothBlack backdrop-blur-sm border border-white/20 flex items-center justify-center relative overflow-hidden"
-          aria-label={isPlaying ? "Pause audio" : "Play audio"}
-        >
-<motion.svg
-  viewBox="0 0 100 20"
-  className="w-6 h-4"
-  preserveAspectRatio="none"
->
-  <motion.path
-    fill="transparent"
-    stroke={isPlaying ? "white" : "white"}
-    strokeWidth="2"
-    initial={false}
-    animate={{
-      d: isPlaying
-        ? [
-            "M0 10 Q25 5, 50 10 T100 10",  // Wave up
-            "M0 10 Q25 15, 50 10 T100 10", // Wave down
-            "M0 10 Q25 5, 50 10 T100 10"   // Wave up again
-          ]
-        : "M0 10 H100", // Straight line
-    }}
-    transition={{
-      duration: 2.4, // Slow and smooth
-      ease: "easeInOut",
-      repeat: isPlaying ? Infinity : 0,
-    }}
-  />
-</motion.svg>
-
-        </motion.button>
+                onClick={handleAudioToggle}
+                whileHover={{ scale: 1.002 }}
+                className="w-10 h-10 rounded-full bg-smoothBlack backdrop-blur-sm border border-white/20 flex items-center justify-center relative overflow-hidden"
+                aria-label={isPlaying ? "Pause audio" : "Play audio"}
+              >
+                <motion.svg
+                  viewBox="0 0 100 20"
+                  className="w-6 h-4"
+                  preserveAspectRatio="none"
+                >
+                  <motion.path
+                    fill="transparent"
+                    stroke={isPlaying ? "white" : "white"}
+                    strokeWidth="2"
+                    initial={false}
+                    animate={{
+                      d: isPlaying
+                        ? [
+                            "M0 10 Q25 5, 50 10 T100 10",  // Wave up
+                            "M0 10 Q25 15, 50 10 T100 10", // Wave down
+                            "M0 10 Q25 5, 50 10 T100 10"   // Wave up again
+                          ]
+                        : "M0 10 H100", // Straight line
+                    }}
+                    transition={{
+                      duration: 2.4, // Slow and smooth
+                      ease: "easeInOut",
+                      repeat: isPlaying ? Infinity : 0,
+                    }}
+                  />
+                </motion.svg>
+              </motion.button>
               <motion.button
                 onClick={() => {
                   onCtaClick?.();
@@ -205,7 +223,6 @@ const handleAudioToggle = async () => {
                 {ctaText}
                 <span className="w-2 h-2 bg-black rounded-full"></span>
               </motion.button>
-              
 
               <motion.button
                 onClick={toggleMenu}
@@ -237,7 +254,7 @@ const handleAudioToggle = async () => {
                       transition={{ delay: 0.4 + i * 0.1 }}
                       onMouseEnter={() => setHoveredItem(item.name)}
                       onMouseLeave={() => setHoveredItem(null)}
-                      onClick={() => setActiveItem(item.name)}
+                      onClick={() => handleMenuItemClick(item)}
                       className={`relative flex items-center justify-between p-4 rounded-2xl cursor-pointer transition-all duration-300 ${
                         activeItem === item.name
                           ? "bg-appleBlue/30 text-white"
@@ -261,7 +278,6 @@ const handleAudioToggle = async () => {
                             />
                           )}
                         </AnimatePresence>
-
                       </div>
                     </motion.div>
                   ))}
@@ -278,7 +294,7 @@ const handleAudioToggle = async () => {
                 {showNewsletter && (
                   <div className="bg-smoothBlack/50 backdrop-blur-sm rounded-3xl p-8 border border-white/10">
                     <h3 className="text-2xl md:text-3xl font-light mb-8">
-                      Subscribe to<br />our newsletter
+                      Subscribe to<br />receive Promotions & Discounts
                     </h3>
                     <form onSubmit={handleSubmit} className="relative">
                       <input
@@ -291,8 +307,7 @@ const handleAudioToggle = async () => {
                       />
                       <motion.button
                         type="submit"
-                        whileHover={{ scale: 1.003 }}
-                        className="absolute right-1 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-xl flex items-center justify-center text-xl"
+                        className="absolute right-1 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 hover:bg-carbonBlack/20 rounded-xl flex items-center justify-center text-xl"
                         aria-label="Submit email"
                       >
                         →
