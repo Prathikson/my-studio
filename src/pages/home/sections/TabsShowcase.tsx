@@ -207,30 +207,40 @@ export const TabsShowcase = ({
 
 const defaultTabs: TabType[] = [
   {
-    key: "identities",
-    label: "Identities",
+    key: "branding",
+    label: "Branding",
     shortcut: "Shift + 1",
-    title: "Identities",
+    title: "Branding",
     description:
-      "Craft brand identities from the ground up and transform raw ideas into cohesive and compelling brand experiences.",
-    imageUrl: "/assets/home6.png",
+      "We craft memorable brand identities from scratch. Every element—from logos to color palettes—is designed with strategy and creativity to make your brand stand out. Our work ensures your brand is not only beautiful but impactful.",
+    imageUrl: "/assets/branding.png",
   },
   {
-    key: "refreshes",
-    label: "Refreshes",
+    key: "social",
+    label: "Social",
     shortcut: "Shift + 2",
-    title: "Refreshes",
+    title: "Social Media & Campaigns",
     description:
-      "Rejuvenate outdated designs and breathe new life into your digital presence with thoughtful visual updates.",
-    imageUrl: "/assets/home4.png",
+      "We design social media campaigns that engage, convert, and build community. From scroll-stopping visuals to viral-ready content, we help your brand tell its story where it matters most—online.",
+    imageUrl: "/assets/social.png",
   },
   {
-    key: "application",
-    label: "Application",
+    key: "design",
+    label: "Design",
     shortcut: "Shift + 3",
-    title: "Application",
+    title: "Design",
     description:
-      "Apply branding across products and touchpoints with consistency and purpose to ensure an impactful experience.",
-    imageUrl: "/assets/home2.png",
+      "Our design team transforms concepts into visually stunning realities. Whether UI/UX, print, or immersive experiences, every design is purposeful, clear, and tailored to your audience to inspire and delight.",
+    imageUrl: "/assets/design.png",
+  },
+  {
+    key: "build",
+    label: "Build",
+    shortcut: "Shift + 4",
+    title: "Development & Implementation",
+    description:
+      "We bring creative visions to life with flawless execution. From websites to apps and interactive platforms, our development team ensures your digital presence is fast, functional, and future-proof.",
+    imageUrl: "/assets/build.png",
   },
 ];
+

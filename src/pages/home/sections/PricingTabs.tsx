@@ -65,8 +65,9 @@ const services: ServicePricing[] = [
         price: "$1599 + tax",
         description: "Full scale studio-level creative execution",
         features: [
-          "Unlimited Pages",
+          "Up to 25 Pages",
           "Motion Design + GSAP",
+          "Responsive Designs",
           "Custom CMS or Headless Setup",
           "Priority Delivery & Support",
         ],
@@ -78,58 +79,58 @@ const services: ServicePricing[] = [
     ],
   },
   {
-    name: "Build",
-    icon: <Monitor size={18} />,
-    color: "blue",
-    pricingTiers: [
-      {
-        title: "Starter",
-        price: "$799 + tax",
-        description: "Basic app or website with solid foundations",
-        features: [
-          "Static Site or SPA",
-          "Responsive & Accessible",
-          "Basic Backend API",
-          "Delivery in 10 Days",
-        ],
-        icon: <Sparkles className="text-gray-300" size={20} />,
-        hoverBg: "hover:bg-blue-500",
-        textColor: "group-hover:text-white",
-        button: "bg-white text-black group-hover:bg-white group-hover:text-black",
-      },
-      {
-        title: "Pro",
-        price: "$1499 + tax",
-        description: "Scalable solutions with integrations",
-        features: [
-          "Full-stack Web or Mobile App",
-          "Database + API Integration",
-          "Performance Optimization",
-          "Delivery in 20 Days",
-        ],
-        icon: <Rocket className="text-blue-300" size={20} />,
-        hoverBg: "hover:bg-blue-600",
-        textColor: "group-hover:text-gray-100",
-        button: "bg-white text-black group-hover:bg-black group-hover:text-blue-400",
-        popular: true,
-      },
-      {
-        title: "Elite",
-        price: "$2499 + tax",
-        description: "Enterprise-grade solutions & support",
-        features: [
-          "Custom Architecture",
-          "Advanced Security",
-          "DevOps & CI/CD Setup",
-          "Priority Support & Maintenance",
-        ],
-        icon: <Flame className="text-blue-300" size={20} />,
-        hoverBg: "hover:bg-blue-700",
-        textColor: "group-hover:text-white",
-        button: "bg-white text-black group-hover:bg-white group-hover:text-blue-700",
-      },
-    ],
-  },
+  name: "Build",
+  icon: <Monitor size={18} />,
+  color: "blue",
+  pricingTiers: [
+    {
+      title: "Landing Page",
+      price: "$499 + tax",
+      description: "Single-page website to showcase your brand or product",
+      features: [
+        "1 Page Design",
+        "Responsive & Accessible",
+        "Basic Static Site",
+        "Delivery in 7 Days",
+      ],
+      icon: <Sparkles className="text-gray-300" size={20} />,
+      hoverBg: "hover:bg-blue-500",
+      textColor: "group-hover:text-white",
+      button: "bg-white text-black group-hover:bg-white group-hover:text-black",
+    },
+    {
+      title: "Small Website",
+      price: "$999 + tax",
+      description: "Website up to 10 pages with light backend functionality",
+      features: [
+        "Up to 10 Pages",
+        "Responsive & Accessible",
+        "Basic Backend/API Integration",
+        "Delivery in 15 Days",
+      ],
+      icon: <Zap className="text-gray-300" size={20} />,
+      hoverBg: "hover:bg-blue-500",
+      textColor: "group-hover:text-white",
+      button: "bg-white text-black group-hover:bg-white group-hover:text-black",
+      popular: true,
+    },
+    {
+      title: "Full Website",
+      price: "$1999 + tax",
+      description: "Comprehensive website up to 25 pages with SEO and backend",
+      features: [
+        "Up to 25 Pages",
+        "Optimized SEO",
+        "Basic Backend/API Integration",
+        "Delivery in 30 Days",
+      ],
+      icon: <Rocket className="text-gray-300" size={20} />,
+      hoverBg: "hover:bg-blue-500",
+      textColor: "group-hover:text-white",
+      button: "bg-white text-black group-hover:bg-white group-hover:text-black",
+    },
+  ],
+},
   {
     name: "Branding",
     icon: <Sparkles size={18} />,
@@ -264,7 +265,7 @@ const PricingTabs: React.FC = () => {
                 onClick={() => setActiveTab(service.name)}
                 className={`group flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium transition-all duration-200 ${
                   activeTab === service.name
-                    ? "bg-zoroRed text-white shadow-lg transform scale-105"
+                    ? "bg-gradient-to-tr from-appleBlue to-[#0078b0] text-white shadow-lg transform scale-105"
                     : "bg-white text-carbonGray hover:bg-lightGray border border-gray-200 hover:border-gray-300"
                 }`}
                 aria-selected={activeTab === service.name}

@@ -66,7 +66,7 @@ export default function ServicesSection() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const cursorRef = useRef<HTMLDivElement | null>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [hoveredCard] = useState<number | null>(null);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [clickedItem, setClickedItem] = useState<string | null>(null);
   const navigate = useNavigate();
@@ -100,57 +100,7 @@ export default function ServicesSection() {
     return () => ctx.revert();
   }, []);
 
-  const handleCardHover = (index: number) => {
-    if (hoveredItem) return; // Don't animate cards if hovering items
-    
-    setHoveredCard(index);
-    gsap.to(cursorRef.current, {
-      scale: 1.02,
-      duration: 0.3,
-      ease: 'back.out(1.7)',
-    });
 
-    cardsRef.current.forEach((card, i) => {
-      if (!card) return;
-      if (i === index) {
-        gsap.to(card, {
-          scale: 1.02,
-          z: 50,
-          duration: 0.4,
-          ease: 'back.out(1.7)',
-        });
-      } else {
-        gsap.to(card, {
-          x: i < index ? -20 : 20,
-          scale: 0.95,
-          duration: 0.4,
-          ease: 'power2.out',
-        });
-      }
-    });
-  };
-
-  const handleCardLeave = () => {
-    if (hoveredItem) return; // Don't reset if still hovering items
-    
-    setHoveredCard(null);
-    gsap.to(cursorRef.current, {
-      scale: 1,
-      duration: 0.3,
-      ease: 'power2.out',
-    });
-
-    cardsRef.current.forEach((card) => {
-      if (!card) return;
-      gsap.to(card, {
-        scale: 1,
-        x: 0,
-        z: 0,
-        duration: 0.4,
-        ease: 'power2.out',
-      });
-    });
-  };
 
   const handleServiceClick = (path: string, itemKey: string) => {
     setClickedItem(itemKey);
@@ -168,17 +118,6 @@ export default function ServicesSection() {
 
   return (
     <div className="relative bg-lightGray min-h-screen overflow-hidden">
-      {/* Enhanced Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 25% 25%, #10b981 0%, transparent 50%), radial-gradient(circle at 75% 75%, #3b82f6 0%, transparent 50%)',
-        }} />
-      </div>
-
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-      <div className="absolute top-40 right-20 w-3 h-3 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0.5s' }} />
-      <div className="absolute bottom-32 left-1/4 w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
 
       <div ref={containerRef} className="container mx-auto px-8 py-20 relative z-10">
         {/* Enhanced Header */}
@@ -189,14 +128,6 @@ export default function ServicesSection() {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <MinimalHeader pillText="Services" titleLine1="Call Us If You Need" />
-          <motion.p 
-            className="mt-6 text-gray-600 text-lg max-w-2xl mx-auto"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-          >
-            Discover our comprehensive range of digital solutions designed to elevate your brand
-          </motion.p>
         </motion.div>
 
         {/* Enhanced Cards Grid */}
@@ -208,45 +139,12 @@ export default function ServicesSection() {
                 ref={(el: HTMLDivElement | null) => {
                   if (el) cardsRef.current[i] = el;
                 }}
-                initial={{ 
-                  rotate: Math.random() * 10 - 5,
-                  opacity: 0,
-                  y: 50
-                }}
-                animate={{ 
-                  rotate: 0,
-                  opacity: 1,
-                  y: 0
-                }}
-                transition={{ 
-                  delay: i * 0.1,
-                  duration: 0.6,
-                  type: 'spring',
-                  stiffness: 100
-                }}
-                whileHover={{
-                  scale: 1.02,
-                  zIndex: 100,
-                }}
-                onMouseEnter={() => handleCardHover(i)}
-                onMouseLeave={handleCardLeave}
                 className="relative w-80 h-96 rounded-3xl shadow-2xl transform-gpu backdrop-blur-sm"
                 style={{
                   background: `linear-gradient(135deg, ${service.gradient[0]}, ${service.gradient[1]})`,
                   boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1)',
                 }}
               >
-                {/* Enhanced Glow Ring */}
-                <motion.div
-                  className="absolute -inset-1 rounded-3xl opacity-0"
-                  style={{
-                    background: `linear-gradient(135deg, ${service.gradient[0]}, ${service.gradient[1]})`,
-                  }}
-                  animate={{
-                    opacity: hoveredCard === i ? 0.3 : 0,
-                  }}
-                  transition={{ duration: 0.3 }}
-                />
 
                 {/* Enhanced Icon */}
                 <motion.div 
@@ -410,16 +308,6 @@ export default function ServicesSection() {
                                 }}
                               />
                               
-                              {/* Subtle background highlight */}
-                              <motion.div
-                                className="absolute -inset-x-1 -inset-y-0.5 bg-white/10 rounded"
-                                initial={{ opacity: 0, scaleX: 0 }}
-                                animate={{
-                                  opacity: isHovered ? 1 : 0,
-                                  scaleX: isHovered ? 1 : 0
-                                }}
-                                transition={{ duration: 0.2 }}
-                              />
                             </span>
                             
                             {/* Enhanced Arrow with Animation */}
@@ -479,7 +367,7 @@ export default function ServicesSection() {
         >
           <motion.button
             className="relative group px-8 py-4 text-carbonGray text-lg font-medium cursor-pointer"
-            whileHover={{ y: -2 }}
+            whileHover={{ y: -1 }}
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.2 }}
           >
@@ -526,31 +414,6 @@ export default function ServicesSection() {
                 }}
               />
               
-              {/* Pencil tip */}
-              <motion.circle
-                cx="2"
-                cy="8"
-                r="2"
-                fill="#fbbf24"
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ 
-                  scale: 1, 
-                  opacity: 1,
-                }}
-                transition={{ duration: 0.3, delay: 0.6 }}
-              />
-              <motion.circle
-                cx="2"
-                cy="8"
-                r="1"
-                fill="#f59e0b"
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ 
-                  scale: 1, 
-                  opacity: 1,
-                }}
-                transition={{ duration: 0.2, delay: 0.7 }}
-              />
             </svg>
             
             {/* Subtle highlight on hover */}
