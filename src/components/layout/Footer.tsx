@@ -272,30 +272,6 @@ export default function MobileResponsiveFooter() {
                       <span>+1 (234) 567-890</span>
                     </a>
                   </div>
-                  <div className="flex space-x-2">
-                    {socialLinks.slice(0, 3).map((social, index) => {
-                      const Icon = social.icon;
-                      return (
-                        <motion.a
-                          key={social.name}
-                          href={social.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-8 h-8 bg-carbonGray rounded-lg flex items-center justify-center"
-                          whileHover={{ scale: 1.1 }}
-                          style={{
-                            background: hoveredSocial === index 
-                              ? `linear-gradient(135deg, ${social.gradient[0]}, ${social.gradient[1]})`
-                              : undefined
-                          }}
-                          onMouseEnter={() => setHoveredSocial(index)}
-                          onMouseLeave={() => setHoveredSocial(null)}
-                        >
-                          <Icon className="w-4 h-4" />
-                        </motion.a>
-                      );
-                    })}
-                  </div>
                 </div>
               </motion.div>
 

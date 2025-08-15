@@ -1,7 +1,8 @@
 import Hero from "./experiment/Hero";
-import ContactSection from "./sections/ContactSection";
+import CTASection from "./sections/CTASection";
 import FeaturesSection from "./sections/FeaturesSection";
 import PricingTabs from "./sections/PricingTabs";
+import ProjectSection from "./sections/ProjectSection";
 import ServicesSection from "./sections/ServiceSection";
 import { TabsShowcase } from "./sections/TabsShowcase";
 import { TapeSection } from "./sections/Tape";
@@ -13,9 +14,10 @@ const Home = () => {
         <ServicesSection/>
         <TapeSection/>
         <TabsShowcase />
+        <ProjectSection/>
         <FeaturesSection/>
         <PricingTabs/>
-        <ContactSection/>
+        <CTASection/>
     </main>
   );
 };
