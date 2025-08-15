@@ -138,7 +138,7 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
           whileTap={{ scale: 0.95 }}
           className="px-6 py-3 rounded-full bg-appleBlue backdrop-blur-sm border border-white/20 text-sm font-medium tracking-wide flex items-center gap-2"
         >
-          MENU <span className="text-xs">⋯⋯</span>
+          MENU
         </motion.button>
       </div>
 
@@ -172,7 +172,7 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="w-12 h-12 rounded-full bg-white text-carbonBlack flex items-center justify-center text-xl font-bold cursor-pointer select-none"
+                className="w-12 h-12   text-carbonBlack flex items-center justify-center text-xl font-bold cursor-pointer select-none"
                 onClick={toggleMenu}
                 aria-label="Close menu"
               >
