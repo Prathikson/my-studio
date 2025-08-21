@@ -265,7 +265,7 @@ const PricingTabs: React.FC = () => {
                 onClick={() => setActiveTab(service.name)}
                 className={`group flex items-center gap-2 px-4 py-2.5 rounded-xl font-medium transition-all duration-200 ${
                   activeTab === service.name
-                    ? "bg-gradient-to-tr from-appleBlue to-[#0078b0] text-white shadow-lg transform scale-105"
+                    ? "bg-appleBlue text-white shadow-lg transform scale-105"
                     : "bg-white text-carbonGray hover:bg-lightGray border border-gray-200 hover:border-gray-300"
                 }`}
                 aria-selected={activeTab === service.name}

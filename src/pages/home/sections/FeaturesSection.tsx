@@ -121,7 +121,7 @@ const FeaturesSection: React.FC = () => {
             key={col.key}
             className={`table-header p-6 text-center font-semibold text-lg ${
               col.key === "xtoic"
-                ? "bg-gradient-to-tr from-appleBlue to-[#0078b0] text-lightGray rounded-tl-3xl"
+                ? "bg-appleBlue text-lightGray rounded-tl-3xl"
                 : "bg-lightGray text-mattBlack"
             }`}
           >
@@ -144,7 +144,7 @@ const FeaturesSection: React.FC = () => {
                 key={col.key}
                 className={`table-row p-6 border-t border-mattBlack/50 ${
                   col.key === "xtoic"
-                    ? `bg-gradient-to-tr from-appleBlue to-[#0078b0] text-lightGray ${
+                    ? `bg-appleBlue text-lightGray ${
                         idx === 0 ? "" : ""
                       } ${idx === data.length - 1 ? "rounded-br-3xl" : ""}`
                     : "text-mattBlack bg-lightGray"
