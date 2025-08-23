@@ -1,7 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import { ArrowRight, ChevronDown } from "lucide-react";
-import Button from "../../../components/ui/Button";
-import AltButton from "../../../components/ui/AltButton";
 import ParticleWord from "../components/ParticleWord";
 
 const words = ["Digital", "Modern", "Stunning", "Beautiful"];
@@ -82,37 +79,9 @@ const HeroSection: React.FC = () => {
           }`}
           style={{ transitionDelay: "500ms" }}
         >
-          <Button
-          data-cursor='button'
-            bgColor="bg-black"
-            hoverBgColor="hover:bg-gray-900"
-            textSize="text-lg"
-            className="rounded-xl px-8 py-4 hover:scale-102 transition"
-            rightIcon={<ArrowRight className="w-5 h-5" />}
-          >
-            Start Your Project
-          </Button>
-          <AltButton
-          data-cursor='button'
-            fillColor="#141414"
-            borderColor="border-black/80"
-            hoverTextColor="hover:text-white"
-            rightIcon={<ArrowRight className="w-5 h-5" />}
-          >
-            View Our Work
-          </AltButton>
+        
         </div>
 
-        {/* Scroll Down Indicator */}
-        <div
-          className={`absolute bottom-10 flex flex-col items-center text-gray-400 transition-all ${
-            mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
-          style={{ transitionDelay: "700ms" }}
-        >
-          <span className="text-xs mb-1 tracking-wide">Scroll to explore</span>
-          <ChevronDown className="w-5 h-5 animate-bounce" />
-        </div>
 
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {[...Array(20)].map((_, i) => (
