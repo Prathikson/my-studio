@@ -5,6 +5,8 @@ import { gsap } from 'gsap';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import MinimalHeader from '../../../components/ui/MinimalHeader';
+import Button from '../../../components/ui/Button';
+import { ChevronRight} from 'lucide-react';
 
 const services = [
   {
@@ -365,65 +367,7 @@ export default function ServicesSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
         >
-          <motion.button
-            className="relative group px-8 py-4 text-carbonGray text-lg font-medium cursor-pointer"
-            whileHover={{ y: -1 }}
-            whileTap={{ scale: 0.98 }}
-            transition={{ duration: 0.2 }}
-          >
-            <span className="relative z-10">View All Services</span>
-            
-            {/* Pencil Stroke Underline */}
-            <svg
-              className="absolute bottom-1 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-              width="180"
-              height="12"
-              viewBox="0 0 180 12"
-              fill="none"
-            >
-              <motion.path
-                d="M2 8C20 4 40 2 60 5C80 8 100 6 120 4C140 2 160 6 178 8"
-                stroke="#3b82f6"
-                strokeWidth="3"
-                strokeLinecap="round"
-                fill="none"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={{ 
-                  pathLength: 1, 
-                  opacity: 1,
-                }}
-                transition={{
-                  pathLength: { duration: 0.8, ease: "easeInOut" },
-                  opacity: { duration: 0.3 }
-                }}
-              />
-              <motion.path
-                d="M2 8.5C20 4.5 40 2.5 60 5.5C80 8.5 100 6.5 120 4.5C140 2.5 160 6.5 178 8.5"
-                stroke="#60a5fa"
-                strokeWidth="2"
-                strokeLinecap="round"
-                fill="none"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={{ 
-                  pathLength: 1, 
-                  opacity: 0.6,
-                }}
-                transition={{
-                  pathLength: { duration: 0.8, ease: "easeInOut", delay: 0.1 },
-                  opacity: { duration: 0.3, delay: 0.1 }
-                }}
-              />
-              
-            </svg>
-            
-            {/* Subtle highlight on hover */}
-            <motion.div
-              className="absolute inset-0"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileHover={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.2 }}
-            />
-          </motion.button>
+         <Button rightIcon={<ChevronRight className="h-5 w-5"/>} title="View Services" to="/portfolio"/>
         </motion.div>
       </div>
     </div>

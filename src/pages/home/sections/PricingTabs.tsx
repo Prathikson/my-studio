@@ -40,7 +40,7 @@ const services: ServicePricing[] = [
           "Delivery in 7 Days",
         ],
         icon: <Zap className="text-gray-300" size={20} />,
-        hoverBg: "hover:bg-red-500",
+        hoverBg: "hover:bg-gradient-to-r from-orange-300 to-orange-500",
         textColor: "group-hover:text-white",
         button: "bg-white text-black group-hover:bg-white group-hover:text-black",
       },
@@ -55,9 +55,9 @@ const services: ServicePricing[] = [
           "Delivery in 10 Days",
         ],
         icon: <Rocket className="text-orange-300" size={20} />,
-        hoverBg: "hover:bg-red-600",
+        hoverBg: "hover:bg-gradient-to-r from-orange-400 to-orange-600",
         textColor: "group-hover:text-gray-100",
-        button: "bg-white text-black group-hover:bg-black group-hover:text-red-400",
+        button: "bg-white text-black group-hover:bg-carbonGray group-hover:text-red-400",
         popular: true,
       },
       {
@@ -72,7 +72,7 @@ const services: ServicePricing[] = [
           "Priority Delivery & Support",
         ],
         icon: <Flame className="text-red-300" size={20} />,
-        hoverBg: "hover:bg-red-700",
+        hoverBg: "hover:bg-gradient-to-r from-orange-500 to-orange-700",
         textColor: "group-hover:text-white",
         button: "bg-white text-black group-hover:bg-white group-hover:text-red-700",
       },
@@ -246,7 +246,7 @@ const PricingTabs: React.FC = () => {
   const activeService = services.find((s) => s.name === activeTab)!;
 
   return (
-    <div className="w-full min-h-screen mb-16 bg-lightGray py-12 md:py-20">
+    <div className="w-full min-h-screen mb-16 bg-lightGray py-10 md:py-20">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 mb-12">

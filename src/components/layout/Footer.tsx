@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { Mail, Phone, Github, Youtube, Instagram, Twitter, Facebook, Award, ChevronRight } from 'lucide-react';
+import { Mail, Phone, Github, Youtube, Instagram, X, Facebook, Award, ChevronRight } from 'lucide-react';
 
 const footerSections = [
   {
@@ -38,7 +38,7 @@ const socialLinks = [
   { name: 'GitHub', icon: Github, gradient: ['#f97316', '#ef4444'], url: 'https://github.com' },
   { name: 'YouTube', icon: Youtube, gradient: ['#ef4444', '#dc2626'], url: 'https://youtube.com' },
   { name: 'Instagram', icon: Instagram, gradient: ['#ec4899', '#be185d'], url: 'https://instagram.com' },
-  { name: 'Twitter', icon: Twitter, gradient: ['#4e3077', '#de307f'], url: 'https://twitter.com' },
+  { name: 'Twitter', icon: X, gradient: ['#121212', '#f1f1f1'], url: 'https://twitter.com' },
   { name: 'Facebook', icon: Facebook, gradient: ['#3b82f6', '#1d4ed8'], url: 'https://facebook.com' },
   { name: 'Awwwards', icon: Award, gradient: ['#10b981', '#059669'], url: 'https://awwwards.com' },
 ];
@@ -157,7 +157,7 @@ export default function MobileResponsiveFooter() {
                       <Mail className="w-4 h-4" />
                     </div>
                     <a href="mailto:hello@xtoic.studio" className="text-white hover:text-purple-400">
-                      hello@xtoic.studio
+                      info@xtoic.cardsRef
                     </a>
                   </motion.div>
 
@@ -166,7 +166,7 @@ export default function MobileResponsiveFooter() {
                       <Phone className="w-4 h-4" />
                     </div>
                     <a href="tel:+1234567890" className="text-white hover:text-pink-400">
-                      +1 (234) 567-890
+                      +1 (780) 667-4895
                     </a>
                   </motion.div>
 

@@ -195,7 +195,7 @@ export const TabsShowcase = ({
             <img
               src={activeTab.imageUrl}
               alt={activeTab.title}
-              className="w-full h-48 sm:h-64 md:h-[70vh] object-cover rounded-3xl"
+              className="w-full h-48 sm:h-64 md:h-[70vh] object-fill rounded-3xl"
               draggable={false}
             />
           )}
@@ -213,7 +213,7 @@ const defaultTabs: TabType[] = [
     title: "Branding",
     description:
       "We craft memorable brand identities from scratch. Every element—from logos to color palettes—is designed with strategy and creativity to make your brand stand out. Our work ensures your brand is not only beautiful but impactful.",
-    imageUrl: "/assets/branding.png",
+    imageUrl: "/assets/home/Brand.png",
   },
   {
     key: "social",
@@ -222,7 +222,7 @@ const defaultTabs: TabType[] = [
     title: "Social Media & Campaigns",
     description:
       "We design social media campaigns that engage, convert, and build community. From scroll-stopping visuals to viral-ready content, we help your brand tell its story where it matters most—online.",
-    imageUrl: "/assets/social.png",
+    imageUrl: "/assets/home/Social.png",
   },
   {
     key: "design",
@@ -231,7 +231,7 @@ const defaultTabs: TabType[] = [
     title: "Design",
     description:
       "Our design team transforms concepts into visually stunning realities. Whether UI/UX, print, or immersive experiences, every design is purposeful, clear, and tailored to your audience to inspire and delight.",
-    imageUrl: "/assets/design.png",
+    imageUrl: "/assets/home/Design.png",
   },
   {
     key: "build",
@@ -240,7 +240,7 @@ const defaultTabs: TabType[] = [
     title: "Development & Implementation",
     description:
       "We bring creative visions to life with flawless execution. From websites to apps and interactive platforms, our development team ensures your digital presence is fast, functional, and future-proof.",
-    imageUrl: "/assets/build.png",
+    imageUrl: "/assets/home/Build.png",
   },
 ];
 
