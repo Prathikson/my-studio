@@ -1,13 +1,16 @@
 import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+
 import Preloader from "./components/preloader/Preloader";
 import Layout from "./components/layout/Layout";
 import Home from "./pages/home/Home";
+import Service from "./pages/services/Services";
 
 export default function App() {
   const [loading, setLoading] = useState(() => {
     if (typeof window !== "undefined") {
       const visited = sessionStorage.getItem("hasVisited");
-      return !visited; 
+      return !visited;
     }
     return true;
   });
@@ -17,11 +20,17 @@ export default function App() {
     setLoading(false);
   };
 
-  return loading ? (
-    <Preloader onComplete={handlePreloaderComplete} />
-  ) : (
+  if (loading) {
+    return <Preloader onComplete={handlePreloaderComplete} />;
+  }
+
+  return (
     <Layout>
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Service />} />
+
+      </Routes>
     </Layout>
   );
 }
