@@ -13,6 +13,8 @@ interface ButtonProps {
   to?: string; // For react-router Link
   navigateTo?: string; // For programmatic navigation
   onClick?: (event: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
+  bgColor?: string; // Tailwind class OR hex value
+  textColor?: string; // Tailwind class OR hex value
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -26,14 +28,26 @@ const Button: React.FC<ButtonProps> = ({
   to,
   navigateTo,
   onClick,
+  bgColor,
+  textColor,
 }) => {
   const navigate = useNavigate();
 
+  // Detect if it's a Tailwind class or HEX color
+  const isTailwind = (val?: string) => val && !val.startsWith("#");
+
   const baseClasses = clsx(
-    "group relative z-10 w-fit cursor-pointer overflow-hidden rounded-2xl bg-carbonGray px-7 py-3 text-lightGray ",
-    "inline-flex items-center justify-center",
+    "group relative z-10 w-fit cursor-pointer overflow-hidden rounded-2xl px-7 py-3",
+    "inline-flex items-center justify-center transition duration-300",
+    isTailwind(bgColor) ? bgColor : "bg-carbonGray",
+    isTailwind(textColor) ? textColor : "text-lightGray",
     containerClass
   );
+
+  const inlineStyle = {
+    backgroundColor: bgColor && !isTailwind(bgColor) ? bgColor : undefined,
+    color: textColor && !isTailwind(textColor) ? textColor : undefined,
+  };
 
   const handleClick = (e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
     if (navigateTo) {
@@ -47,7 +61,7 @@ const Button: React.FC<ButtonProps> = ({
     <>
       {leftIcon}
       <span className="relative inline-flex overflow-hidden font-general text-xs uppercase px-2">
-        <div className="translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-12 ">
+        <div className="translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-12">
           {title}
         </div>
         <div className="absolute translate-y-[164%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0">
@@ -65,6 +79,7 @@ const Button: React.FC<ButtonProps> = ({
         id={id}
         to={to}
         className={clsx(baseClasses, "no-underline")}
+        style={inlineStyle}
         onClick={handleClick}
       >
         {content}
@@ -81,6 +96,7 @@ const Button: React.FC<ButtonProps> = ({
         target={target}
         rel={target === "_blank" ? "noopener noreferrer" : undefined}
         className={clsx(baseClasses, "no-underline")}
+        style={inlineStyle}
         onClick={handleClick}
       >
         {content}
@@ -94,6 +110,7 @@ const Button: React.FC<ButtonProps> = ({
       id={id}
       type="button"
       className={baseClasses}
+      style={inlineStyle}
       onClick={handleClick}
     >
       {content}

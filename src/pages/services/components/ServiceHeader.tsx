@@ -23,14 +23,18 @@ const ServiceHeader: React.FC = () => {
           </motion.h1>
 
           {/* Avatar placeholder */}
-          <motion.div
-            className="w-20 h-20 bg-lightGray rounded-lg flex items-center justify-center"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <div className="w-16 h-16 md:w-20 md:h-20 bg-gray-400 rounded-md"></div>
-          </motion.div>
+<motion.div
+  className="w-20 h-20 bg-lightGray rounded-lg overflow-hidden flex items-center justify-center"
+  initial={{ opacity: 0, scale: 0.8 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.6, delay: 0.4 }}
+>
+  <img
+    src="/assets/services/influencer.jpg"
+    alt="influencer"
+    className="w-full h-full object-cover"
+  />
+</motion.div>
 
           <motion.h1
             className="text-6xl sm:text-6xl lg:text-8xl font-semibold text-carbonBlack tracking-tight"

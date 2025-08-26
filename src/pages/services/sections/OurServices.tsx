@@ -1,192 +1,258 @@
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import {
-  Search,
-  TrendingUp,
-  Lightbulb,
-  Target,
-  ArrowDownRightFromCircle,
+  ChevronRight,
+  Share2,
+  Code,
+  Palette,
+  Sparkles,
+  ExternalLink,
+  Sparkle
 } from "lucide-react";
 import Button from "../../../components/ui/Button";
+import MinimalHeader from "../../../components/ui/MinimalHeader";
 
 const OurServices = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
+  const [hoveredService, setHoveredService] = useState<number | null>(null);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
+  const [clickedItem, setClickedItem] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   const services = [
     {
       id: 1,
-      title: "Search Strategy",
-      categories: ["SEO Strategy", "Search Marketing", "Performance Analytics"],
+      title: "Brand",
+      icon: Sparkles,
+      emoji: "📷",
+      gradient: ["#10b981", "#059669"],
       description:
-        "Our search strategy team are your growth partners - navigating the digital landscape of today and tomorrow. And every Rise at Seven client gets one!",
-      icon: Search,
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80",
+        "Create compelling brand experiences that resonate with your audience and differentiate you from competitors through strategic brand positioning.",
+      services: [
+        { name: "Brand Strategy", path: "/services/brand/brand-strategy" },
+        { name: "360° Creative", path: "/services/brand/360-creative" },
+        { name: "Art Direction", path: "/services/brand/art-direction" },
+        { name: "Copywriting", path: "/services/brand/copywriting" },
+        { name: "Editing", path: "/services/brand/editing" },
+        { name: "Motion Graphics", path: "/services/brand/motion-graphics" }
+      ],
     },
     {
       id: 2,
-      title: "Growth Strategy",
-      categories: ["Growth Marketing", "Conversion Strategy", "User Acquisition"],
+      title: "Social",
+      icon: Share2,
+      emoji: "📱",
+      gradient: ["#60a5fa", "#3b82f6"],
       description:
-        "Accelerate your business growth with comprehensive strategies designed to expand your market reach and increase revenue through data-driven approaches.",
-      icon: TrendingUp,
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
+        "Amplify your social presence with data-driven strategies that engage your community and drive meaningful conversations across all platforms.",
+      services: [
+        { name: "Social Media Strategy", path: "/services/social/social-media-strategy" },
+        { name: "TikTok/Social Shorts", path: "/services/social/tiktok-social-shorts" },
+        { name: "Influencer Campaigns", path: "/services/social/influencer-campaigns" },
+        { name: "Community Management", path: "/services/social/community-management" },
+        { name: "Content Creation", path: "/services/social/content-creation" }
+      ],
     },
     {
       id: 3,
-      title: "Brand & Creative Strategy",
-      categories: ["Brand Strategy", "Creative Direction", "Visual Identity"],
+      title: "Build",
+      icon: Code,
+      emoji: "💻",
+      gradient: ["#f97316", "#ef4444"],
       description:
-        "Think bigger with creative strategies that resonate with your audience and differentiate you from competitors through compelling brand experiences.",
-      icon: Lightbulb,
-      image:
-        "https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=600&q=80",
+        "Transform your digital presence with cutting-edge development solutions that deliver exceptional performance and user experiences.",
+      services: [
+        { name: "Web Development", path: "/services/build/web-development" },
+        { name: "Frontend Solutions", path: "/services/build/frontend-solutions" },
+        { name: "Mobile Apps", path: "/services/build/mobile-apps" },
+        { name: "API Integration", path: "/services/build/api-integration" },
+        { name: "Performance Optimization", path: "/services/build/performance-optimization" },
+        { name: "Search Engine Optimization", path: "/services/build/seo" }
+      ],
     },
     {
       id: 4,
-      title: "Digital Strategy",
-      categories: [
-        "Digital Transformation",
-        "Technology Integration",
-        "Innovation Strategy",
-      ],
+      title: "Design",
+      icon: Palette,
+      emoji: "🎨",
+      gradient: ["#a78bfa", "#ec4899"],
       description:
-        "Transform your digital presence with strategic solutions that prepare your business for tomorrow's challenges and opportunities.",
-      icon: Target,
-      image:
-        "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=600&q=80",
+        "Craft beautiful, functional designs that tell your story and create memorable experiences for your users across all touchpoints.",
+      services: [
+        { name: "UI/UX Design", path: "/services/design/ui-ux-design" },
+        { name: "Website Re-Design", path: "/services/design/website-redesign" },
+        { name: "Visual Identity", path: "/services/design/visual-identity" },
+        { name: "Print Design", path: "/services/design/print-design" },
+        { name: "Design Systems", path: "/services/design/design-systems" }
+      ],
     },
   ];
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
 
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        },
-      });
+  const handleServiceClick = (path: string, itemKey: string) => {
+    setClickedItem(itemKey);
+    setTimeout(() => {
+      navigate(path);
+    }, 150);
+  };
 
-      tl.from(".services-header", {
-        y: 30,
-        opacity: 0,
-        duration: 0.8,
-        ease: "power2.out",
-      });
+  const handleViewServicesClick = (serviceTitle: string) => {
+    const servicePath = `/services/${serviceTitle.toLowerCase()}`;
+    navigate(servicePath);
+  };
 
-      tl.from(
-        ".service-item",
-        {
-          y: 40,
-          opacity: 0,
-          duration: 0.6,
-          stagger: 0.15,
-          ease: "power2.out",
-        },
-        "-=0.3"
-      );
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+  const getItemKey = (serviceId: number, itemName: string) => {
+    return `${serviceId}-${itemName}`;
+  };
 
   return (
-    <div ref={sectionRef} className="bg-lightGray py-16 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div ref={sectionRef} className="relative bg-lightGray py-20 px-4 overflow-hidden">
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="services-header mb-16 text-center">
-          <h2 className="text-4xl lg:text-7xl text-carbonBlack font-bold mb-4">
-            Search & Growth Strategy
-          </h2>
+          <MinimalHeader pillText="Our Services" titleLine1="What We Offer" />
         </div>
 
-        {/* Services List */}
-        <div className="space-y-0">
+        {/* Services Grid with Equal Height Cards */}
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 mb-16 items-stretch">
           {services.map((service, index) => {
             const Icon = service.icon;
-            const isLast = index === services.length - 1;
+            const isHovered = hoveredService === service.id;
 
             return (
-              <div
+              <motion.div
                 key={service.id}
-                className={`service-item group transition-transform duration-300 hover:translate-y-1 ${
-                  !isLast ? "border-b border-gray-200" : ""
-                }`}
+                className="service-card group relative h-full"
+                onMouseEnter={() => setHoveredService(service.id)}
+                onMouseLeave={() => setHoveredService(null)}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.6 }}
               >
-                <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 py-12 lg:py-16 items-center">
-                  {/* Content Left */}
-                  <div className="flex flex-col justify-center">
-                    <div className="mb-6">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-8 h-8 flex items-center justify-center">
-                          <Icon className="w-6 h-6 text-gray-700" />
-                        </div>
-                        <span className="text-sm font-medium text-gray-600 uppercase tracking-wider">
-                          Strategy
-                        </span>
-                      </div>
-
-                      <h3 className="text-2xl lg:text-3xl font-semibold text-carbonBlack mb-3">
-                        {service.title}
-                      </h3>
-
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {service.categories.map((category, idx) => (
-                          <span
-                            key={idx}
-                            className="text-sm text-carbonGray bg-white px-3 py-1 rounded-full border border-gray-200"
-                          >
-                            {category}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <p className="text-smoothBlack/80 leading-relaxed text-lg mb-8 max-w-lg">
-                      {service.description}
-                    </p>
-
-                    <div className="inline-block">
-                      <Button
-                        title="View Services"
-                        rightIcon={
-                          <ArrowDownRightFromCircle className="w-5 h-5" />
-                        }
-                      />
-                    </div>
-                  </div>
-
-                  {/* Image Right */}
-                  <div className="flex items-center justify-center lg:justify-end">
-                    <div className="relative w-full max-w-xl lg:max-w-2xl">
-                      <div className="aspect-square overflow-hidden rounded-2xl bg-gray-100 shadow-md hover:shadow-xl transition-shadow duration-500">
-                        <img
-                          src={service.image}
-                          alt={service.title}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                {/* Main Card */}
+                <motion.div
+                  className="relative rounded-3xl p-8 shadow-xl h-full flex flex-col justify-between"
+                  style={{
+                    background: `linear-gradient(135deg, ${service.gradient[0]}, ${service.gradient[1]})`,
+                    zIndex: 3,
+                  }}
+                  initial={{ 
+                    transform: "translate3d(0, 0, 0) scale(1)",
+                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                  }}
+                  animate={{
+                    transform: isHovered 
+                      ? "translate3d(0, -2px, 0) scale(1.02)" 
+                      : "translate3d(0, 0, 0) scale(1)",
+                    boxShadow: isHovered
+                      ? "0 32px 64px -12px rgba(0, 0, 0, 0.35)"
+                      : "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                  }}
+                  transition={{ 
+                    duration: 0.3,
+                    ease: "easeOut"
+                  }}
+                >
+                  {/* Service Header */}
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="flex items-center gap-4">
+                      <motion.div
+                        className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/20 backdrop-blur-sm text-white relative overflow-hidden"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <Icon className="w-6 h-6 relative z-10" />
+                        <motion.div
+                          className="absolute inset-0 bg-white"
+                          initial={{ x: "-100%" }}
+                          animate={{ x: isHovered ? "100%" : "-100%" }}
+                          transition={{ duration: 0.6 }}
+                          style={{ opacity: 0.2 }}
                         />
-                      </div>
-
-                      {/* Think Bigger Overlay for Brand Strategy */}
-                      {service.id === 3 && (
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="bg-blue-600 text-white px-6 py-3 rounded-lg transform rotate-2 shadow-lg">
-                            <span className="font-bold text-lg">THINK</span>
-                            <br />
-                            <span className="font-bold text-lg">BIGGER.</span>
-                          </div>
-                        </div>
-                      )}
+                      </motion.div>
+                      <h3 className="text-2xl font-bold text-white">{service.title}</h3>
                     </div>
+                    <motion.div
+                      className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-2xl"
+                      whileHover={{ scale: 1.1, rotate: -5 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      {service.emoji}
+                    </motion.div>
                   </div>
-                </div>
-              </div>
+
+                  {/* Services List */}
+                  <div className="space-y-2 mb-8">
+                    <h4 className="font-semibold text-white mb-4">Services Include:</h4>
+                    {service.services.map((serviceItem, idx) => {
+                      const itemKey = getItemKey(service.id, serviceItem.name);
+                      const isItemHovered = hoveredItem === itemKey;
+                      const isClicked = clickedItem === itemKey;
+
+                      return (
+                        <motion.button
+                          key={idx}
+                          className="w-full text-left p-3 -m-3 rounded-xl transition-all duration-200 group/item flex items-center justify-between"
+                          onMouseEnter={() => setHoveredItem(itemKey)}
+                          onMouseLeave={() => setHoveredItem(null)}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            handleServiceClick(serviceItem.path, itemKey);
+                          }}
+                          whileHover={{
+                            backgroundColor: "rgba(255, 255, 255, 0.1)",
+                            x: 4,
+                          }}
+                          whileTap={{ scale: 0.98 }}
+                          animate={{
+                            backgroundColor: isClicked
+                              ? "rgba(255, 255, 255, 0.2)"
+                              : "transparent",
+                          }}
+                        >
+                          <div className="flex items-center gap-3">
+                            <motion.div
+                              animate={{
+                                scale: isItemHovered ? 1.2 : 1,
+                                rotate: isItemHovered ? 180 : 0,
+                              }}
+                              transition={{ duration: 0.3 }}
+                            >
+                              <Sparkle className="w-3 h-3 text-white/80" />
+                            </motion.div>
+                            <span className="text-white/90 group-hover/item:text-white font-medium transition-colors duration-200">
+                              {serviceItem.name}
+                            </span>
+                          </div>
+                          <motion.div
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{
+                              opacity: isItemHovered ? 1 : 0,
+                              x: isItemHovered ? 0 : -10,
+                            }}
+                            transition={{ duration: 0.2 }}
+                          >
+                            <ChevronRight className="w-4 h-4 text-white/60" />
+                          </motion.div>
+                        </motion.button>
+                      );
+                    })}
+                  </div>
+
+                  {/* CTA Button */}
+                  <div className="flex justify-between items-center mt-auto">
+                    <Button
+                      title="View Services"
+                      bgColor="#f1f1f1"
+                      textColor="carbonGray"
+                      rightIcon={<ExternalLink className="w-4 h-4" />}
+                      onClick={() => handleViewServicesClick(service.title)}
+                    />
+                  </div>
+                </motion.div>
+              </motion.div>
             );
           })}
         </div>

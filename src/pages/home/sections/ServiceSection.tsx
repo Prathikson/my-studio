@@ -15,12 +15,12 @@ const services = [
     icon: '📷',
     gradient: ['#10b981', '#059669'],
     items: [
-      { name: 'Brand Strategy', path: '/services/brand-strategy' },
-      { name: '360° Creative', path: '/services/360-creative' },
-      { name: 'Art Direction', path: '/services/art-direction' },
-      { name: 'Copywriting', path: '/services/copywriting' },
-      { name: 'Editing', path: '/services/editing' },
-      { name: 'Motion Graphics', path: '/services/motion-graphics' }
+      { name: 'Brand Strategy', path: '/services/brand/brand-strategy' },
+      { name: '360° Creative', path: '/services/brand/360-creative' },
+      { name: 'Art Direction', path: '/services/brand/art-direction' },
+      { name: 'Copywriting', path: '/services/brand/copywriting' },
+      { name: 'Editing', path: '/services/brand/editing' },
+      { name: 'Motion Graphics', path: '/services/brand/motion-graphics' }
     ],
   },
   {
@@ -29,10 +29,10 @@ const services = [
     icon: '📱',
     gradient: ['#60a5fa', '#3b82f6'],
     items: [
-      { name: 'Social Media Strategy', path: '/services/social-media-strategy' },
-      { name: 'TikTok/Social Shorts', path: '/services/tiktok-social-shorts' },
-      { name: 'Influencer Campaigns', path: '/services/influencer-campaigns' },
-      { name: 'Community Management', path: '/services/community-management' },
+      { name: 'Social Media Strategy', path: '/services/social/social-media-strategy' },
+      { name: 'TikTok/Social Shorts', path: '/services/social/tiktok-social-shorts' },
+      { name: 'Influencer Campaigns', path: '/services/social/influencer-campaigns' },
+      { name: 'Community Management', path: '/services/social/community-management' },
     ],
   },
   {
@@ -41,12 +41,12 @@ const services = [
     icon: '💻',
     gradient: ['#f97316', '#ef4444'],
     items: [
-      { name: 'Web Development', path: '/services/web-development' },
-      { name: 'Frontend Solutions', path: '/services/frontend-solutions' },
-      { name: 'Mobile Apps', path: '/services/mobile-apps' },
-      { name: 'API Integration', path: '/services/api-integration' },
-      { name: 'Performance Optimization', path: '/services/performance-optimization' },
-      { name: 'Search Engine Optimization (SEO)', path: '/services/seo' }
+      { name: 'Web Development', path: '/services/build/web-development' },
+      { name: 'Frontend Solutions', path: '/services/build/frontend-solutions' },
+      { name: 'Mobile Apps', path: '/services/build/mobile-apps' },
+      { name: 'API Integration', path: '/services/build/api-integration' },
+      { name: 'Performance Optimization', path: '/services/build/performance-optimization' },
+      { name: 'Search Engine Optimization (SEO)', path: '/services/build/seo' }
     ],
   },
   {
@@ -55,11 +55,11 @@ const services = [
     icon: '🎨',
     gradient: ['#a78bfa', '#ec4899'],
     items: [
-      { name: 'UI/UX Design', path: '/services/ui-ux-design' },
-      { name: 'Website Re-Design', path: '/services/website-redesign' },
-      { name: 'Visual Identity', path: '/services/visual-identity' },
-      { name: 'Print Design', path: '/services/print-design' },
-      { name: 'Design Systems', path: '/services/design-systems' },
+      { name: 'UI/UX Design', path: '/services/design/ui-ux-design' },
+      { name: 'Website Re-Design', path: '/services/design/website-redesign' },
+      { name: 'Visual Identity', path: '/services/design/visual-identity' },
+      { name: 'Print Design', path: '/services/design/print-design' },
+      { name: 'Design Systems', path: '/services/design/design-systems' },
     ],
   },
 ];
@@ -367,7 +367,7 @@ export default function ServicesSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
         >
-         <Button rightIcon={<ChevronRight className="h-5 w-5"/>} title="View Services" to="/portfolio"/>
+         <Button rightIcon={<ChevronRight className="h-5 w-5"/>} title="View Services" to="/services"/>
         </motion.div>
       </div>
     </div>

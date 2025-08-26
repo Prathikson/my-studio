@@ -1,6 +1,7 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AnimatedLogo } from "./AnimatedLogo";
+import { useLocation, useNavigate } from "react-router-dom";
 
 interface MenuItem {
   name: string;
@@ -13,8 +14,7 @@ interface FloatingNavProps {
   ctaText?: string;
   onCtaClick?: () => void;
   showNewsletter?: boolean;
-  className?: string;
-  onNavigate?: (path: string) => void; // Add navigation handler
+  className?: string;// Add navigation handler
 }
 
 const FloatingNav: React.FC<FloatingNavProps> = ({
@@ -29,14 +29,23 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
   onCtaClick,
   showNewsletter = true,
   className = "",
-  onNavigate
+
 }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState("HOME");
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [email, setEmail] = useState("");
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+    // Sync active item with route
+  useEffect(() => {
+    const current = menuItems.find((item) => item.path === location.pathname);
+    if (current) {
+      setActiveItem(current.name);
+    }
+  }, [location, menuItems]);
 
   const toggleMenu = () => setIsMenuOpen(prev => !prev);
 
@@ -65,17 +74,7 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
 
   const handleMenuItemClick = (item: MenuItem) => {
     setActiveItem(item.name);
-    
-    // Handle navigation
-    if (onNavigate) {
-      onNavigate(item.path);
-    } else {
-      // Default behavior: use window.location or history API
-      if (typeof window !== 'undefined') {
-        window.location.href = item.path;
-      }
-    }
-    
+    navigate(item.path)
     // Close menu after navigation
     setIsMenuOpen(false);
   };

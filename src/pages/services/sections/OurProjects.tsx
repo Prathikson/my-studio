@@ -1,10 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import { motion, type Variants } from "framer-motion";
 import gsap from "gsap";
-import { Link } from "react-router-dom";
-import { ExternalLink, Palette, Monitor, Megaphone, Sparkles } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { ExternalLink, Palette, Monitor, Megaphone, Sparkles, ArrowRight } from "lucide-react";
 import { PROJECTS, type Project } from "../../../data/projects";
 import MinimalHeader from "../../../components/ui/MinimalHeader";
+import Button from "../../../components/ui/Button";
 
 const cardVariants: Variants = {
   initial: { opacity: 0, y: 40, scale: 0.95 },
@@ -177,6 +178,7 @@ const ProjectCard: React.FC<{ project: Project; idx: number; size?: 'large' | 'm
 // Main OurProjects Component
 const OurProjects: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const container = containerRef.current;
@@ -189,35 +191,38 @@ const OurProjects: React.FC = () => {
     );
   }, []);
 
-  // Group projects by the 2-3-2 pattern
+  // Limit projects to first 5
+  const limitedProjects = PROJECTS.slice(0, 5);
+
+  // Group projects by the 2-3 pattern for 5 projects
   const groupProjects = (projects: Project[]) => {
     const groups: Project[][] = [];
-    let currentIndex = 0;
-    const pattern = [2, 3, 2];
-    let patternIndex = 0;
-
-    while (currentIndex < projects.length) {
-      const groupSize = pattern[patternIndex % pattern.length];
-      const group = projects.slice(currentIndex, currentIndex + groupSize);
-      if (group.length > 0) {
-        groups.push(group);
+    
+    // For 5 projects, we'll do 2 in first row, 3 in second row
+    if (projects.length <= 2) {
+      groups.push(projects);
+    } else if (projects.length <= 5) {
+      groups.push(projects.slice(0, 2)); // First 2
+      if (projects.length > 2) {
+        groups.push(projects.slice(2)); // Remaining projects
       }
-      currentIndex += groupSize;
-      patternIndex++;
     }
 
     return groups;
   };
 
-  const projectGroups = groupProjects(PROJECTS);
+  const projectGroups = groupProjects(limitedProjects);
+
+  const handleViewAllWorks = () => {
+    navigate('/portfolio');
+  };
 
   return (
     <div className="w-full bg-lightGray py-20">
       <div className="mx-auto max-w-full px-6 lg:px-8">
         {/* Header */}
         <div ref={containerRef} className="text-center mb-16 space-y-4">
-<MinimalHeader titleLine1="Work's We Have Done" pillText="Projects"/>
-          
+          <MinimalHeader titleLine1="Work's We Have Done" pillText="Projects"/>
         </div>
 
         {/* Projects Grid */}
@@ -245,6 +250,22 @@ const OurProjects: React.FC = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* CTA Section */}
+        <motion.div
+          className="flex justify-center mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <Button
+            title="View All Works"
+            bgColor="#1b1b1b"
+            textColor="#f1f1f1"
+            rightIcon={<ArrowRight className="w-5 h-5" />}
+            onClick={handleViewAllWorks}
+          />
+        </motion.div>
 
       </div>
     </div>
