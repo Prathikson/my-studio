@@ -9,6 +9,7 @@ import Brand from "./pages/services/subpages/Brand/Brand";
 import Build from "./pages/services/subpages/Build/Build";
 import Design from "./pages/services/subpages/Design/Design";
 import Social from "./pages/services/subpages/Social/Social";
+import About from "./pages/about/About";
 
 export default function App() {
   const [loading, setLoading] = useState(() => {
@@ -39,6 +40,10 @@ export default function App() {
         <Route path="/services/social" element={<Social />} />
         <Route path="/services/design" element={<Design />} />
         <Route path="/services/build" element={<Build />} />
+
+
+        {/* About */}
+        <Route path="/about" element={<About />} />
 
 
       </Routes>

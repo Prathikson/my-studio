@@ -316,3 +316,7 @@ html {
         .animate-shimmer {
           animation: shimmer 2s infinite;
         }
+@keyframes scroll-left {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-25%); }
+        }
