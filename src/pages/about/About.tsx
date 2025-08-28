@@ -19,7 +19,7 @@ const items = [
 const About = () => {
   return (
             <main className="flex flex-col overflow-x-hidden">
-            <OurHero/>
+            <OurHero topText="Nice To" leftText="Meet" rightText="You"/>
             <WhoWeAre />
             <LogoTape/>
             <WhatWeDo/>

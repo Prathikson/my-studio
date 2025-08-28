@@ -320,17 +320,6 @@ const OurHero: React.FC<OurHeroProps> = ({
       {/* Main Content Container */}
       <div className={`w-full max-w-6xl mx-auto text-center ${currentSize.spacing}`}>
         
-        {/* Left Text (if provided) */}
-        {leftText && (
-          <motion.div 
-            className="mb-4"
-            variants={textVariants}
-          >
-            <h2 className={`font-bold text-carbonBlack ${currentSize.main}`}>
-              {leftText}
-            </h2>
-          </motion.div>
-        )}
 
         {/* Top Text */}
         <motion.div variants={textVariants}>
@@ -348,7 +337,7 @@ const OurHero: React.FC<OurHeroProps> = ({
             variants={textVariants}
           >
             <h1 className={`font-bold text-carbonBlack leading-tight uppercase ${currentSize.main}`}>
-              meet
+              {leftText}
             </h1>
           </motion.div>
 
@@ -378,22 +367,12 @@ const OurHero: React.FC<OurHeroProps> = ({
             variants={textVariants}
           >
             <h1 className={`font-bold text-carbonBlack leading-tight uppercase ${currentSize.main}`}>
-              you
+              {rightText}
             </h1>
           </motion.div>
         </div>
 
-        {/* Right Text (if provided) */}
-        {rightText && (
-          <motion.div 
-            className="mt-4"
-            variants={textVariants}
-          >
-            <h2 className={`font-bold text-carbonBlack ${currentSize.main}`}>
-              {rightText}
-            </h2>
-          </motion.div>
-        )}
+
 
         {/* Description */}
         {description && (

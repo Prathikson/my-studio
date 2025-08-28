@@ -10,6 +10,7 @@ import Build from "./pages/services/subpages/Build/Build";
 import Design from "./pages/services/subpages/Design/Design";
 import Social from "./pages/services/subpages/Social/Social";
 import About from "./pages/about/About";
+import Contact from "./pages/contact/Contact";
 
 export default function App() {
   const [loading, setLoading] = useState(() => {
@@ -44,6 +45,9 @@ export default function App() {
 
         {/* About */}
         <Route path="/about" element={<About />} />
+
+        {/* Contact */}
+         <Route path="/contact" element={<Contact />} />
 
 
       </Routes>

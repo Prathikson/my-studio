@@ -157,7 +157,7 @@ export default function MobileResponsiveFooter() {
                       <Mail className="w-4 h-4" />
                     </div>
                     <a href="mailto:hello@xtoic.studio" className="text-white hover:text-purple-400">
-                      info@xtoic.cardsRef
+                      info@xtoic.studio
                     </a>
                   </motion.div>
 
