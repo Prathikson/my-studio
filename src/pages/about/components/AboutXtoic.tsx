@@ -83,23 +83,23 @@ const AboutXtoic = () => {
           {/* Content Section */}
           <div className="section-content pl-8 flex flex-col justify-start">
 <div className="mb-6">
-  <p className="text-sm font-medium text-gray-600 uppercase tracking-wider mb-4">
+  <p className="text-sm font-medium text-smoothBlack uppercase tracking-wider mb-4">
     The Story Behind the Vision
   </p>
-  <h2 className="text-3xl lg:text-4xl xl:text-5xl text-carbonBlack leading-tight mb-8 max-w-2xl">
+  <h2 className="text-xl lg:text-2xl xl:text-3xl text-carbonBlack leading-tight mb-8 max-w-2xl">
     Xtoic Studio: Crafting Timeless Visual Narratives That Move People
   </h2>
 </div>
 
 <div className="space-y-6 mb-10 max-w-2xl">
-  <p className="text-smoothBlack leading-relaxed text-base">
+  <p className="text-smoothBlack/80 leading-relaxed text-base">
     Xtoic Studio is a creative powerhouse built to transform ideas into captivating stories that
     resonate with audiences worldwide. Specializing in brand identity, high-end content production,
     and immersive digital experiences, we merge artistry with strategy to deliver work that doesn’t
     just stand out but leaves a lasting impression. Every project is crafted with precision, emotion,
     and purpose, making your brand impossible to ignore.  
   </p>
-  <p className="text-smoothBlack leading-relaxed text-base">
+  <p className="text-smoothBlack/80 leading-relaxed text-base">
     Founded by <span className="font-semibold">Prathikson Jeyakumar</span>, a visionary creative
     director and entrepreneur, Xtoic Studio reflects his passion for design, innovation, and
     storytelling. With a relentless focus on quality and authenticity, Prathikson leads a team

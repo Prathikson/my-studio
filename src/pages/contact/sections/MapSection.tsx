@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink } from 'lucide-react';
+import { X,  Map } from 'lucide-react';
 
 const MapSection = () => {
   const [isMapOpen, setIsMapOpen] = useState(false);
@@ -9,7 +9,7 @@ const MapSection = () => {
   const closeMap = () => setIsMapOpen(false);
 
   return (
-    <div className="relative bg-lightGray text-carbonBlack">
+    <div className="relative bg-smoothBlack text-lightGray">
       {/* Main Section */}
       <div className="flex flex-col items-center justify-center min-h-[600px] w-full px-6 py-6">
         <motion.div
@@ -18,7 +18,7 @@ const MapSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center"
         >
-<p className="text-carbonGray text-lg mb-4 font-light tracking-wide">
+<p className="text-lightGray text-lg mb-4 font-light tracking-wide">
   Smarter. Faster. Closer than ever.
 </p>
 
@@ -31,15 +31,15 @@ const MapSection = () => {
             onClick={openMap}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="group relative btn-contact backdrop-blur-sm border 
-                     px-8 py-4 text-white font-medium text-lg
-                     hover:bg-white/20 hover:border-white/30 
+            className="group relative rounded-2xl bg-lightGray backdrop-blur-xl 
+                     px-8 py-4 text-carbonGray font-medium text-lg
+                     hover:bg-lightGray/90
                      transition-all duration-300 ease-out
                      "
           >
             <span className="flex items-center gap-3">
               Show the Map
-              <ExternalLink 
+              <Map 
                 size={20} 
                 className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" 
               />
@@ -140,12 +140,12 @@ const MapSection = () => {
                 onClick={closeMap}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-carbonGray backdrop-blur-sm rounded-full px-6 py-3 flex items-center gap-3 
-                         shadow-lg hover:shadow-xl transition-all duration-200 text-white font-medium"
+                className="bg-lightGray backdrop-blur-sm rounded-2xl px-6 py-4 flex items-center gap-3 
+                         shadow-lg hover:shadow-xl transition-all duration-200 text-carbonGray font-medium"
               >
                 <span>Close</span>
-                <div className="w-6 h-6 bg-white rounded-full flex items-center justify-center">
-                  <X size={14} className="text-carbonGray" />
+                <div className="w-6 h-6 bg-carbonGray rounded-full flex items-center justify-center">
+                  <X size={14} className="text-lightGray" />
                 </div>
               </motion.button>
             </motion.div>

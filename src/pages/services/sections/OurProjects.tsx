@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { motion, type Variants } from "framer-motion";
 import gsap from "gsap";
 import { Link, useNavigate } from "react-router-dom";
-import { ExternalLink, Palette, Monitor, Megaphone, Sparkles, ArrowRight } from "lucide-react";
+import {Palette, Monitor, Megaphone, Sparkles, ArrowRight, Navigation } from "lucide-react";
 import { PROJECTS, type Project } from "../../../data/projects";
 import MinimalHeader from "../../../components/ui/MinimalHeader";
 import Button from "../../../components/ui/Button";
@@ -125,12 +125,12 @@ const ProjectCard: React.FC<{ project: Project; idx: number; size?: 'large' | 'm
       <div className="relative z-10 flex h-full flex-col justify-between p-8">
         {/* Top Section - Badge */}
         <div className="flex justify-between items-start">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-md border border-white/20 px-4 py-2 shadow-sm">
+          <div className="inline-flex items-center gap-2 rounded-lg bg-white/20 backdrop-blur-md border border-white/20 px-4 py-2 shadow-sm">
             {getTagIcon(project.tag)}
             <span className="text-sm font-medium text-white">{project.tag}</span>
           </div>
           
-          <div className="rounded-lg bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1.5 text-xs font-semibold text-white/90 shadow-sm">
+          <div className="rounded-lg bg-white/10 backdrop-blur-lg border border-white/20 px-3 py-1.5 text-xs font-semibold text-white/90 shadow-sm">
             <span className="truncate">{project.badge}</span>
           </div>
         </div>
@@ -160,12 +160,12 @@ const ProjectCard: React.FC<{ project: Project; idx: number; size?: 'large' | 'm
             
             <Link
               to={`/portfolio/${project.slug}`}
-              className="group/btn relative inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-white/10 backdrop-blur-md border border-white/20 rounded-xl hover:bg-white/20 hover:border-white/30 transition-all duration-300 hover:shadow-lg hover:shadow-white/10"
+              className="group/btn relative inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-carbonGray bg-lightGray backdrop-blur-md rounded-xl hover:bg-lightGray/90  transition-all duration-300 hover:shadow-lg"
             >
               <span className="transition-transform group-hover/btn:translate-x-[-2px]">
                 View Project
               </span>
-              <ExternalLink className="h-4 w-4 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
+              <Navigation className="h-4 w-4 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
             </Link>
           </div>
         </div>

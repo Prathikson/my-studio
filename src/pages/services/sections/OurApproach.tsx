@@ -3,7 +3,7 @@ import React from 'react';
 const OurApproach: React.FC = () => {
   return (
     <div className="w-full bg-lightGray py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto  px-4 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
           {/* Left Column - Title and Description */}
           <div className="flex flex-col">

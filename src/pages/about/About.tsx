@@ -1,5 +1,6 @@
 import CTASection from "../home/sections/CTASection"
 import ServicesSection from "../home/sections/ServiceSection"
+import { TapeSection } from "../home/sections/Tape"
 import CTATape from "../services/components/CTATape"
 import LogoTape from "../services/components/LogoTape"
 import TestimonialSection from "../services/sections/TestimonialSection"
@@ -19,14 +20,15 @@ const items = [
 const About = () => {
   return (
             <main className="flex flex-col overflow-x-hidden">
-            <OurHero topText="Nice To" leftText="Meet" rightText="You"/>
+            <OurHero topText="Nice To" leftText="Meet" rightText="You" description=""/>
             <WhoWeAre />
             <LogoTape/>
             <WhatWeDo/>
-            <CTATape items={items} speed={60}/>
             <AboutXtoic/>
             <TestimonialSection/>
+            <CTATape items={items} speed={10}/>
             <ServicesSection/>
+            <TapeSection/>
             <CTASection/>
 
         

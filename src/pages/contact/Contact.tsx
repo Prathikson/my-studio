@@ -5,7 +5,7 @@ import emailjs from "emailjs-com";
 import confetti, {type Options as ConfettiOptions } from "canvas-confetti";
 import CTASection from "../home/sections/CTASection";
 import { TapeSection } from "../home/sections/Tape";
-import OurHero from "../about/components/OurHero";
+import Header from "./sections/Header";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -152,15 +152,22 @@ const defaults: ConfettiOptions = {
     <>
       {/* Hero Section */}
       <div className="bg-lightGray pt-20 pb-16 max-w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-<OurHero textSize="md" topText="Get In Touch" leftText="Say" rightText="Hi 👋" imageUrl="/icon_5.svg"/>
-          </motion.div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center"
+        >
+          <Header
+            textSize="md"
+            topText="Get In Touch"
+            description=""
+            leftText="Say"
+            rightText="Hi 👋"
+            imageUrl="/icon_5.svg"
+          />
+        </motion.div>
+      </div>
 
       {/* Contact Form + Map Section */}
       <div className="bg-lightGray py-20">
@@ -170,7 +177,7 @@ const defaults: ConfettiOptions = {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid lg:grid-cols-2 gap-16 items-start"
+            className="flex flex-col gap-16"
           >
             {/* Contact Form */}
             <motion.div variants={itemVariants} className="space-y-8">
@@ -325,7 +332,7 @@ const defaults: ConfettiOptions = {
                   whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                 >
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-[#10b981]  to-[#059669] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    className="absolute inset-0 bg-gradient-to-r from-carbonGray  to-smoothBlack opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   />
                   <span className="relative flex items-center justify-center gap-2">
                     {isSubmitting ? (
@@ -359,14 +366,8 @@ const defaults: ConfettiOptions = {
             </motion.div>
 
             {/* Map Section */}
-            <motion.div 
-              variants={itemVariants}
-              className="lg:sticky lg:top-8 space-y-6"
-            >
-
-              <div className="rounded-3xl overflow-hidden shadow-xl">
+<motion.div variants={itemVariants} className="rounded-3xl overflow-hidden shadow-xl">
                 <MapSection />
-              </div>
             </motion.div>
           </motion.div>
         </div>

@@ -26,14 +26,13 @@ const CTASection: React.FC = () => {
       {/* CTA Button */}
       <motion.button
         onClick={() => navigate('/contact')}
-        className="group relative px-10 py-5 rounded-2xl font-semibold text-lg uppercase tracking-wide 
-                   bg-carbonBlack text-lightGray transition-all duration-300 flex items-center gap-3
+        className="group relative px-10 py-4 rounded-2xl font-semibold text-lg uppercase tracking-wide 
+                   bg-carbonGray text-lightGray transition-all duration-300 flex items-center gap-3
                    shadow-[0_0_20px_rgba(0,113,254,0.5)] hover:bg-lightGray hover:text-carbonBlack"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.3 }}
         whileHover={{
-          y: -5,
           boxShadow: '0px 0px 35px rgba(0,113,254,0.9)',
         }}
         whileTap={{ scale: 0.97 }}

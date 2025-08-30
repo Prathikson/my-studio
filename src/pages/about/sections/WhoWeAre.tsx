@@ -19,7 +19,7 @@ interface WhoWeAreProps {
 }
 
 const WhoWeAre: React.FC<WhoWeAreProps> = ({
-  sectionLabel = "Who we are",
+  sectionLabel = "Who Are We",
   mainHeading = "A global team of organic media planners behind some of the worlds biggest category leaders",
   description = "",
   links = [
@@ -115,7 +115,7 @@ const WhoWeAre: React.FC<WhoWeAreProps> = ({
             variants={enableAnimations ? leftColumnVariants : {}}
             className="flex flex-col justify-center"
           >
-            <h3 className={`text-base sm:text-5xl font-normal ${labelColor} tracking-normal`}>
+            <h3 className={`text-xl sm:text-5xl font-semibold ${labelColor} tracking-normal`}>
               {sectionLabel}
             </h3>
           </motion.div>
@@ -128,7 +128,7 @@ const WhoWeAre: React.FC<WhoWeAreProps> = ({
             
             {/* Main Heading */}
             <div>
-              <h1 className={`text-3xl justify-start items-start sm:text-3xl lg:text-3xl xl:text-4xl font-bold leading-tight ${textColor}`}>
+              <h1 className={`text-3xl justify-start items-start sm:text-3xl lg:text-3xl xl:text-4xl font-regular leading-tight ${textColor}`}>
                 {mainHeading}
               </h1>
             </div>

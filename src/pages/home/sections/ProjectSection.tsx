@@ -31,7 +31,7 @@ function getTagIcon(tag: "Branding" | "Build" | "Design" | "Social") {
 
 // ---- Read More Button ----
 const ReadMore = ({ slug }: { slug: string }) => (
-  <Link to={`/portfolio/${slug}`} className="group relative inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-appleBlue rounded-xl hover:bg-carbonBlack transition-all duration-200 hover:shadow-lg">
+  <Link to={`/portfolio/${slug}`} className="group relative inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-lightGray bg-carbonGray rounded-xl  transition-all duration-200 ">
     <span>View Project</span>
     <ExternalLink className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
   </Link>
@@ -90,13 +90,13 @@ const ProjectCard: React.FC<{ project: Project; idx: number }> = ({ project, idx
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         
         {/* Project Badge */}
-        <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-md border border-white/20 px-4 py-2 shadow-sm">
+        <div className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-lg bg-white/20 backdrop-blur-lg border border-white/20 px-4 py-2 shadow-sm">
           {getTagIcon(project.tag)}
           <span className="text-sm font-medium text-carbonGray">{project.tag}</span>
         </div>
         
         {/* Status Badge */}
-        <div className="absolute bottom-4 right-4 rounded-lg bg-white/20 backdrop-blur-md border border-white/20 px-3 py-1.5 text-xs font-semibold text-white shadow-sm">
+        <div className="absolute bottom-4 right-4 rounded-lg bg-white/20 backdrop-blur-lg border border-white/20 px-3 py-1.5 text-xs font-semibold text-white shadow-sm">
           <span className="truncate">{project.badge}</span>
         </div>
       </div>
