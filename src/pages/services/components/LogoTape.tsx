@@ -12,7 +12,7 @@ interface Logo {
 interface LogoScrollerProps {
   categories?: Category[];
   text?: string;
-  speed?: number; // Speed multiplier (0.1 = very slow, 1 = normal, 2 = fast)
+  speed?: number;
 }
 
 const logoData: Logo[] = [
@@ -31,7 +31,7 @@ const logoData: Logo[] = [
 const LogoTape: React.FC<LogoScrollerProps> = ({
   categories = ["Brand", "Social", "Design", "Build"],
   text = "Channels we drive demand & discovery on",
-  speed = 0.5, // Super slow default
+  speed = 0.5,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -40,61 +40,54 @@ const LogoTape: React.FC<LogoScrollerProps> = ({
     [categories]
   );
 
-  // Create a smooth infinite loop with enough logos
   const repeatedLogos = useMemo(() => {
-    const minRepeats = 4; // Minimum repetitions for smooth loop
+    const minRepeats = 4;
     const totalRepeats = Math.max(minRepeats, Math.ceil(24 / filteredLogos.length));
     return Array(totalRepeats).fill(filteredLogos).flat();
   }, [filteredLogos]);
 
-  // Calculate duration based on number of logos and desired speed
-  const baseDurationPerLogo = 3; // 3 seconds per logo at normal speed
+  const baseDurationPerLogo = 3;
   const duration = (repeatedLogos.length * baseDurationPerLogo) / speed;
 
   return (
-    <div className="relative w-full overflow-hidden bg-lightGray py-16">
-      <div className="flex items-center space-x-12 px-6 w-full  mx-auto">
+    <div className="relative w-full overflow-hidden bg-lightGray py-10 sm:py-16">
+      <div className="flex flex-col sm:flex-row items-center sm:items-start sm:space-x-12 space-y-6 sm:space-y-0 px-4 sm:px-6 w-full">
+        
         {/* Left Text */}
-        <div className="flex-shrink-0 w-64 text-left">
-          <p className="text-gray-700 font-medium text-base leading-relaxed">{text}</p>
+        <div className="flex-shrink-0 text-center sm:text-left sm:w-64">
+          <p className="text-carbonGray font-medium text-base sm:text-lg leading-relaxed">{text}</p>
         </div>
 
         {/* Logo Scroller */}
-        <div className="relative flex-1 overflow-hidden">
-          {/* Smooth gradient masks */}
-          <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-white/20  to-transparent blur-md z-10 pointer-events-none"></div>
-          <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-white/20  to-transparent blur-md z-10 pointer-events-none"></div>
+        <div className="relative flex-1 overflow-hidden w-full">
+          {/* Gradient Fades */}
+          <div className="absolute left-0 top-0 w-8 sm:w-10 h-full bg-gradient-to-r backdrop-blur-md from-white/40 to-transparent z-10 pointer-events-none"></div>
+          <div className="absolute right-0 top-0 w-8 sm:w-10 h-full bg-gradient-to-l backdrop-blur-md from-white/40 to-transparent z-10 pointer-events-none"></div>
 
-          {/* Ultra-smooth scrolling motion */}
           <motion.div
             ref={containerRef}
-            className="flex items-center space-x-20"
+            className="flex items-center space-x-10 sm:space-x-20"
             style={{ width: "max-content" }}
-            animate={{ 
-              x: [0, -50 + "%"] // Move exactly half the width for seamless loop
-            }}
+            animate={{ x: [0, "-50%"] }}
             transition={{
               duration: duration,
-              ease: "linear", // Perfectly consistent speed
+              ease: "linear",
               repeat: Infinity,
               repeatType: "loop",
             }}
           >
-            {/* Duplicate the logos exactly once for perfect seamless loop */}
             {[...repeatedLogos, ...repeatedLogos].map((logo, index) => (
               <motion.div
                 key={`${logo.name}-${index}`}
                 className="flex-shrink-0 flex flex-col items-center group cursor-pointer"
-                whileHover={{ scale: 1.01 }}
+                whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >
-                <div className="w-16 h-16 flex items-center justify-center mb-3">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center mb-2 sm:mb-3">
                   <img
                     src={logo.imageSrc}
                     alt={logo.name}
-                    className="max-w-full max-h-full object-contain filter grayscale opacity-60 
-                             group-hover:grayscale-0 group-hover:opacity-100 
-                             transition-all duration-500 ease-out"
+                    className="max-w-full max-h-full object-contain filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.src = `data:image/svg+xml;base64,${btoa(`
@@ -109,8 +102,7 @@ const LogoTape: React.FC<LogoScrollerProps> = ({
                     }}
                   />
                 </div>
-                <span className="text-sm text-gray-600 font-medium opacity-80 group-hover:opacity-100 
-                               transition-opacity duration-300">
+                <span className="text-xs sm:text-sm text-smoothBlack font-medium opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                   {logo.name}
                 </span>
               </motion.div>

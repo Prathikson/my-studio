@@ -327,7 +327,7 @@ const OurHero: React.FC<OurHeroProps> = ({
         </motion.div>
 
         {/* Image and Bottom Text Row */}
-        <div className="relative flex flex-row items-center justify-center gap-2 sm:gap-4 lg:gap-6 xl:gap-8">
+<div className="relative flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8">
           
           {/* Bottom Text - "meet" (left side) */}
           <motion.div 

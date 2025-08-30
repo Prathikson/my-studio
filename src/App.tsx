@@ -11,6 +11,7 @@ import Design from "./pages/services/subpages/Design/Design";
 import Social from "./pages/services/subpages/Social/Social";
 import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
+import ResetScroll from "./components/Navigation/ResetScroll";
 
 export default function App() {
   const [loading, setLoading] = useState(() => {
@@ -31,7 +32,9 @@ export default function App() {
   }
 
   return (
+
     <Layout>
+      <ResetScroll/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Service />} />
