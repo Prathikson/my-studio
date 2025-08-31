@@ -12,6 +12,8 @@ import Social from "./pages/services/subpages/Social/Social";
 import About from "./pages/about/About";
 import Contact from "./pages/contact/Contact";
 import ResetScroll from "./components/Navigation/ResetScroll";
+import Portfolio from "./pages/portfolio/Portfolio";
+import ProjectDetail from "./pages/portfolio/sections/[slug]";
 
 export default function App() {
   const [loading, setLoading] = useState(() => {
@@ -51,6 +53,11 @@ export default function App() {
 
         {/* Contact */}
          <Route path="/contact" element={<Contact />} />
+
+
+         <Route path="/portfolio" element={<Portfolio />} />
+<Route path="/portfolio/:slug" element={<ProjectDetail />} />
+
 
 
       </Routes>
