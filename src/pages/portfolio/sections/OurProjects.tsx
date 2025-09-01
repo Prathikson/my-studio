@@ -366,7 +366,7 @@ const TableRow: React.FC<{ project: Project; idx: number }> = ({ project, idx })
             initial={{ opacity: 0, scale: 0.8, x: 20 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             exit={{ opacity: 0, scale: 0.8, x: 20 }}
-            className="w-8 h-48 rounded-xl overflow-hidden shadow-xl ring-1 ring-black/10"
+            className="w-68 h-48 rounded-xl overflow-hidden shadow-xl ring-1 ring-black/10"
           >
             <img
               src={project.image}
