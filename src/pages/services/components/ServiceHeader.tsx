@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Button from "../../../components/ui/Button";
+import { useNavigate } from "react-router-dom";
 
 interface HeaderProps {
   leftTitle: string;
@@ -17,6 +18,13 @@ const ServiceHeader: React.FC<HeaderProps> = ({
   description,
   buttonText = "Let's Talk",
 }) => {
+
+const navigate = useNavigate(); 
+
+  const handleButtonClick = () => {
+    navigate("/contact");
+  };
+
   return (
     <motion.header
       className="w-full bg-lightGray mt-20 py-12 px-4 sm:px-6 lg:px-8"
@@ -72,7 +80,7 @@ const ServiceHeader: React.FC<HeaderProps> = ({
           <p className="text-carbonBlack text-base sm:text-lg font-medium mb-6 leading-relaxed">
             {description}
           </p>
-          <Button title={buttonText} />
+          <Button title={buttonText} onClick={handleButtonClick} />
         </motion.div>
       </div>
     </motion.header>

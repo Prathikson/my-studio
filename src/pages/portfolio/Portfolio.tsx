@@ -16,6 +16,7 @@ const items = [
 const Portfolio = () => {
   return (
     <main className="flex flex-col overflow-x-hidden">
+      <div className="bg-lightGray pt-20 pb-16 max-w-full">
         <Header
             textSize="md"
             topText="Discover"
@@ -25,11 +26,12 @@ const Portfolio = () => {
             imageUrl="/icon_3.svg"
           />
         <OurProjects/>
-        <CTATape items={items} speed={10}/>
-        <ServicesSection/>
         <TapeSection/>
+        <ServicesSection/>
         <TestimonialSection/>
+          <CTATape items={items} speed={10}/>
         <CTASection/>
+      </div>
     </main>
   )
 }

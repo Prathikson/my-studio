@@ -79,6 +79,15 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
     setIsMenuOpen(false);
   };
 
+    const handleCtaClick = () => {
+    if (onCtaClick) {
+      onCtaClick();
+    } else {
+      navigate("/contact");
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <div className={`text-white relative overflow-hidden ${className}`}>
       {/* Desktop Header Controls */}
@@ -121,7 +130,7 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
 
         {/* CTA Button */}
         <motion.button
-          onClick={onCtaClick}
+          onClick={handleCtaClick}
           whileHover={{ scale: 1.002 }}
           whileTap={{ scale: 0.95 }}
           className="px-6 py-3 rounded-full text-carbonBlack bg-lightGray backdrop-blur-sm border border-smoothBlack/20 hover:bg-smoothBlack hover:text-lightGray text-sm font-medium tracking-wide flex items-center gap-2"
@@ -211,10 +220,7 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
                 </motion.svg>
               </motion.button>
               <motion.button
-                onClick={() => {
-                  onCtaClick?.();
-                  setIsMenuOpen(false);
-                }}
+                onClick={handleCtaClick}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 className="px-6 py-3 rounded-full bg-lightGray/80 backdrop-blur-sm border text-smoothBlack text-sm font-medium tracking-wide flex items-center gap-2"
@@ -314,21 +320,6 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
                     </form>
                   </div>
                 )}
-                {/* Labs */}
-                <motion.div className="bg-black rounded-3xl p-8 border border-white/10 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-appleBlue/20 to-blue-600/20" />
-                  <div className="relative flex items-center justify-between">
-                    <div className="flex items-center gap-4">
-                      <div className="w-8 h-8 border-2 border-white rounded-full flex items-center justify-center">
-                        <div className="w-3 h-3 bg-white rounded-full" />
-                      </div>
-                      <span className="text-xl font-light tracking-wide">LABS</span>
-                    </div>
-                    <motion.div whileHover={{ x: 5 }} className="text-2xl">
-                      ↗
-                    </motion.div>
-                  </div>
-                </motion.div>
               </motion.div>
             </div>
           </motion.div>

@@ -235,11 +235,11 @@ const RelatedProjects: React.FC<{ currentProject: Project }> = ({ currentProject
   const navigate = useNavigate();
 
   return (
-    <div className="py-20 max-w-7xl mx-auto">
+    <div className="py-20 max-w-7xl mx-auto px-10">
       <div className="flex items-center justify-between mb-12">
         <div>
-          <h3 className="text-3xl font-bold text-gray-900 mb-2">Related Works</h3>
-          <p className="text-gray-600">Discover more projects from our portfolio</p>
+          <h3 className="text-3xl font-bold text-carbonGray mb-2">Related Works</h3>
+          <p className="text-smoothBlack text-base">Discover more projects from our portfolio</p>
         </div>
         <Button
           title="View All Works"
@@ -250,7 +250,7 @@ const RelatedProjects: React.FC<{ currentProject: Project }> = ({ currentProject
         />
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
         {relatedProjects.map((project, idx) => (
           <motion.div
             key={project.id}

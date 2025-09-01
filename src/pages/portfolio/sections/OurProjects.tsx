@@ -106,54 +106,55 @@ const TopBar: React.FC<TopBarProps> = ({
             </button>
 
             {isFilterOpen && (
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                className="absolute top-full mt-2 right-0 bg-white border border-gray-200 rounded-xl shadow-lg p-2 min-w-[200px] z-[100]"
-              >
-                <div className="space-y-1">
-                  <p className="text-xs font-semibold text-gray-500 px-3 py-2">Filter by Service</p>
-                  {FILTER_OPTIONS.map((type) => (
-                    <button
-                      key={type}
-                      onClick={() => {
-                        setFilterType(type);
-                        setIsFilterOpen(false);
-                      }}
-                      className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-all duration-200 flex items-center gap-2 ${
-                        filterType === type
-                          ? "bg-blue-50 text-blue-700 font-medium"
-                          : "hover:bg-gray-50 text-gray-700"
-                      }`}
-                    >
-                      {getTagIcon(type)}
-                      <span className="capitalize">{type === "all" ? "All Services" : type}</span>
-                    </button>
-                  ))}
+  <motion.div
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: 10 }}
+    className="absolute top-full mt-2 left-0 sm:right-0 sm:left-auto bg-white border border-gray-200 rounded-xl shadow-lg p-2 min-w-[200px] max-w-[90vw] overflow-auto z-[100]"
+  >
+    <div className="space-y-1">
+      <p className="text-xs font-semibold text-gray-500 px-3 py-2">Filter by Service</p>
+      {FILTER_OPTIONS.map((type) => (
+        <button
+          key={type}
+          onClick={() => {
+            setFilterType(type);
+            setIsFilterOpen(false);
+          }}
+          className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-all duration-200 flex items-center gap-2 ${
+            filterType === type
+              ? "bg-blue-50 text-blue-700 font-medium"
+              : "hover:bg-gray-50 text-gray-700"
+          }`}
+        >
+          {getTagIcon(type)}
+          <span className="capitalize">{type === "all" ? "All Services" : type}</span>
+        </button>
+      ))}
 
-                  <div className="border-t pt-2 mt-2">
-                    <p className="text-xs font-semibold text-gray-500 px-3 py-2">Sort by</p>
-                    {SORT_OPTIONS.map((sort) => (
-                      <button
-                        key={sort}
-                        onClick={() => {
-                          setSortType(sort);
-                          setIsFilterOpen(false);
-                        }}
-                        className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-all duration-200 ${
-                          sortType === sort
-                            ? "bg-blue-50 text-blue-700 font-medium"
-                            : "hover:bg-gray-50 text-gray-700"
-                        }`}
-                      >
-                        <span className="capitalize">{sort === "date" ? "Latest First" : sort}</span>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            )}
+      <div className="border-t pt-2 mt-2">
+        <p className="text-xs font-semibold text-gray-500 px-3 py-2">Sort by</p>
+        {SORT_OPTIONS.map((sort) => (
+          <button
+            key={sort}
+            onClick={() => {
+              setSortType(sort);
+              setIsFilterOpen(false);
+            }}
+            className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-all duration-200 ${
+              sortType === sort
+                ? "bg-blue-50 text-blue-700 font-medium"
+                : "hover:bg-gray-50 text-gray-700"
+            }`}
+          >
+            <span className="capitalize">{sort === "date" ? "Latest First" : sort}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+  </motion.div>
+)}
+
           </div>
 
           {/* View Toggle */}
@@ -259,7 +260,7 @@ const ProjectCard: React.FC<{ project: Project; idx: number }> = ({ project, idx
       initial="initial"
       animate="in"
       ref={cardRef}
-      className="group relative cursor-pointer overflow-hidden rounded-2xl bg-gradient-to-br from-white/90 to-gray-50/80 backdrop-blur-lg shadow-lg ring-1 ring-black/5 transition-all duration-500 hover:shadow-2xl hover:ring-black/15 min-h-[420px]"
+      className="group relative cursor-pointer overflow-hidden rounded-2xl bg-gradient-to-br from-white/90 to-gray-50/80 backdrop-blur-lg shadow-lg ring-1 ring-black/5 transition-all duration-500 hover:shadow-2xl hover:ring-black/15 min-h-[320px]"
     >
       {/* Background Image */}
       <div ref={imgRef} className="absolute inset-0 overflow-hidden">
@@ -339,22 +340,22 @@ const TableRow: React.FC<{ project: Project; idx: number }> = ({ project, idx })
       className="group hover:bg-gray-50/50 transition-all duration-300 relative"
     >
       {/* Project Title */}
-      <td className="py-6 px-8">
+      <td className="py-16 px-8 border-b-2 border-smoothBlack/20">
         <Link 
           to={`/portfolio/${project.slug}`}
           className="block"
         >
-          <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors duration-200">
+          <h3 className="text-5xl font-bold text-carbonGray group-hover:text-blue-700 transition-colors duration-200">
             {project.title}
           </h3>
         </Link>
       </td>
 
       {/* Service Tag */}
-      <td className="py-6 px-8">
-        <div className="inline-flex items-center gap-3 px-4 py-2 bg-gray-50 rounded-xl">
+      <td className="py-6 px-8 border-b-2 border-smoothBlack/20">
+        <div className="inline-flex items-center gap-3 px-4 py-2 bg-lightGray/20 rounded-xl">
           {getTagIcon(project.tag)}
-          <span className="text-sm font-semibold text-gray-700">{project.tag}</span>
+          <span className="text-lg font-semibold text-carbonGray">{project.tag}</span>
         </div>
       </td>
 
@@ -365,7 +366,7 @@ const TableRow: React.FC<{ project: Project; idx: number }> = ({ project, idx })
             initial={{ opacity: 0, scale: 0.8, x: 20 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             exit={{ opacity: 0, scale: 0.8, x: 20 }}
-            className="w-48 h-32 rounded-xl overflow-hidden shadow-xl ring-1 ring-black/10"
+            className="w-8 h-48 rounded-xl overflow-hidden shadow-xl ring-1 ring-black/10"
           >
             <img
               src={project.image}
@@ -471,7 +472,7 @@ const OurProjects: React.FC = () => {
             </motion.div>
           ) : (
             <motion.div
-              className="bg-white/80 backdrop-blur-lg border border-gray-200/60 rounded-2xl overflow-hidden shadow-sm"
+              className=" backdrop-blur-lg overflow-hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
