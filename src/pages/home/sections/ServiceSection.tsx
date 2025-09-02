@@ -7,62 +7,9 @@ import { useNavigate } from 'react-router-dom';
 import MinimalHeader from '../../../components/ui/MinimalHeader';
 import Button from '../../../components/ui/Button';
 import { ChevronRight} from 'lucide-react';
+import { Services} from '../../../data/services.ts'
 
-const services = [
-  {
-    id: 'brand',
-    title: 'Brand',
-    icon: '📷',
-    gradient: ['#10b981', '#059669'],
-    items: [
-      { name: 'Brand Strategy', path: '/services/brand/brand-strategy' },
-      { name: '360° Creative', path: '/services/brand/360-creative' },
-      { name: 'Art Direction', path: '/services/brand/art-direction' },
-      { name: 'Copywriting', path: '/services/brand/copywriting' },
-      { name: 'Editing', path: '/services/brand/editing' },
-      { name: 'Motion Graphics', path: '/services/brand/motion-graphics' }
-    ],
-  },
-  {
-    id: 'social',
-    title: 'Social',
-    icon: '📱',
-    gradient: ['#60a5fa', '#3b82f6'],
-    items: [
-      { name: 'Social Media Strategy', path: '/services/social/social-media-strategy' },
-      { name: 'TikTok/Social Shorts', path: '/services/social/tiktok-social-shorts' },
-      { name: 'Influencer Campaigns', path: '/services/social/influencer-campaigns' },
-      { name: 'Community Management', path: '/services/social/community-management' },
-    ],
-  },
-  {
-    id: 'build',
-    title: 'Build',
-    icon: '💻',
-    gradient: ['#f97316', '#ef4444'],
-    items: [
-      { name: 'Web Development', path: '/services/build/web-development' },
-      { name: 'Frontend Solutions', path: '/services/build/frontend-solutions' },
-      { name: 'Mobile Apps', path: '/services/build/mobile-apps' },
-      { name: 'API Integration', path: '/services/build/api-integration' },
-      { name: 'Performance Optimization', path: '/services/build/performance-optimization' },
-      { name: 'Search Engine Optimization (SEO)', path: '/services/build/seo' }
-    ],
-  },
-  {
-    id: 'design',
-    title: 'Design',
-    icon: '🎨',
-    gradient: ['#a78bfa', '#ec4899'],
-    items: [
-      { name: 'UI/UX Design', path: '/services/design/ui-ux-design' },
-      { name: 'Website Re-Design', path: '/services/design/website-redesign' },
-      { name: 'Visual Identity', path: '/services/design/visual-identity' },
-      { name: 'Print Design', path: '/services/design/print-design' },
-      { name: 'Design Systems', path: '/services/design/design-systems' },
-    ],
-  },
-];
+const services = Services
 
 export default function ServicesSection() {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -159,14 +106,14 @@ export default function ServicesSection() {
                     background: 'linear-gradient(135deg, #000000, #1f1f1f)',
                   }}
                 >
-                  {service.icon}
+                  {service.emoji}
                 </motion.div>
 
                 {/* Enhanced Sparkles */}
                 <AnimatePresence>
                   {hoveredCard === i && (
                     <>
-                      {service.id === 'social' && (
+                      {service.title === 'social' && (
                         <motion.div 
                           className="absolute -top-2 left-8 w-12 h-12 bg-emerald-400 rounded-full flex items-center justify-center shadow-lg"
                           initial={{ scale: 0, rotate: -180 }}
@@ -177,7 +124,7 @@ export default function ServicesSection() {
                           <span className="text-sm">✨</span>
                         </motion.div>
                       )}
-                      {service.id === 'build' && (
+                      {service.title === 'build' && (
                         <motion.div 
                           className="absolute -top-3 right-16 w-14 h-14 bg-blue-400 rounded-full flex items-center justify-center shadow-lg"
                           initial={{ scale: 0, rotate: -180 }}
@@ -188,7 +135,7 @@ export default function ServicesSection() {
                           <span className="text-lg">⚡</span>
                         </motion.div>
                       )}
-                      {service.id === 'design' && (
+                      {service.title === 'design' && (
                         <motion.div 
                           className="absolute -top-2 -left-2 w-12 h-12 bg-pink-400 rounded-lg flex items-center justify-center shadow-lg"
                           initial={{ scale: 0, rotate: -180 }}
@@ -222,7 +169,7 @@ export default function ServicesSection() {
                   
                   <div className="space-y-3 flex-1">
                     {service.items.map((item, idx) => {
-                      const itemKey = getItemKey(service.id, item.name);
+                      const itemKey = getItemKey(service.title, item.name);
                       const isHovered = hoveredItem === itemKey;
                       const isClicked = clickedItem === itemKey;
                       
