@@ -73,7 +73,7 @@ const Social = () => {
       />
           <CTATape items={items}  speed={60}/>
            <DiscoverServices  />
-          <RelatedProjects tags={["Design"]} />
+          <RelatedProjects tags={["Social"]} />
           <TapeSection/>
           <CTASection/>
     </main>

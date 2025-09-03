@@ -81,7 +81,7 @@ const DiscoverServices: React.FC<DiscoverServicesProps> = ({ include, exclude })
       ref={sectionRef}
       className="relative bg-lightGray py-20 px-4 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-full mx-auto relative z-10">
         {/* Dynamic Header */}
         <div className="services-header mb-16 text-center">
           <MinimalHeader pillText="Our Services" titleLine1={headerText} />

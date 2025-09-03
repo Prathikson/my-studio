@@ -260,7 +260,7 @@ const ProjectCard: React.FC<{ project: Project; idx: number }> = ({ project, idx
       initial="initial"
       animate="in"
       ref={cardRef}
-      className="group relative cursor-pointer overflow-hidden rounded-2xl bg-gradient-to-br from-white/90 to-gray-50/80 backdrop-blur-lg shadow-lg ring-1 ring-black/5 transition-all duration-500 hover:shadow-2xl hover:ring-black/15 min-h-[320px]"
+      className="group relative cursor-pointer overflow-hidden rounded-2xl bg-gradient-to-br from-white/90 to-gray-50/80 backdrop-blur-lg shadow-lg ring-1 ring-black/5 transition-all duration-500 hover:shadow-2xl hover:ring-black/15 min-h-[520px]"
     >
       {/* Background Image */}
       <div ref={imgRef} className="absolute inset-0 overflow-hidden">

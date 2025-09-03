@@ -1,4 +1,4 @@
-import {Megaphone, MonitorSmartphone, SparklesIcon, type LucideIcon } from "lucide-react";
+import {Megaphone, MonitorSmartphone, Palette, SparklesIcon, type LucideIcon } from "lucide-react";
 
 
 export interface ServiceSection {
@@ -758,7 +758,7 @@ export const Services: ServiceCategory[] = [
   {
     id: 4,
     title: 'Design',
-    icon: '🎨',
+    icon: Palette,
     emoji: '🎨',
     gradient: ['#a78bfa', '#ec4899'],
     items: [

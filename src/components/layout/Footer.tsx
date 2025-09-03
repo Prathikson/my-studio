@@ -8,7 +8,7 @@ const footerSections = [
     title: 'Services',
     gradient: ['#10b981', '#059669'],
     links: [
-      { name: 'Branding', path: '/services/branding' },
+      { name: 'Branding', path: '/services/brand' },
       { name: 'Social', path: '/services/social' },
       { name: 'Design', path: '/services/design' },
       { name: 'Build', path: '/services/build' }
