@@ -15,6 +15,11 @@ import ResetScroll from "./components/Navigation/ResetScroll";
 import Portfolio from "./pages/portfolio/Portfolio";
 import ProjectDetail from "./pages/portfolio/sections/[slug]";
 
+import SocialServices from "./pages/services/subpages/Social/Services/[slug]";
+import DesignServices from "./pages/services/subpages/Design/Services/[slug]";
+import BrandServices from "./pages/services/subpages/Brand/Services/[slug]";
+import BuildServices from "./pages/services/subpages/Build/Services/[slug]";
+
 export default function App() {
   const [loading, setLoading] = useState(() => {
     if (typeof window !== "undefined") {
@@ -46,6 +51,14 @@ export default function App() {
         <Route path="/services/social" element={<Social />} />
         <Route path="/services/design" element={<Design />} />
         <Route path="/services/build" element={<Build />} />
+
+
+        {/* Social */}
+        <Route path="/services/social/:slug" element={<SocialServices />} />        
+        <Route path="/services/build/:slug" element={<BuildServices />} />        
+        <Route path="/services/brand/:slug" element={<BrandServices />} />        
+        <Route path="/services/design/:slug" element={<DesignServices />} />        
+
 
 
         {/* About */}

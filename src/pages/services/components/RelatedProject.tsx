@@ -65,7 +65,7 @@ const RelatedProjects: React.FC<RelatedProjectsProps> = ({
   }, []);
 
   return (
-    <div ref={sectionRef} className="py-20 max-w-7xl mx-auto px-6 lg:px-8">
+    <div ref={sectionRef} className="py-20 max-w-7xl mx-auto px-6 lg:px-8 bg-lig">
       {/* Header */}
       <div className="flex items-center justify-between mb-12">
         <h3 className="text-4xl md:text-5xl font-bold text-gray-900">{title}</h3>
