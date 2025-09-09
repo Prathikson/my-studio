@@ -78,7 +78,7 @@ const ProjectCard: React.FC<{ project: Project; idx: number }> = ({ project, idx
       initial="initial"
       animate="in"
       ref={cardRef}
-      className="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-white/80 backdrop-blur-sm p-6 shadow-lg ring-1 ring-black/5 transition-all duration-300 hover:shadow-2xl hover:ring-black/10"
+      className="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-lightGray/10 backdrop-blur-2xl p-6   transition-all duration-300"
       style={{ ...inwardCornerMask }}
     >
       <div ref={imgRef} className="relative aspect-[4/3] overflow-hidden rounded-2xl mb-6">

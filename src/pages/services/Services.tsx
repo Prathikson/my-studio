@@ -6,7 +6,15 @@ import OrganicMediaSection from "./sections/OrganicMediaSection"
 import OurApproach from "./sections/OurApproach"
 import OurServices from "./sections/OurServices"
 import OurProjects from "./sections/OurProjects"
+import { TapeSection } from "../home/sections/Tape"
+import CTATape from "./components/CTATape"
 
+const items = [
+  { type: 'text', content: 'Growth strategy' },
+  { type: 'image', content: '/assets/services/influencer.jpg', alt: 'Description' },
+  { type: 'text', content: 'Starts Here' },
+  { type: 'image', content: '/assets/services/influencer.jpg', alt: 'Description' },
+];
 
 const Services = () => {
   return (
@@ -23,7 +31,9 @@ const Services = () => {
             <OrganicMediaSection/>
             <TestimonialSection/>
             <OurProjects/>
+            <CTATape items={items} speed={10}/>
             <PricingTabs/>
+            <TapeSection/>
             <CTASection/>
     </main>
   )
