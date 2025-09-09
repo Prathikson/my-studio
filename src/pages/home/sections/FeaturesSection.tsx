@@ -122,7 +122,7 @@ const FeaturesSection: React.FC = () => {
             className={`table-header p-6 text-center font-semibold text-lg ${
               col.key === "xtoic"
                 ? "bg-appleBlue text-lightGray rounded-tl-3xl"
-                : "bg-lightGray text-mattBlack"
+                : "bg-lightGray text-smoothBlack"
             }`}
           >
             {col.label}
@@ -147,7 +147,7 @@ const FeaturesSection: React.FC = () => {
                     ? `bg-appleBlue text-lightGray ${
                         idx === 0 ? "" : ""
                       } ${idx === data.length - 1 ? "rounded-br-3xl" : ""}`
-                    : "text-mattBlack bg-lightGray"
+                    : "text-smoothBlack bg-lightGray"
                 }`}
                 variants={rowVariants}
               >

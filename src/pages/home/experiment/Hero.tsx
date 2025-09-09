@@ -377,7 +377,7 @@ const Hero: React.FC = () => {
         <span className="text-segment">We Don’t Just Build Brands, </span>
         <span className="text-segment">We Create Obsessions</span>
         <div className="placeholder-icon"></div>
-        <span className="text-segment">Digital Built </span>
+        <span className="text-segment">That Built </span>
         <div className="placeholder-icon"></div>
         <span className="text-segment">to Perform</span>
         <div className="placeholder-icon"></div>
