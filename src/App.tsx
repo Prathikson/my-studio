@@ -20,6 +20,8 @@ import DesignServices from "./pages/services/subpages/Design/Services/[slug]";
 import BrandServices from "./pages/services/subpages/Brand/Services/[slug]";
 import BuildServices from "./pages/services/subpages/Build/Services/[slug]";
 import Terms from "./pages/legal/Terms";
+import Privacy from "./pages/legal/Privacy";
+import CookieProviderWrapper from "./components/CookieConsent/CookieProviderWrapper";
 
 export default function App() {
   const [loading, setLoading] = useState(() => {
@@ -40,6 +42,7 @@ export default function App() {
   }
 
   return (
+    <CookieProviderWrapper>
 
     <Layout>
       <ResetScroll/>
@@ -70,11 +73,13 @@ export default function App() {
 
 
          <Route path="/portfolio" element={<Portfolio />} />
-<Route path="/portfolio/:slug" element={<ProjectDetail />} />
+        <Route path="/portfolio/:slug" element={<ProjectDetail />} />
 
-         <Route path="/terms-of-use" element={<Terms />} />
+         <Route path="/terms-&-conditions" element={<Terms />} />
+         <Route path="/privacy-policy" element={<Privacy />} />
 
       </Routes>
     </Layout>
+    </CookieProviderWrapper>
   );
 }

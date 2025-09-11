@@ -1,5 +1,7 @@
 import Header from "./Header";
 import Footer from "./Footer";
+import CookieBanner from "../CookieConsent/CookieBanner";
+import CookieModal from "../CookieConsent/CookieModal";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -11,6 +13,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <Header />
       <main className="flex-grow">{children}</main>
       <Footer />
+      <CookieBanner/>
+      <CookieModal/>
     </div>
   );
 };

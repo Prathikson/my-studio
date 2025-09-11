@@ -1,17 +1,6 @@
-import { createContext, type ReactNode, useContext } from 'react';
+import { type ReactNode } from 'react';
 import { useCookieConsent } from './useCookieConsent';
-
-type CookieConsentContextType = ReturnType<typeof useCookieConsent>;
-
-const CookieConsentContext = createContext<CookieConsentContextType | undefined>(undefined);
-
-export const useCookieConsentContext = (): CookieConsentContextType => {
-  const context = useContext(CookieConsentContext);
-  if (!context) {
-    throw new Error('useCookieConsentContext must be used within a CookieProviderWrapper');
-  }
-  return context;
-};
+import { CookieConsentContext } from './cookieConsentContext';
 
 interface CookieProviderWrapperProps {
   children: ReactNode;

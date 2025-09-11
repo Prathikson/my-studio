@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { Mail, Phone, Github, Youtube, Instagram, X, Facebook, Award, ChevronRight } from 'lucide-react';
+import { useCookieConsentContext } from '../CookieConsent/cookieConsentContext';
 
 const footerSections = [
   {
@@ -27,9 +28,8 @@ const footerSections = [
     title: 'Legal',
     gradient: ['#f97316', '#ef4444'],
     links: [
-      { name: 'Terms of Use', path: '/terms-of-use' },
+      { name: 'Terms & Conditions', path: '/terms-&-conditions' },
       { name: 'Privacy Policy', path: '/privacy-policy' },
-      { name: 'Manage Cookies', path: '/cookies' }
     ],
   },
 ];
@@ -49,6 +49,7 @@ export default function MobileResponsiveFooter() {
   const [hoveredSocial, setHoveredSocial] = useState<number | null>(null);
   const [expandedSection, setExpandedSection] = useState<number | null>(null);
   const navigate = useNavigate();
+  const { setShowModal: setCookieModalVisible } = useCookieConsentContext();
 
   useEffect(() => {
     if (!isInView) return;
@@ -206,7 +207,7 @@ export default function MobileResponsiveFooter() {
             </div>
 
             {/* Bottom */}
-            <div className="border-t border-gray-800 mt-16 pt-8 animate-on-view opacity-0 translate-y-10 transition-all duration-700" style={{ transitionDelay: '1000ms' }}>
+            <div className="border-t border-lightGray mt-16 pt-8 animate-on-view opacity-0 translate-y-10 transition-all duration-700" style={{ transitionDelay: '1000ms' }}>
               <div className="flex flex-col md:flex-row justify-between items-center">
                 <motion.button
                   className="bg-smoothBlack hover:bg-white/10 px-6 py-3 rounded-full text-sm transition-colors"
@@ -216,6 +217,12 @@ export default function MobileResponsiveFooter() {
                 >
                   Let's Create Something Amazing Together! 🚀
                 </motion.button>
+                                  <button
+                    onClick={() => setCookieModalVisible(true)}
+                    className="underline text-base hover:text-zoroRed"
+                  >
+                    Cookie Preferences
+                  </button>
 
                 <div className="text-sm text-gray-400 mt-4 md:mt-0">
                   © 2025 XTOIC STUDIO | All rights reserved

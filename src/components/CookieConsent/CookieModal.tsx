@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
-import { useCookieConsentContext } from './CookieProviderWrapper';
+import { useCookieConsentContext } from './cookieConsentContext';
 import type { CookieConsentType } from './useCookieConsent';
 
 const CookieModal = () => {
