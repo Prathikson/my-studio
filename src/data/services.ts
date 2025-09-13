@@ -531,10 +531,10 @@ export const Services: ServiceCategory[] = [
           { label: 'Client Retention', value: '95%', description: 'Long-term development partnerships' }
         ],
         images: [
-          { src: '/images/web-development-1.jpg', alt: 'Web development workspace', caption: 'Modern web development environment' },
-          { src: '/images/web-development-2.jpg', alt: 'Code review session', caption: 'Collaborative development process' },
-          { src: '/images/web-development-3.jpg', alt: 'Website performance testing', caption: 'Performance optimization and testing' },
-          { src: '/images/web-development-4.jpg', alt: 'Responsive design showcase', caption: 'Cross-device compatibility testing' }
+          { src: '/assets/build/web-development-1.png', alt: 'Web development workspace', caption: 'Modern web development environment' },
+          { src: '/assets/build/web-development-2.png', alt: 'Code review session', caption: 'Collaborative development process' },
+          { src: '/assets/build/web-development-3.png', alt: 'Website performance testing', caption: 'Performance optimization and testing' },
+          { src: '/assets/build/web-development-4.png', alt: 'Responsive design showcase', caption: 'Cross-device compatibility testing' }
         ],
         cta: {
           title: 'Build Your Custom Web Solution',

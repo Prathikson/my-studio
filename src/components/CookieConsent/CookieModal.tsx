@@ -47,20 +47,20 @@ const CookieModal = () => {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 50, opacity: 0 }}
             transition={{ duration: 0.3, ease: 'easeOut' }}
-            className="bg-white w-full max-w-md rounded-xl p-6 shadow-xl relative mx-4"
+  className="liquid-glass w-full max-w-md p-6 relative mx-4"
           >
             <button
               onClick={() => setShowModal(false)}
               aria-label="Close"
-              className="absolute top-4 right-4 text-gray-500 hover:text-black transition"
+              className="absolute top-4 right-4 text-lightGray hover:text-black transition"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <h2 id="cookie-modal-title" className="text-xl font-semibold mb-2">
+            <h2 id="cookie-modal-title" className="text-xl font-semibold text-lightGray mb-2">
               🍪 Cookie Preferences
             </h2>
-            <p className="text-sm text-gray-600 mb-4">
+            <p className="text-sm text-lightGray mb-4">
               Choose which cookies you want to allow.
             </p>
 
@@ -68,11 +68,11 @@ const CookieModal = () => {
               {(['essential', 'analytics', 'marketing'] as CookieConsentType[]).map((type) => (
                 <div
                   key={type}
-                  className="flex justify-between items-start border border-gray-200 p-3 rounded-lg"
+                  className="flex justify-between items-start border  bg-lightGray border-gray-200 p-3 rounded-lg"
                 >
                   <div className="pr-2">
-                    <p className="font-medium capitalize">{type}</p>
-                    <p className="text-xs text-gray-500">
+                    <p className="font-medium capitalize text-carbonBlack">{type}</p>
+                    <p className="text-xs text-smoothBlack">
                       {type === 'essential'
                         ? 'Required for site functionality.'
                         : type === 'analytics'
@@ -93,7 +93,7 @@ const CookieModal = () => {
 
             <button
               onClick={() => saveConsent(temp)}
-              className="mt-6 w-full px-5 py-2.5 bg-black text-white rounded-md hover:bg-appleBlue transition"
+              className="mt-6 w-full px-5 py-2.5 bg-black text-white rounded-2xl hover:bg-appleBlue transition"
             >
               Save Preferences
             </button>

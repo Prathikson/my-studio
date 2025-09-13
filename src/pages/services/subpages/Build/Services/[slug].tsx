@@ -199,15 +199,15 @@ const BuildServices: React.FC = () => {
         <div className="grid grid-cols-2 gap-6">
           <div className="space-y-6">
             <motion.img 
-              src="/images/showcase1.jpg"
-              alt="Creative work 1"
+              src={currentService.images[0].src}
+              alt={currentService.images[0].alt}
               className="w-full h-72 object-cover rounded-2xl shadow-lg"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             />
             <motion.img 
-              src="/images/showcase2.jpg"
-              alt="Creative work 2"
+              src={currentService.images[1].src}
+              alt={currentService.images[1].alt}
               className="w-full h-96 object-cover rounded-2xl shadow-lg"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
@@ -215,15 +215,15 @@ const BuildServices: React.FC = () => {
           </div>
           <div className="space-y-6 pt-10">
             <motion.img 
-              src="/images/showcase3.jpg"
-              alt="Creative work 3"
+              src={currentService.images[2].src}
+              alt={currentService.images[2].alt}
               className="w-full h-96 object-cover rounded-2xl shadow-lg"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             />
             <motion.img 
-              src="/images/showcase4.jpg"
-              alt="Creative work 4"
+              src={currentService.images[3].src}
+              alt={currentService.images[3].alt}
               className="w-full h-72 object-cover rounded-2xl shadow-lg"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
@@ -367,7 +367,7 @@ const BuildServices: React.FC = () => {
             <div className="relative">
               <div className="aspect-square bg-gradient-to-br from-orange-100 to-red-100 rounded-3xl overflow-hidden">
                 <img 
-                  src="/images/development-process.jpg" 
+                  src="/assets/build/process.png" 
                   alt="Development Process"
                   className="w-full h-full object-cover"
                 />

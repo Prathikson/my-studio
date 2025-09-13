@@ -74,7 +74,7 @@ const Brand = () => {
         className="py-12"
       />
           <CTATape items={items}  speed={60}/>
-           <DiscoverServices exclude={["Brand"]} />
+           <DiscoverServices  />
           <RelatedProjects tags={["Branding"]} />
           <TapeSection/>
           <CTASection/>

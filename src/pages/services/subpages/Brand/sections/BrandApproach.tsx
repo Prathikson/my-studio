@@ -38,8 +38,8 @@ const BrandApproach: React.FC<WhatWeDoProps> = ({
   links = [
     { text: "Our Culture", href: "#culture" }
   ],
-  videoUrl = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-  videoPoster = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
+  videoUrl = "/assets/brand/Branding.mp4",
+  videoPoster = "/assets/brand/Branding_Cover.png",
   backgroundColor = "bg-lightGray",
   textColor = "text-carbonBlack",
   labelColor = "text-carbonGray",

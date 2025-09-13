@@ -30,6 +30,7 @@ const footerSections = [
     links: [
       { name: 'Terms & Conditions', path: '/terms-&-conditions' },
       { name: 'Privacy Policy', path: '/privacy-policy' },
+      { name: 'Cookie Preferences', path: "/", action: 'cookie' }, // Special action for cookie preferences
     ],
   },
 ];
@@ -67,8 +68,12 @@ export default function MobileResponsiveFooter() {
     navigate('/contact');
   };
 
-  const handleLinkClick = (path: string) => {
-    navigate(path);
+  const handleLinkClick = (path: string, action?: string) => {
+    if (action === 'cookie') {
+      setCookieModalVisible(true);
+    } else if (path) {
+      navigate(path);
+    }
   };
 
   const toggleSection = (index: number) => {
@@ -121,7 +126,7 @@ export default function MobileResponsiveFooter() {
                     {section.links.map((link) => (
                       <li key={`${section.title}-${link.name}`}>
                         <motion.button
-                          onClick={() => handleLinkClick(link.path)}
+                          onClick={() => handleLinkClick(link.path, link.action)}
                           className="text-gray-300 hover:text-white transition-colors duration-300 block relative group text-left"
                           whileHover={{ x: 10 }}
                         >
@@ -217,12 +222,6 @@ export default function MobileResponsiveFooter() {
                 >
                   Let's Create Something Amazing Together! 🚀
                 </motion.button>
-                                  <button
-                    onClick={() => setCookieModalVisible(true)}
-                    className="underline text-base hover:text-zoroRed"
-                  >
-                    Cookie Preferences
-                  </button>
 
                 <div className="text-sm text-gray-400 mt-4 md:mt-0">
                   © 2025 XTOIC STUDIO | All rights reserved
@@ -320,7 +319,7 @@ export default function MobileResponsiveFooter() {
                       {section.links.map((link) => (
                         <button
                           key={`${section.title}-${link.name}`}
-                          onClick={() => handleLinkClick(link.path)}
+                          onClick={() => handleLinkClick(link.path, link.action)}
                           className="block text-sm text-gray-300 hover:text-white transition-colors w-full text-left py-1"
                         >
                           {link.name}
