@@ -223,7 +223,7 @@ export default function MobileResponsiveFooter() {
                   Let's Create Something Amazing Together! 🚀
                 </motion.button>
 
-                <div className="text-sm text-gray-400 mt-4 md:mt-0">
+                <div className="text-sm text-lightGray/80 mt-4 md:mt-0">
                   © 2025 XTOIC STUDIO | All rights reserved
                 </div>
               </div>
@@ -273,9 +273,9 @@ export default function MobileResponsiveFooter() {
                       <Mail className="w-4 h-4 text-purple-400" />
                       <span>hello@xtoic.studio</span>
                     </a>
-                    <a href="tel:+1234567890" className="flex items-center space-x-2 text-sm">
+                    <a href="tel:7806674895" className="flex items-center space-x-2 text-sm">
                       <Phone className="w-4 h-4 text-pink-400" />
-                      <span>+1 (234) 567-890</span>
+                      <span>+1 (780) 667-4895</span>
                     </a>
                   </div>
                 </div>
@@ -371,9 +371,9 @@ export default function MobileResponsiveFooter() {
           </div>
 
           {/* Mobile Footer */}
-          <div className="border-t border-gray-800 px-6 py-6">
+          <div className="border-t border-lightGray/80 px-6 py-6">
             <div className="text-center">
-              <div className="text-sm text-gray-400">
+              <div className="text-sm text-text-lightGray/80">
                 © 2025 XTOIC STUDIO | All rights reserved
               </div>
             </div>
