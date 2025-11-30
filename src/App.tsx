@@ -75,7 +75,7 @@ export default function App() {
          <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/portfolio/:slug" element={<ProjectDetail />} />
 
-         <Route path="/terms-&-conditions" element={<Terms />} />
+         <Route path="/terms-conditions" element={<Terms />} />
          <Route path="/privacy-policy" element={<Privacy />} />
 
       </Routes>

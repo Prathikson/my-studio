@@ -262,8 +262,8 @@ const Terms: React.FC = () => {
   title="Terms & Conditions | XTOIC Studio"
   description="Read the official Terms & Conditions for using XTOIC Studio’s website, services, products, and digital experiences. Learn about usage, policies, restrictions, and legal protections."
   keywords="terms and conditions, service terms, legal terms, user agreement, xtoic studio terms, website usage terms"
-  canonical="https://www.xtoicstudio.com/terms-&-conditions"
-  ogUrl="https://www.xtoicstudio.com/terms-&-conditions"
+  canonical="https://www.xtoicstudio.com/terms-conditions"
+  ogUrl="https://www.xtoicstudio.com/terms-conditions"
   siteName="XTOIC Studio"
   type="website"
 />
