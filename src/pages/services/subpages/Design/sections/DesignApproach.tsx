@@ -34,7 +34,7 @@ const DesignApproach: React.FC<WhatWeDoProps> = ({
     "We are your strategic growth partners for everything organic",
     "Chasing consumers, not algorithms in an audience-first world"
   ],
-  conclusionText = "And that's why Rise at Seven exists!",
+  conclusionText = "And that's why Xtoic Studio exists!",
   links = [
     { text: "Our Culture", href: "#culture" }
   ],
