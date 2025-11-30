@@ -1,3 +1,4 @@
+import { SEO } from "../../../../components/Seo/SEO"
 import CTASection from "../../../home/sections/CTASection"
 import { TapeSection } from "../../../home/sections/Tape"
 import CTATape from "../../components/CTATape"
@@ -38,6 +39,16 @@ const Design = () => {
   ];
   return (
        <main className="flex flex-col overflow-x-hidden">
+          <SEO
+  title="UI/UX Design, Web Design & Creative Visual Design Services | XTOIC Studio"
+  description="XTOIC Studio delivers premium UI/UX design, website layouts, mobile app design, wireframes, prototypes, design systems, and creative visuals using Figma and modern design tools."
+  keywords="ui ux design services, web design, app design, figma designer, ux strategy, user experience design, design systems, prototyping, visual design agency"
+  canonical="https://www.xtoicstudio.com/services/design"
+  ogUrl="https://www.xtoicstudio.com/services/design"
+  siteName="XTOIC Studio"
+  type="website"
+/>
+
             <ServiceHeader
             leftTitle="Get"
             rightTitle="Creative"

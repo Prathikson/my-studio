@@ -6,6 +6,7 @@ import confetti, {type Options as ConfettiOptions } from "canvas-confetti";
 import CTASection from "../home/sections/CTASection";
 import { TapeSection } from "../home/sections/Tape";
 import Header from "./sections/Header";
+import { SEO } from "../../components/Seo/SEO";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -150,6 +151,16 @@ const defaults: ConfettiOptions = {
 
   return (
     <>
+    <SEO
+  title="Contact XTOIC Studio – Let’s Build Your Next Digital Experience"
+  description="Get in touch with XTOIC Studio. Start a project, request a proposal, or discover how we can help elevate your brand, website, or digital strategy."
+  keywords="contact creative agency, hire web design studio, request a quote, work with branding agency, digital studio contact"
+  canonical="https://www.xtoicstudio.com/contact"
+  ogUrl="https://www.xtoicstudio.com/contact"
+  siteName="XTOIC Studio"
+  type="website"
+/>
+
       {/* Hero Section */}
       <div className="bg-lightGray pt-20 pb-16 max-w-full">
         <motion.div

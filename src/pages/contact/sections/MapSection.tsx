@@ -70,7 +70,7 @@ const MapSection = () => {
               {/* Full Screen Map */}
              <div className="w-full h-full rounded-xl border-2 border-black/20 overflow-hidden">
   <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2376.0623486990867!2d-113.3631154!3d53.4494717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a019861b2a7421%3A0x9e503cfe9bee58b6!2s1306%2014%20Ave%20NW%2C%20Edmonton%2C%20AB!5e0!3m2!1sen!2sca!4v1756401521363!5m2!1sen!2sca" 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2373.2578024256923!2d-113.47247!3d53.49958999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x53a018cc01b401e1%3A0x160d4c434e953145!2sEngrity%20Group%20Inc.!5e0!3m2!1sen!2sca!4v1764525126150!5m2!1sen!2sca" 
     width="100%"
     height="100%"
     style={{ border: 0 }}

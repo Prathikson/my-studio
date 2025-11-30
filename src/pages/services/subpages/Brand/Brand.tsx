@@ -1,3 +1,4 @@
+import { SEO } from "../../../../components/Seo/SEO";
 import CTASection from "../../../home/sections/CTASection";
 import { TapeSection } from "../../../home/sections/Tape";
 import CTATape from "../../components/CTATape"
@@ -40,6 +41,16 @@ const Brand = () => {
   ];
   return (
     <main className="flex flex-col overflow-x-hidden">
+       <SEO
+  title="Brand Identity, Strategy & Positioning Services | XTOIC Studio"
+  description="Build a memorable brand with XTOIC Studio — offering brand identity design, strategy, messaging, visual systems, and complete brand transformation for modern companies."
+  keywords="branding services, brand identity design, brand strategy, brand guidelines, logo design, visual identity, brand messaging, rebranding agency, brand consulting"
+  canonical="https://www.xtoicstudio.com/services/brand"
+  ogUrl="https://www.xtoicstudio.com/services/brand"
+  siteName="XTOIC Studio"
+  type="website"
+/>
+     
             <ServiceHeader
                   leftTitle="Branding"
                   rightTitle="Services"

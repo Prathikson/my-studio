@@ -28,7 +28,7 @@ const services: ServicePricing[] = [
     pricingTiers: [
       {
         title: "Starter",
-        price: "$499",
+        price: "$799",
         description: "Perfect for portfolio sites & basic brands",
         features: [
           "1 Landing Page",
@@ -42,7 +42,7 @@ const services: ServicePricing[] = [
       },
       {
         title: "Pro",
-        price: "$999",
+        price: "$2,199",
         description: "Ideal for creative teams & product launches",
         features: [
           "Up to 5 Pages",
@@ -57,10 +57,10 @@ const services: ServicePricing[] = [
       },
       {
         title: "Elite",
-        price: "$1599",
+        price: "$6,599",
         description: "Full scale studio-level creative execution",
         features: [
-          "Up to 25 Pages",
+          "Up to 25 Pages/Web App Wireframe",
           "Motion Design + GSAP",
           "Responsive Designs",
           "Custom CMS or Headless Setup",
@@ -78,8 +78,8 @@ const services: ServicePricing[] = [
     color: "blue",
     pricingTiers: [
       {
-        title: "Landing Page",
-        price: "$499",
+        title: "Starter",
+        price: "$799",
         description: "Single-page website to showcase your brand or product",
         features: [
           "1 Page Design",
@@ -92,8 +92,8 @@ const services: ServicePricing[] = [
         accentColor: "from-blue-400/20 to-cyan-400/20",
       },
       {
-        title: "Small Website",
-        price: "$999",
+        title: "Pro",
+        price: "$3,499",
         description: "Website up to 10 pages with light backend functionality",
         features: [
           "Up to 10 Pages",
@@ -107,8 +107,8 @@ const services: ServicePricing[] = [
         popular: true,
       },
       {
-        title: "Full Website",
-        price: "$1999",
+        title: "Elite",
+        price: "$10,499",
         description: "Comprehensive website up to 25 pages with SEO and backend",
         features: [
           "Up to 25 Pages",
@@ -129,7 +129,7 @@ const services: ServicePricing[] = [
     pricingTiers: [
       {
         title: "Starter",
-        price: "$399",
+        price: "$599",
         description: "Logo and basic brand identity",
         features: [
           "Logo Design",
@@ -143,7 +143,7 @@ const services: ServicePricing[] = [
       },
       {
         title: "Pro",
-        price: "$899",
+        price: "$1,299",
         description: "Complete brand identity and collateral",
         features: [
           "Logo & Visual Identity",
@@ -158,7 +158,7 @@ const services: ServicePricing[] = [
       },
       {
         title: "Elite",
-        price: "$1499",
+        price: "$2,899",
         description: "Full branding experience & strategy",
         features: [
           "Comprehensive Brand Strategy",
@@ -179,7 +179,7 @@ const services: ServicePricing[] = [
     pricingTiers: [
       {
         title: "Starter",
-        price: "$299",
+        price: "$599",
         description: "Basic social media setup & content",
         features: [
           "Profile Setup",
@@ -193,7 +193,7 @@ const services: ServicePricing[] = [
       },
       {
         title: "Pro",
-        price: "$699",
+        price: "$1,499",
         description: "Growth & engagement focused",
         features: [
           "Daily Posts",
@@ -208,7 +208,7 @@ const services: ServicePricing[] = [
       },
       {
         title: "Elite",
-        price: "$1199",
+        price: "$3,299",
         description: "Full social media management & analytics",
         features: [
           "Comprehensive Strategy",
@@ -293,7 +293,7 @@ const PricingTabs: React.FC = () => {
             >
               {/* Liquid Glass Card */}
               <div 
-                className="relative h-full rounded-3xl backdrop-blur-2xl border border-smoothBlack/5 p-8 hover:border-white/20 transition-all duration-500"
+                className="relative h-full  rounded-3xl backdrop-blur-2xl border border-smoothBlack/5 p-8 hover:border-white/20 transition-all duration-500"
                 style={{
                   background: `linear-gradient(135deg, ${tier.glassColor}, rgba(255, 255, 255, 0.02))`
                 }}

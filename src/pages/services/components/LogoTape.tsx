@@ -16,16 +16,57 @@ interface LogoScrollerProps {
 }
 
 const logoData: Logo[] = [
+  /* ---------------------- SOCIAL ---------------------- */
   { name: "Instagram", category: "Social", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/instagram/instagram-original.svg" },
-  { name: "Microsoft Bing", category: "Brand", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg" },
+  { name: "Facebook", category: "Social", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" },
+  { name: "TikTok", category: "Social", imageSrc: "https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" },
   { name: "YouTube", category: "Social", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/youtube/youtube-original.svg" },
   { name: "Snapchat", category: "Social", imageSrc: "https://upload.wikimedia.org/wikipedia/en/c/c4/Snapchat_logo.svg" },
-  { name: "LinkedIn", category: "Brand", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" },
+  { name: "LinkedIn", category: "Social", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" },
   { name: "Pinterest", category: "Social", imageSrc: "https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" },
-  { name: "Apple", category: "Brand", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" },
-  { name: "GitHub", category: "Build", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+  { name: "X (Twitter)", category: "Social", imageSrc: "https://upload.wikimedia.org/wikipedia/commons/5/53/X_logo_2023_original.svg" },
+  { name: "Reddit", category: "Social", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/reddit/reddit-original.svg" },
+
+  /* ---------------------- DESIGN ---------------------- */
   { name: "Figma", category: "Design", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
-  { name: "Adobe", category: "Design", imageSrc: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Adobe_Systems_logo_and_wordmark.svg" },
+  { name: "Canva", category: "Design", imageSrc: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Canva_Logo.png" },
+  { name: "Adobe Photoshop", category: "Design", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg" },
+  { name: "Adobe Illustrator", category: "Design", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg" },
+  { name: "Adobe XD", category: "Design", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-plain.svg" },
+  { name: "Adobe After Effects", category: "Design", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-plain.svg" },
+  { name: "Adobe Premiere Pro", category: "Design", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg" },
+  { name: "Blender", category: "Design", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" },
+
+  /* ---------------------- BRAND ---------------------- */
+  { name: "Apple", category: "Brand", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" },
+  { name: "Microsoft", category: "Brand", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoft/microsoft-original.svg" },
+  { name: "Google", category: "Brand", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" },
+  { name: "Amazon AWS", category: "Brand", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" },
+
+  /* ---------------------- BUILD ---------------------- */
+  { name: "React", category: "Build", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+  { name: "Next.js", category: "Build", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+  { name: "JavaScript", category: "Build", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+  { name: "TypeScript", category: "Build", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+  { name: "HTML5", category: "Build", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+  { name: "CSS3", category: "Build", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+  { name: "Tailwind CSS", category: "Build", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+  { name: "Three.js", category: "Build", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg" },
+
+  { name: "Node.js", category: "Build", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+  { name: "Express", category: "Build", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+
+  { name: "WordPress", category: "Build", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" },
+  { name: "PHP", category: "Build", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+
+  { name: "MongoDB", category: "Build", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+  { name: "MySQL", category: "Build", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+  { name: "PostgreSQL", category: "Build", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+  { name: "Firebase", category: "Build", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" },
+
+  { name: "Git", category: "Build", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+  { name: "GitHub", category: "Build", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+  { name: "Docker", category: "Build", imageSrc: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
 ];
 
 const LogoTape: React.FC<LogoScrollerProps> = ({

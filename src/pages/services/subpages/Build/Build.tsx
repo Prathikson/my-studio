@@ -1,3 +1,4 @@
+import { SEO } from "../../../../components/Seo/SEO";
 import CTASection from "../../../home/sections/CTASection";
 import { TapeSection } from "../../../home/sections/Tape";
 import CTATape from "../../components/CTATape";
@@ -36,6 +37,16 @@ const Build = () => {
   ];
   return (
        <main className="flex flex-col overflow-x-hidden">
+          <SEO
+  title="Web Development, Next.js, App Development & Tech Build Services | XTOIC Studio"
+  description="XTOIC Studio builds high-performance websites and applications using modern technologies — including React, Next.js, TypeScript, WordPress, APIs, and custom full-stack solutions."
+  keywords="web development services, nextjs developer, react developer, website development, app development, full stack development, api development, wordpress development, frontend development"
+  canonical="https://www.xtoicstudio.com/services/build"
+  ogUrl="https://www.xtoicstudio.com/services/build"
+  siteName="XTOIC Studio"
+  type="website"
+/>
+
             <ServiceHeader
             leftTitle="Build"
             rightTitle="the Future"

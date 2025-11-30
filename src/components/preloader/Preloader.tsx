@@ -162,13 +162,15 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-gray-50 overflow-hidden">
+    <div className="fixed inset-0 z-50 bg-lightGray overflow-hidden">
+      
       <div className={`w-full h-full ${progress >= 99 ? 'slide-up' : ''}`}>
         <canvas
           ref={canvasRef}
           className="absolute inset-0 cursor-crosshair"
           style={{ background: 'transparent' }}
         />
+
         <div className="absolute bottom-8 right-8 text-9xl counter font-extrabold text-smoothBlack">
           {Math.round(progress)}
         </div>

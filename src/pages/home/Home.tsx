@@ -11,10 +11,28 @@ import { TapeSection } from "./sections/Tape";
 const Home = () => {
   return (
     <>
-    <SEO 
-        title="XTOIC STUDIO - Digital Experience Studio"
-        description="We create stunning websites and digital experiences"
-        ogUrl="https://my-studio-three.vercel.app/"
+      <SEO
+        title="XTOIC Studio – Creative Agency for Web, Branding & Digital Growth"
+        description="XTOIC Studio builds high-performing websites, stunning brand identities, and audience-first digital experiences designed to help brands grow organically and outperform competitors."
+        keywords="
+          web design agency, 
+          creative studio canada, 
+          branding services, 
+          website development, 
+          SEO agency, 
+          UI UX design, 
+          React developer, 
+          Next.js development, 
+          marketing agency, 
+          content strategy,
+          full-service studio,
+          digital branding,
+          custom website design
+        "
+        canonical="https://www.xtoicstudio.com/"
+        ogUrl="https://www.xtoicstudio.com/"
+        siteName="XTOIC Studio"
+        type="website"
       />
     <main className="flex flex-col overflow-x-hidden">
         <Hero/>

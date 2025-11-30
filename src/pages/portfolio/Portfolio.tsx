@@ -1,3 +1,4 @@
+import { SEO } from "../../components/Seo/SEO"
 import Header from "../contact/sections/Header"
 import CTASection from "../home/sections/CTASection"
 import ServicesSection from "../home/sections/ServiceSection"
@@ -16,6 +17,16 @@ const items = [
 const Portfolio = () => {
   return (
     <main className="flex flex-col overflow-x-hidden">
+      <SEO
+  title="Portfolio – Websites, Brands & Digital Experiences by XTOIC Studio"
+  description="View XTOIC Studio's portfolio of websites, branding projects, digital experiences, UI/UX designs, and creative builds crafted for businesses across industries."
+  keywords="portfolio, web design projects, branding portfolio, creative agency work, ui ux case studies, website showcase, custom design examples"
+  canonical="https://www.xtoicstudio.com/portfolio"
+  ogUrl="https://www.xtoicstudio.com/portfolio"
+  siteName="XTOIC Studio"
+  type="website"
+/>
+
       <div className="bg-lightGray pt-20 pb-16 max-w-full">
         <Header
             textSize="md"

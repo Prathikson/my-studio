@@ -8,6 +8,7 @@ import OurServices from "./sections/OurServices"
 import OurProjects from "./sections/OurProjects"
 import { TapeSection } from "../home/sections/Tape"
 import CTATape from "./components/CTATape"
+import { SEO } from "../../components/Seo/SEO"
 
 const items = [
   { type: 'text', content: 'Growth strategy' },
@@ -19,6 +20,16 @@ const items = [
 const Services = () => {
   return (
         <main className="flex flex-col overflow-x-hidden">
+            <SEO
+  title="Our Services – Web Development, Branding, UI/UX, SEO | XTOIC Studio"
+  description="Explore XTOIC Studio's full-service capabilities including website development, branding, UI/UX design, SEO, content strategy, social media, and performance-focused digital solutions."
+  keywords="web development services, branding services, ui ux design, seo agency services, creative studio services, nextjs developer, react developer, marketing strategy"
+  canonical="https://www.xtoicstudio.com/services"
+  ogUrl="https://www.xtoicstudio.com/services"
+  siteName="XTOIC Studio"
+  type="website"
+/>
+
             <ServiceHeader
             leftTitle="Our"
             rightTitle="Services"

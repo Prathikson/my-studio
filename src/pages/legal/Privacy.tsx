@@ -30,6 +30,7 @@ import {
 
 import  {privacyData, privacyVersionHistory} from '../../data/Privacy';
 import { Link } from 'react-router-dom';
+import { SEO } from '../../components/Seo/SEO';
 
 
 type IconName = 'FileText' | 'Shield' | 'Users' | 'AlertTriangle' | 'CheckCircle' | 'MapPin' | 'Calendar' | 'Clock' | 'Scale' | 'Eye' | 'Lock' | 'Zap' | 'Database' | 'Target' | 'Globe' | 'Baby' | 'Brain' | 'RefreshCw' | 'Mail';
@@ -202,6 +203,16 @@ const Privacy: React.FC = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
+      <SEO
+  title="Privacy Policy | XTOIC Studio"
+  description="Learn how XTOIC Studio collects, uses, protects, and manages your personal information in compliance with global privacy and data protection standards."
+  keywords="privacy policy, data protection, personal information policy, website privacy, user privacy, xtoic studio privacy"
+  canonical="https://www.xtoicstudio.com/privacy-policy"
+  ogUrl="https://www.xtoicstudio.com/privacy-policy"
+  siteName="XTOIC Studio"
+  type="website"
+/>
+
       {/* Floating Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <motion.div 

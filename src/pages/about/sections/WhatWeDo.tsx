@@ -32,14 +32,21 @@ const WhatWeDo: React.FC<WhatWeDoProps> = ({
     "Growing into new audiences, markets and channels - meeting your consumers at each stage of the journey",
     "And then innovating - in ways your competitors don't even dream of. We do content marketing work the industry copies 3 years from now",
     "We are your strategic growth partners for everything organic",
-    "Chasing consumers, not algorithms in an audience-first world"
+    "Chasing consumers, not algorithms in an audience-first world",
+    "Turning your website into a high-performing sales engine — not just a digital brochure",
+"Building scalable digital ecosystems that grow with your brand, not against it",
+"Transforming data into decisions — using analytics to guide every piece of content and design",
+"Creating experiences that convert attention into action and action into loyalty",
+"Engineering brand trust through consistency, credibility, and world-class execution",
+"Helping you escape the cycle of paid ads dependency through sustainable organic growth",
+"Crafting digital strategies tailored to your industry, your brand voice, and your long-term goals"
   ],
-  conclusionText = "And that's why Rise at Seven exists!",
+  conclusionText = "And that's why Xtoic Studio exists!",
   links = [
     { text: "Our Culture", href: "#culture" }
   ],
-  videoUrl = "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-  videoPoster = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
+  videoUrl = "/assets/about/About.mp4",
+  videoPoster = "/assets/about/About_Cover.png",
   backgroundColor = "bg-lightGray",
   textColor = "text-carbonBlack",
   labelColor = "text-carbonGray",

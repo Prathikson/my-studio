@@ -1,3 +1,4 @@
+import { SEO } from "../../../../components/Seo/SEO";
 import CTASection from "../../../home/sections/CTASection";
 import { TapeSection } from "../../../home/sections/Tape";
 import CTATape from "../../components/CTATape";
@@ -38,6 +39,16 @@ const Social = () => {
   ];
   return (
    <main className="flex flex-col overflow-x-hidden">
+          <SEO
+  title="Social Media Strategy, Content Creation & Growth Services | XTOIC Studio"
+  description="Grow your social presence with XTOIC Studio — offering content creation, social strategy, TikTok/Instagram management, paid & organic growth campaigns, and brand storytelling."
+  keywords="social media services, content creation, instagram marketing, tiktok marketing, social media management, social strategy, content agency, digital storytelling"
+  canonical="https://www.xtoicstudio.com/services/social"
+  ogUrl="https://www.xtoicstudio.com/services/social"
+  siteName="XTOIC Studio"
+  type="website"
+/>
+
             <ServiceHeader
             leftTitle="Social"
             rightTitle="Media"

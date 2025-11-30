@@ -31,6 +31,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { termsData, termsVersionHistory, type TermsSection } from '../../data/Terms';
+import { SEO } from '../../components/Seo/SEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -257,6 +258,16 @@ const Terms: React.FC = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
+      <SEO
+  title="Terms & Conditions | XTOIC Studio"
+  description="Read the official Terms & Conditions for using XTOIC Studio’s website, services, products, and digital experiences. Learn about usage, policies, restrictions, and legal protections."
+  keywords="terms and conditions, service terms, legal terms, user agreement, xtoic studio terms, website usage terms"
+  canonical="https://www.xtoicstudio.com/terms-&-conditions"
+  ogUrl="https://www.xtoicstudio.com/terms-&-conditions"
+  siteName="XTOIC Studio"
+  type="website"
+/>
+
       {/* Floating Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <motion.div 
