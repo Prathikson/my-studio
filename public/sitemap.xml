@@ -3,58 +3,58 @@
 
   <!-- MAIN PAGES -->
   <url>
-    <loc>https://yourdomain.com/</loc>
+    <loc>https://xtoicstudio.com/</loc>
   </url>
   <url>
-    <loc>https://yourdomain.com/services</loc>
+    <loc>https://xtoicstudio.com/services</loc>
   </url>
   <url>
-    <loc>https://yourdomain.com/about</loc>
+    <loc>https://xtoicstudio.com/about</loc>
   </url>
   <url>
-    <loc>https://yourdomain.com/contact</loc>
+    <loc>https://xtoicstudio.com/contact</loc>
   </url>
   <url>
-    <loc>https://yourdomain.com/portfolio</loc>
+    <loc>https://xtoicstudio.com/portfolio</loc>
   </url>
   <url>
-    <loc>https://yourdomain.com/terms-conditions</loc>
+    <loc>https://xtoicstudio.com/terms-conditions</loc>
   </url>
   <url>
-    <loc>https://yourdomain.com/privacy-policy</loc>
+    <loc>https://xtoicstudio.com/privacy-policy</loc>
   </url>
 
   <!-- SERVICE CATEGORY PAGES -->
   <url>
-    <loc>https://yourdomain.com/services/brand</loc>
+    <loc>https://xtoicstudio.com/services/brand</loc>
   </url>
   <url>
-    <loc>https://yourdomain.com/services/build</loc>
+    <loc>https://xtoicstudio.com/services/build</loc>
   </url>
   <url>
-    <loc>https://yourdomain.com/services/design</loc>
+    <loc>https://xtoicstudio.com/services/design</loc>
   </url>
   <url>
-    <loc>https://yourdomain.com/services/social</loc>
+    <loc>https://xtoicstudio.com/services/social</loc>
   </url>
 
   <!-- SERVICE SUB-PAGES (DYNAMIC SLUGS) -->
   <url>
-    <loc>https://yourdomain.com/services/brand/:slug</loc>
+    <loc>https://xtoicstudio.com/services/brand/:slug</loc>
   </url>
   <url>
-    <loc>https://yourdomain.com/services/build/:slug</loc>
+    <loc>https://xtoicstudio.com/services/build/:slug</loc>
   </url>
   <url>
-    <loc>https://yourdomain.com/services/design/:slug</loc>
+    <loc>https://xtoicstudio.com/services/design/:slug</loc>
   </url>
   <url>
-    <loc>https://yourdomain.com/services/social/:slug</loc>
+    <loc>https://xtoicstudio.com/services/social/:slug</loc>
   </url>
 
   <!-- PORTFOLIO DETAIL PAGES -->
   <url>
-    <loc>https://yourdomain.com/portfolio/:slug</loc>
+    <loc>https://xtoicstudio.com/portfolio/:slug</loc>
   </url>
 
 </urlset>

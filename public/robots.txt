@@ -4,4 +4,4 @@ Allow: /
 # Block admin or internal pages (if any)
 # Disallow: /admin/
 
-Sitemap: https://xtoic.com/sitemap.xml
+Sitemap: https://xtoicstudio.com/sitemap.xml
