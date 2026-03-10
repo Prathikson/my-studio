@@ -79,11 +79,11 @@ const FloatingNav: React.FC<FloatingNavProps> = ({
     setIsMenuOpen(false);
   };
 
-    const handleCtaClick = () => {
+  const handleCtaClick = () => {
     if (onCtaClick) {
       onCtaClick();
     } else {
-      navigate("/contact");
+      window.open('https://calendly.com/prathiksonj/30min', '_blank');
     }
     setIsMenuOpen(false);
   };

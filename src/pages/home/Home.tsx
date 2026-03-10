@@ -31,7 +31,7 @@ const Home = () => {
         "
         canonical="https://www.xtoicstudio.com/"
         ogUrl="https://www.xtoicstudio.com/"
-        siteName="XTOIC Studio"
+        siteName="XTOIC STUDIO"
         type="website"
       />
     <main className="flex flex-col overflow-x-hidden">
