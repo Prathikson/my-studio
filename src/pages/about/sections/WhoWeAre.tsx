@@ -20,11 +20,11 @@ interface WhoWeAreProps {
 
 const WhoWeAre: React.FC<WhoWeAreProps> = ({
   sectionLabel = "Who Are We",
-  mainHeading = "A global team of organic media planners behind some of the worlds biggest category leaders",
+  mainHeading = "A creative powerhouse crafting digital excellence for bold brands and ambitious startups",
   description = "",
   links = [
-    { text: "Our Culture", href: "#culture" },
-    { text: "Our Services", href: "#services" }
+    { text: "Our Works", href: "/portfolio" },
+    { text: "Our Services", href: "/services" }
   ],
   backgroundColor = "bg-lightGray",
   textColor = "text-carbonBlack",

@@ -81,12 +81,12 @@ const ProjectCard: React.FC<{ project: Project; idx: number }> = ({ project, idx
       className="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-lightGray/10 backdrop-blur-2xl p-6   transition-all duration-300"
       style={{ ...inwardCornerMask }}
     >
-      <div ref={imgRef} className="relative aspect-[4/3] overflow-hidden rounded-2xl mb-6">
-        <img 
-          src={project.image} 
-          alt={project.title} 
-          className="h-full w-full object-fill transition-transform duration-700 group-hover:scale-[1.05]" 
-        />
+<div ref={imgRef} className="relative min-h-[480px] max-h-[480px] overflow-hidden rounded-2xl mb-6 bg-slate-100">
+  <img 
+    src={project.image} 
+    alt={project.title} 
+    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05]" 
+  />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         
         {/* Project Badge */}

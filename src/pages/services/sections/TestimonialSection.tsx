@@ -18,90 +18,104 @@ interface TestimonialSectionProps {
 }
 
 const defaultTestimonials: TestimonialProps[] = [
-  {
-    id: 1,
-    quote:
-      "Rise at Seven's creative approach to SEO and digital PR is what has attracted us to them and they've already proved the value they bring to us in fuelling digital growth for the PLT brand internationally.",
-    author: {
-      name: 'Matt Holmes',
-      title: 'Head of Digital PLT',
-      avatar:
-        'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
-    },
-    image:
-      'https://images.unsplash.com/photo-1594736797933-d0a56ba98d45?w=600&h=400&fit=crop',
-    logo: '🎯',
+{
+  id: 1,
+  quote:
+    "Xtoic Studio completely transformed our brand identity. Their creative vision and strategic approach delivered results that exceeded all our expectations.",
+  author: {
+    name: 'Sarah Mitchell',
+    title: 'CEO at TechVision Inc.',
+    avatar:
+      'https://images.unsplash.com/photo-1494790108755-2616b332c3db?w=100&h=100&fit=crop&crop=face',
   },
-  {
-    id: 2,
-    quote:
-      'Their strategic approach to digital marketing has transformed our brand presence and delivered exceptional results across all our campaigns.',
-    author: {
-      name: 'Sarah Johnson',
-      title: 'Marketing Director',
-      avatar:
-        'https://images.unsplash.com/photo-1494790108755-2616b332c3db?w=100&h=100&fit=crop&crop=face',
-    },
-    image:
-      'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop',
-    logo: 'AD',
+  image:
+    'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
+  logo: '🚀',
+},
+{
+  id: 2,
+  quote:
+    'Working with Xtoic Studio was a game-changer for our startup. They transformed our rough ideas into a stunning, cohesive brand that truly resonates with our audience.',
+  author: {
+    name: 'Marcus Chen',
+    title: 'Founder at GrowthLab',
+    avatar:
+      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
   },
-  {
-    id: 3,
-    quote:
-      'Working with this team has been a game-changer for our digital growth strategy and brand positioning in the market.',
-    author: {
-      name: 'David Chen',
-      title: 'CEO GameTech',
-      avatar:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face',
-    },
-    image:
-      'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=600&h=400&fit=crop',
-    logo: 'GAME',
+  image:
+    'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=400&fit=crop',
+  logo: '🫳',
+},
+{
+  id: 3,
+  quote:
+    'The website Xtoic Studio designed for us is not just beautiful—it converts. Our traffic and engagement metrics have doubled since launch.',
+  author: {
+    name: 'Jessica Torres',
+    title: 'Marketing Director at Luxe Living',
+    avatar:
+      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face',
   },
-  {
-    id: 4,
-    quote:
-      'The restructuring of our digital presence has led to unprecedented growth and market expansion opportunities.',
-    author: {
-      name: 'Emma Wilson',
-      title: 'Operations Manager',
-      avatar:
-        'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face',
-    },
-    image:
-      'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop',
-    logo: 'REST',
+  image:
+    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop',
+  logo: '✨',
+},
+{
+  id: 4,
+  quote:
+    "Xtoic Studio brought our creative vision to life with exceptional design and strategic thinking. They're more than a vendor—they're true partners in our success.",
+  author: {
+    name: 'David Park',
+    title: 'Creative Director at Momentum Agency',
+    avatar:
+      'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face',
   },
-  {
-    id: 5,
-    quote:
-      'Their innovative approach to sustainable beauty marketing has revolutionized how we connect with our environmentally conscious customers.',
-    author: {
-      name: 'Lisa Rodriguez',
-      title: 'Brand Director',
-      avatar:
-        'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&h=100&fit=crop&crop=face',
-    },
-    image:
-      'https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&h=400&fit=crop',
-    logo: 'BEAUTY',
+  image:
+    'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop',
+  logo: '🧙‍♂️',
+},
+{
+  id: 5,
+  quote:
+    "Their social media strategy and content creation elevated our brand presence dramatically. Engagement is up 300% and we're seeing real business impact every single day.",
+  author: {
+    name: 'Amanda Reed',
+    title: 'Head of Brand at FreshFit',
+    avatar:
+      'https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&h=100&fit=crop&crop=face',
   },
-  {
-    id: 6,
-    quote:
-      'Outstanding results and exceptional service delivery that exceeded all our expectations and business objectives.',
-    author: {
-      name: 'Michael Brown',
-      title: 'Growth Lead',
-      avatar:
-        'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face',
-    },
-    image:
-      'https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&h=400&fit=crop',
-    logo: '🏆',
+  image:
+    'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop',
+  logo: '🌟',
+},
+{
+  id: 6,
+  quote:
+    "Xtoic Studio doesn't just design—they solve problems. Our new brand identity perfectly captures who we are and where we're heading as a company.",
+  author: {
+    name: 'Ryan Thompson',
+    title: 'Co-Founder at BuildRight',
+    avatar:
+      'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face',
   },
+  image:
+    'https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?w=600&h=400&fit=crop',
+  logo: '😉',
+},
+{
+  id: 7,
+  quote:
+    'From concept to execution, Xtoic Studio exceeded every expectation. Their video production work is cinematic quality and drives real engagement with our target audience.',
+  author: {
+    name: 'Chris Anderson',
+    title: 'VP Marketing at Velocity Sports',
+    avatar:
+      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=face',
+  },
+  image:
+    'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&h=400&fit=crop',
+  logo: '😎',
+},
 ];
 
 const TestimonialSection: React.FC<TestimonialSectionProps> = ({

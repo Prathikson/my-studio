@@ -267,7 +267,7 @@ const ProjectCard: React.FC<{ project: Project; idx: number }> = ({ project, idx
         <img
           src={project.image}
           alt={project.title}
-          className="h-full w-full object-fill transition-all duration-700"
+          className="h-full w-full object-cover transition-all duration-700"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
       </div>
@@ -457,7 +457,7 @@ const OurProjects: React.FC = () => {
         <div className="relative z-10">
           {viewMode === 'grid' ? (
             <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}

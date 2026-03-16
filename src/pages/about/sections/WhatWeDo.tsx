@@ -25,23 +25,23 @@ interface WhatWeDoProps {
 
 const WhatWeDo: React.FC<WhatWeDoProps> = ({
   sectionLabel = "What we do",
-  mainHeading = "We are a team of organic media planners",
+  mainHeading = "We craft digital experiences that captivate and convert",
   description = "",
   bulletPoints = [
-    "Defending your position in the market - through industry leading onsite technical and content experience",
-    "Growing into new audiences, markets and channels - meeting your consumers at each stage of the journey",
-    "And then innovating - in ways your competitors don't even dream of. We do content marketing work the industry copies 3 years from now",
-    "We are your strategic growth partners for everything organic",
-    "Chasing consumers, not algorithms in an audience-first world",
-    "Turning your website into a high-performing sales engine — not just a digital brochure",
-"Building scalable digital ecosystems that grow with your brand, not against it",
-"Transforming data into decisions — using analytics to guide every piece of content and design",
-"Creating experiences that convert attention into action and action into loyalty",
-"Engineering brand trust through consistency, credibility, and world-class execution",
-"Helping you escape the cycle of paid ads dependency through sustainable organic growth",
-"Crafting digital strategies tailored to your industry, your brand voice, and your long-term goals"
+    "Building brands that don't just exist online — they dominate their space with bold, memorable presence",
+    "Designing user experiences so seamless, your audience won't just visit — they'll stay, explore, and return",
+    "Creating content that doesn't chase trends — it sets them, sparking conversations your competitors wish they started",
+    "Engineering websites that aren't brochures — they're powerful sales engines built to perform and scale",
+    "Crafting social media strategies that cut through the noise and turn followers into loyal brand advocates",
+    "Developing visual identities that tell your story at first glance — no explanation needed",
+    "Transforming complex ideas into simple, stunning designs that connect emotionally and drive action",
+    "Delivering campaigns that blend creativity with strategy — where art meets ROI",
+    "Building digital ecosystems that grow with you — flexible, future-proof, and always ahead of the curve",
+    "Turning data into creative fuel — using insights to inform every pixel, word, and interaction",
+    "Partnering with you as your extended creative team — invested in your success, not just your project",
+    "Innovating fearlessly — exploring new platforms, formats, and ideas while others play it safe"
   ],
-  conclusionText = "And that's why Xtoic Studio exists!",
+  conclusionText = "That's why Xtoic Studio exists — to turn your vision into reality.",
   links = [
     { text: "Our Culture", href: "#culture" }
   ],
