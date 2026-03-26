@@ -111,7 +111,7 @@ export const PROJECTS: Project[] = [
       description: "We created a clean, modern aesthetic that reflects the cafe's warm atmosphere and artisan approach. The design emphasizes beautiful photography, easy navigation, and a seamless user experience.",
       cta: {
         text: "View Live Site",
-        link: "https://luminarycafe.com"
+        link: "https://cafe.xtoicstudio.com"
       }
     },
     {
@@ -119,8 +119,8 @@ export const PROJECTS: Project[] = [
       title: "Menu & Online Ordering",
       description: "An intuitive menu system with beautiful food photography and integrated online ordering functionality. Customers can browse the full menu, view daily specials, and place orders with just a few clicks.",
       cta: {
-        text: "Explore Features",
-        link: "/features"
+        text: "Explore Site",
+        link: "https://cafe.xtoicstudio.com"
       }
     },
     {
@@ -131,10 +131,12 @@ export const PROJECTS: Project[] = [
   ],
   images: [
     "/assets/projects/proj2.png",
-    "/assets/projects/proj2-dashboard.png",
-    "/assets/projects/proj2-charts.png",
-    "/assets/projects/proj2-mobile.png",
-    "/assets/projects/proj2-analytics.png"
+    "/assets/projects/cafe/hero.png",
+    "/assets/projects/cafe/menu.png",
+    "/assets/projects/cafe/stacking.png",
+    "/assets/projects/cafe/responsive.png",
+    "/assets/projects/cafe/testimonial.png",
+    "/assets/projects/cafe/journey.png",
   ],
   stats: [
     { id: 1, label: "Page Load Speed", value: "1.2s", description: "Lightning fast" },
@@ -331,7 +333,7 @@ export const PROJECTS: Project[] = [
       description: "We built a fully optimized website targeting local search terms and transportation-related keywords. The site ranks on page one for key search queries, driving consistent organic traffic.",
       cta: {
         text: "View Live Site",
-        link: "https://mhrideshare.com"
+        link: "https://mhride.ca"
       }
     },
     {
@@ -340,7 +342,7 @@ export const PROJECTS: Project[] = [
       description: "Through strategic local SEO, Google My Business optimization, and local citation building, we established MH Rideshare as the go-to transportation service in Medicine Hat and surrounding areas.",
       cta: {
         text: "SEO Strategy",
-        link: "/seo-strategy"
+        link: "/services/build/seo/"
       }
     },
     {
@@ -351,10 +353,12 @@ export const PROJECTS: Project[] = [
   ],
   images: [
     "/assets/projects/proj6.png",
-    "/assets/projects/proj6-homepage.png",
-    "/assets/projects/proj6-booking.png",
-    "/assets/projects/proj6-mobile.png",
-    "/assets/projects/proj6-analytics.png"
+    "/assets/projects/ride/hero.png",
+    "/assets/projects/ride/about.png",
+    "/assets/projects/ride/responsive.png",
+    "/assets/projects/ride/download.png",
+    "/assets/projects/ride/steps.png",
+    "/assets/projects/ride/testimonial.png",
   ],
   stats: [
     { id: 1, label: "Organic Traffic", value: "320%", description: "Increase in 6 months" },
