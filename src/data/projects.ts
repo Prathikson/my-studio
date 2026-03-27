@@ -265,7 +265,7 @@ export const PROJECTS: Project[] = [
   id: 5,
   title: "Notez AI",
   slug: "notez-ai-meeting-notes",
-  image: "/assets/projects/proj5.png",
+  image: "/assets/projects/notez/hero.png",
   badge: "AI Note-Taking",
   tag: "Design",
   description: "AI-powered note-taking app that automatically transcribes and summarizes your meeting recordings and class lectures into organized, searchable notes.",
@@ -297,11 +297,7 @@ export const PROJECTS: Project[] = [
     }
   ],
   images: [
-    "/assets/projects/proj5.png",
-    "/assets/projects/proj5-dashboard.png",
-    "/assets/projects/proj5-transcript.png",
-    "/assets/projects/proj5-summary.png",
-    "/assets/projects/proj5-mobile.png"
+    "/assets/projects/notez/hero.png",
   ],
   stats: [
     { id: 1, label: "Transcription Accuracy", value: "97%", description: "Word recognition rate" },
@@ -373,5 +369,254 @@ export const PROJECTS: Project[] = [
     buttonLink: "/contact"
   }
 },
+  {
+    id: 7,
+    title: "GTX Logistics",
+    slug: "gtx-logistics-platform",
+    image: "/assets/projects/gtx/hero.png",
+    badge: "Logistics & Supply Chain",
+    tag: "Build",
+    description: "A high-performance web platform for GTX, streamlining freight management and global transport logistics with a focus on reliability and real-time tracking.",
+    categories: ["Web Design", "Logistics", "Freight", "Enterprise"],
+    date: "2025-09-12",
+    sections: [
+      {
+        id: 1,
+        title: "Operational Efficiency",
+        description: "We designed a clean, professional interface that prioritizes complex data visualization, making it easy for clients to track shipments and manage supply chain operations.",
+        cta: {
+          text: "View Live Site",
+          link: "https://gtx.xtoicstudio.com/"
+        }
+      },
+      {
+        id: 2,
+        title: "Scalable Infrastructure",
+        description: "Built with speed and scalability in mind, the platform ensures rapid load times even with heavy data processing, supporting global logistics demands.",
+        cta: {
+          text: "Our Tech Stack",
+          link: "/services/build/development/"
+        }
+      }
+    ],
+    images: [
+      "/assets/projects/gtx/hero.png",
+      "/assets/projects/gtx/about.png",
+      "/assets/projects/gtx/services.png",
+      "/assets/projects/gtx/reviews.png",
+      "/assets/projects/gtx/video.png",
+      "/assets/projects/gtx/faq.png",
+      "/assets/projects/gtx/contact.png"
+    ],
+    stats: [
+      { id: 1, label: "User Retention", value: "65%", description: "Increase in platform usage" },
+      { id: 2, label: "Load Time", value: "1.1s", description: "Global average" },
+      { id: 3, label: "Security", value: "100%", description: "Data encryption" }
+    ],
+    finalCTA: {
+      title: "Streamline Your Logistics?",
+      description: "We build robust digital solutions for the transport industry that enhance operational efficiency and user trust.",
+      buttonText: "Start Your Project",
+      buttonLink: "/contact"
+    }
+  },
+  {
+    id: 8,
+    title: "Rasoi Indian Kitchen",
+    slug: "rasoi-restaurant-website",
+    image: "/assets/projects/rasoi/hero.png",
+    badge: "UI/UX & Hospitality",
+    tag: "Branding",
+    description: "A mouth-watering digital experience for Rasoi, showcasing authentic Indian cuisine through immersive visual storytelling and seamless online reservations.",
+    categories: ["Hospitality", "Web Design", "Local Business", "UI/UX"],
+    date: "2025-10-05",
+    sections: [
+      {
+        id: 1,
+        title: "Visual Storytelling",
+        description: "Focusing on high-quality food photography and elegant typography, we created a digital menu that captures the essence of Rasoi’s authentic flavors.",
+        cta: {
+          text: "View Live Site",
+          link: "https://rasoi.xtoicstudio.com/"
+        }
+      },
+      {
+        id: 2,
+        title: "Seamless Reservations",
+        description: "Integrated a friction-less booking system that allows customers to reserve tables in seconds, directly increasing dine-in conversions.",
+        cta: {
+          text: "UI/UX Design",
+          link: "/services/design/ui-ux/"
+        }
+      }
+    ],
+    images: [
+      "/assets/projects/rasoi/hero.png",
+      "/assets/projects/rasoi/space.png",
+      "/assets/projects/rasoi/wines.png",
+      "/assets/projects/rasoi/menu.png",
+      "/assets/projects/rasoi/contact.png",
+      "/assets/projects/rasoi/dishes.png",
+    ],
+    stats: [
+      { id: 1, label: "Online Bookings", value: "+120%", description: "Increase in first month" },
+      { id: 2, label: "Mobile Traffic", value: "78%", description: "Highly responsive design" },
+      { id: 3, label: "Menu Views", value: "5k+", description: "Monthly unique visitors" }
+    ],
+    finalCTA: {
+      title: "Grow Your Restaurant?",
+      description: "Transform your culinary brand with a website that looks as good as your food tastes.",
+      buttonText: "Book a Discovery Call",
+      buttonLink: "/contact"
+    }
+  },
+  {
+    id: 9,
+    title: "JoyBliss Wellness",
+    slug: "joybliss-wellness-retreat",
+    image: "/assets/projects/tattoo/preloader.png",
+    badge: "E-commerce & Lifestyle",
+    tag: "Social",
+    description: "A serene and calming web experience for JoyBliss, designed to promote holistic wellness programs and facilitate easy booking for retreats and classes.",
+    categories: ["Wellness", "E-commerce", "Health", "Web Design"],
+    date: "2025-11-20",
+    sections: [
+      {
+        id: 1,
+        title: "Calming User Experience",
+        description: "Using a soft color palette and minimalist layout, the design reflects the tranquility of the JoyBliss brand, reducing user friction and stress.",
+        cta: {
+          text: "View Live Site",
+          link: "https://joybliss.xtoicstudio.com/"
+        }
+      },
+      {
+        id: 2,
+        title: "Class Scheduling",
+        description: "A custom-built scheduling system allows users to browse wellness programs and book sessions with real-time availability.",
+        cta: {
+          text: "Custom Solutions",
+          link: "/services/build/development/"
+        }
+      }
+    ],
+    images: [
+      "/assets/projects/tattoo/preloader.png",
+      "/assets/projects/tattoo/hero.png",
+      "/assets/projects/tattoo/galllery.png",
+      "/assets/projects/tattoo/footer.png",
+      "/assets/projects/tattoo/section2.png",
+    ],
+    stats: [
+      { id: 1, label: "Conversion Rate", value: "4.8%", description: "On booking pages" },
+      { id: 2, label: "Session Duration", value: "3:45", description: "Average time on site" },
+      { id: 3, label: "Growth", value: "45%", description: "Increase in newsletter subs" }
+    ],
+    finalCTA: {
+      title: "Elevate Your Wellness Brand?",
+      description: "We create digital environments that resonate with your audience and turn visitors into loyal members.",
+      buttonText: "Let's Build Together",
+      buttonLink: "/contact"
+    }
+  },
+  {
+    id: 10,
+    title: "Nexus Tech",
+    slug: "nexus-saas-platform",
+    image: "/assets/projects/nexus/hero.png",
+    badge: "SaaS & Innovation",
+    tag: "Social",
+    description: "A forward-thinking website for Nexus, a tech-driven platform focusing on innovative software solutions and scalable digital transformation.",
+    categories: ["SaaS", "Tech", "B2B", "Web Development"],
+    date: "2025-12-15",
+    sections: [
+      {
+        id: 1,
+        title: "Tech-Forward Design",
+        description: "A modern, dark-themed interface utilizing glassmorphism and high-tech visuals to position Nexus as a leader in the SaaS space.",
+        cta: {
+          text: "View Live Site",
+          link: "https://nexus.xtoicstudio.com/"
+        }
+      },
+      {
+        id: 2,
+        title: "Feature Showcase",
+        description: "Interactive sections highlight the software’s core capabilities, ensuring potential B2B clients understand the value proposition immediately.",
+        cta: {
+          text: "View Features",
+          link: "https://nexus.xtoicstudio.com/tools"
+        }
+      }
+    ],
+    images: [
+      "/assets/projects/nexus/hero.png",
+      "/assets/projects/nexus/pricing.png",
+      "/assets/projects/nexus/weoffer.png",
+      "/assets/projects/nexus/tool1.png",
+      "/assets/projects/nexus/tool2.png",
+      "/assets/projects/nexus/booking.png",
+    ],
+    stats: [
+      { id: 1, label: "Page Speed", value: "98/100", description: "Lighthouse score" },
+      { id: 2, label: "Lead Gen", value: "210%", description: "Increase in demo requests" },
+      { id: 3, label: "Interactions", value: "15k+", description: "Monthly micro-interactions" }
+    ],
+    finalCTA: {
+      title: "Scale Your SaaS?",
+      description: "From concept to conversion, we build tech-focused websites that communicate innovation and drive growth.",
+      buttonText: "Launch Your SaaS",
+      buttonLink: "/contact"
+    }
+  },
+  {
+    id: 11,
+    title: "Luxe Spa",
+    slug: "luxe-spa-services",
+    image: "/assets/projects/spa/herokr.png",
+    badge: "Professional Services",
+    tag: "Branding",
+    description: "A premium, aesthetic website for a luxury spa, focusing on high-end service presentation and an effortless appointment booking flow.",
+    categories: ["Beauty", "Luxury", "Local Business", "Booking"],
+    date: "2026-01-10",
+    sections: [
+      {
+        id: 1,
+        title: "Aesthetic Excellence",
+        description: "The UI was crafted to mirror the luxury experience of the spa itself, using elegant layouts and a soothing, high-end visual language.",
+        cta: {
+          text: "View Live Site",
+          link: "https://spa-website-eight.vercel.app/"
+        }
+      },
+      {
+        id: 2,
+        title: "Service Catalog",
+        description: "Detailed service pages categorized by treatment types, allowing users to explore benefits and book specific therapists easily.",
+        cta: {
+          text: "Luxury SEO Strategy",
+          link: "/services/build/seo/"
+        }
+      }
+    ],
+    images: [
+      "/assets/projects/spa/herokr.png",
+      "/assets/projects/spa/hero.png",
+      "/assets/projects/spa/reviews.png",
+      "/assets/projects/spa/services.png",
+      "/assets/projects/spa/story.png"
+    ],
+    stats: [
+      { id: 1, label: "Engagement", value: "340%", description: "Increase in service page views" },
+      { id: 2, label: "Booking Speed", value: "45s", description: "Average checkout time" },
+      { id: 3, label: "Direct Traffic", value: "55%", description: "From brand searches" }
+    ],
+    finalCTA: {
+      title: "Elevate Your Service Business?",
+      description: "We help premium service providers dominate their local markets with high-converting, beautiful websites.",
+      buttonText: "Get Started",
+      buttonLink: "/contact"
+    }
+  }
 
 ];
