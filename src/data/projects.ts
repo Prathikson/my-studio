@@ -98,7 +98,7 @@ export const PROJECTS: Project[] = [
   id: 2,
   title: "Luminary Cafe",
   slug: "luminary-cafe-website",
-  image: "/assets/projects/proj2.png",
+  image: "/assets/projects/hero.png",
   badge: "Web Design & Development",
   tag: "Build",
   description: "A modern, minimal website for Luminary Cafe in Edmonton, Alberta. Clean design meets functionality to showcase their artisan coffee and create an inviting online presence.",
@@ -130,8 +130,9 @@ export const PROJECTS: Project[] = [
     }
   ],
   images: [
-    "/assets/projects/proj2.png",
-    "/assets/projects/cafe/hero.png",
+    "/assets/projects/hero.png",
+    "/assets/projects/cafe/proj2.png",
+    "/assets/projects/cafe/mainb.png",
     "/assets/projects/cafe/menu.png",
     "/assets/projects/cafe/stacking.png",
     "/assets/projects/cafe/responsive.png",
@@ -316,7 +317,7 @@ export const PROJECTS: Project[] = [
   id: 6,
   title: "MH Rideshare",
   slug: "mh-rideshare-website",
-  image: "/assets/projects/proj6.png",
+  image: "/assets/projects/hero.png",
   badge: "SEO & Web Design",
   tag: "Branding",
   description: "A modern website for MH Rideshare in Medicine Hat, Alberta, designed to build traffic and digital presence with comprehensive SEO optimization services.",
@@ -348,8 +349,9 @@ export const PROJECTS: Project[] = [
     }
   ],
   images: [
-    "/assets/projects/proj6.png",
-    "/assets/projects/ride/hero.png",
+    "/assets/projects/hero.png",
+    "/assets/projects/ride/main.png",
+    "/assets/projects/ride/proj6.png",
     "/assets/projects/ride/about.png",
     "/assets/projects/ride/responsive.png",
     "/assets/projects/ride/download.png",
@@ -371,8 +373,8 @@ export const PROJECTS: Project[] = [
 },
   {
     id: 7,
-    title: "GTX Logistics",
-    slug: "gtx-logistics-platform",
+    title: "GTX Mods",
+    slug: "gtx-mods-platform",
     image: "/assets/projects/gtx/hero.png",
     badge: "Logistics & Supply Chain",
     tag: "Build",
@@ -401,6 +403,7 @@ export const PROJECTS: Project[] = [
     ],
     images: [
       "/assets/projects/gtx/hero.png",
+      "/assets/projects/gtx/main.png",
       "/assets/projects/gtx/about.png",
       "/assets/projects/gtx/services.png",
       "/assets/projects/gtx/reviews.png",
@@ -452,6 +455,7 @@ export const PROJECTS: Project[] = [
     ],
     images: [
       "/assets/projects/rasoi/hero.png",
+      "/assets/projects/rasoi/main.png",
       "/assets/projects/rasoi/space.png",
       "/assets/projects/rasoi/wines.png",
       "/assets/projects/rasoi/menu.png",
@@ -573,7 +577,7 @@ export const PROJECTS: Project[] = [
     id: 11,
     title: "Luxe Spa",
     slug: "luxe-spa-services",
-    image: "/assets/projects/spa/herokr.png",
+    image: "/assets/projects/spa/hero.png",
     badge: "Professional Services",
     tag: "Branding",
     description: "A premium, aesthetic website for a luxury spa, focusing on high-end service presentation and an effortless appointment booking flow.",
@@ -600,8 +604,9 @@ export const PROJECTS: Project[] = [
       }
     ],
     images: [
-      "/assets/projects/spa/herokr.png",
       "/assets/projects/spa/hero.png",
+      "/assets/projects/spa/herokr.png",
+      "/assets/projects/spa/main.png",
       "/assets/projects/spa/reviews.png",
       "/assets/projects/spa/services.png",
       "/assets/projects/spa/story.png"
