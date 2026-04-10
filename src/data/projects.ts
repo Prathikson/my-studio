@@ -98,7 +98,7 @@ export const PROJECTS: Project[] = [
   id: 2,
   title: "Luminary Cafe",
   slug: "luminary-cafe-website",
-  image: "/assets/projects/hero.png",
+  image: "/assets/projects/cafe/hero.png",
   badge: "Web Design & Development",
   tag: "Build",
   description: "A modern, minimal website for Luminary Cafe in Edmonton, Alberta. Clean design meets functionality to showcase their artisan coffee and create an inviting online presence.",
@@ -130,7 +130,7 @@ export const PROJECTS: Project[] = [
     }
   ],
   images: [
-    "/assets/projects/hero.png",
+    "/assets/projects/cafe/hero.png",
     "/assets/projects/cafe/proj2.png",
     "/assets/projects/cafe/mainb.png",
     "/assets/projects/cafe/menu.png",
