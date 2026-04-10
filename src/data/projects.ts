@@ -317,7 +317,7 @@ export const PROJECTS: Project[] = [
   id: 6,
   title: "MH Rideshare",
   slug: "mh-rideshare-website",
-  image: "/assets/projects/hero.png",
+  image: "/assets/projects/ride/hero.png",
   badge: "SEO & Web Design",
   tag: "Branding",
   description: "A modern website for MH Rideshare in Medicine Hat, Alberta, designed to build traffic and digital presence with comprehensive SEO optimization services.",
@@ -349,7 +349,7 @@ export const PROJECTS: Project[] = [
     }
   ],
   images: [
-    "/assets/projects/hero.png",
+    "/assets/projects/ride/hero.png",
     "/assets/projects/ride/main.png",
     "/assets/projects/ride/proj6.png",
     "/assets/projects/ride/about.png",
