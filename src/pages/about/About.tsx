@@ -7,6 +7,7 @@ import LogoTape from "../services/components/LogoTape"
 import TestimonialSection from "../services/sections/TestimonialSection"
 import AboutXtoic from "./components/AboutXtoic"
 import OurHero from "./components/OurHero"
+import ExoticTeamHero from "./sections/ExoticTeamHero"
 import WhatWeDo from "./sections/WhatWeDo"
 import WhoWeAre from "./sections/WhoWeAre"
 
@@ -36,6 +37,7 @@ const About = () => {
             <LogoTape/>
             <WhatWeDo/>
             <AboutXtoic/>
+            <ExoticTeamHero/>
             <TestimonialSection/>
             <CTATape items={items} speed={10}/>
             <ServicesSection/>
