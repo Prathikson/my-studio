@@ -295,25 +295,6 @@ const OurHero: React.FC<OurHeroProps> = ({
         })}
       </AnimatePresence>
 
-      {/* Custom Cursor (when mouse spawn is enabled) */}
-      {enableMouseSpawn && (
-        <motion.div
-          className="fixed pointer-events-none z-50 w-4 h-4 bg-gray-800 rounded-full mix-blend-difference"
-          animate={{
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 1,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          style={{
-            left: 0,
-            top: 0,
-            transform: 'translate(-50%, -50%)'
-          }}
-        />
-      )}
       {/* Main Content Container */}
       <div className={`w-full max-w-6xl mx-auto text-center ${currentSize.spacing}`}>
 
