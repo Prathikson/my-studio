@@ -7,6 +7,8 @@ interface SEOProps {
   canonical?: string;
   ogImage?: string;
   ogUrl?: string;
+  siteName?: string; // Added missing prop
+  type?: string;     // Added missing prop
 }
 
 export const SEO = ({ 
@@ -16,36 +18,37 @@ export const SEO = ({
   canonical,
   ogImage,
   ogUrl,
+  siteName = "XTOIC STUDIO", // Default value
+  type = "website",           // Default value
 }: SEOProps) => {
-  const fullTitle = `${title} | Xtoic Studio`;
+  const fullTitle = `${title} | XTOIC STUDIO`;
 
-  // THIS IS THE KEY FOR COMPANY RECOGNITION
   const companySchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Xtoic Studio",
+    "name": "XTOIC STUDIO",
     "url": "https://xtoicstudio.com",
-    "logo": "https://xtoicstudio.com/logo.png", // Replace with your actual logo URL
+    "logo": "https://xtoicstudio.com/logo.png", 
     "sameAs": [
       "https://www.instagram.com/xtoicstudio",
-      "https://www.linkedin.com/company/xtoicstudio",
-      "https://twitter.com/xtoicstudio"
+      "https://www.linkedin.com/company/xtoicstudio"
     ],
-    "description": "Xtoic Studio is a creative studio specializing in brand, design, and digital building."
+    "description": description
   };
 
   return (
     <>
       <Title>{fullTitle}</Title>
       <Meta name="description" content={description} />
-      {keywords && <Meta name="keywords" content={keywords} />}
+      {/* Cleanup keywords: remove newlines and extra spaces */}
+      {keywords && <Meta name="keywords" content={keywords.replace(/\s+/g, ' ').trim()} />}
       {canonical && <Link rel="canonical" href={canonical} />}
       
       {/* OpenGraph (Social Media) */}
       <Meta property="og:title" content={fullTitle} />
       <Meta property="og:description" content={description} />
-      <Meta property="og:site_name" content="Xtoic Studio" />
-      <Meta property="og:type" content="website" />
+      <Meta property="og:site_name" content={siteName} />
+      <Meta property="og:type" content={type} />
       {ogImage && <Meta property="og:image" content={ogImage} />}
       <Meta property="og:url" content={ogUrl || "https://xtoicstudio.com"} />
       
