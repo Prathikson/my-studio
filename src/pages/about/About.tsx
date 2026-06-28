@@ -23,8 +23,8 @@ const About = () => {
   return (
             <main className="flex flex-col overflow-x-hidden">
               <SEO
-  title="About XTOIC Studio – Strategy. Creativity. Engineering. Growth."
-  description="Learn about XTOIC Studio — a forward-thinking creative & development studio focused on building scalable digital experiences through design, engineering, and brand strategy."
+  title="About XTOIC Studio – Strategy. Creativity. Growth."
+  description="Learn about XTOIC Studio — a forward-thinking creative & development studio based in Edmonoton focused on building scalable digital experiences through design, engineering, and brand strategy."
   keywords="about creative agency, about web design studio, digital agency canada, design and development team, branding experts, UI UX agency, tech studio overview"
   canonical="https://www.xtoicstudio.com/about"
   ogUrl="https://www.xtoicstudio.com/about"

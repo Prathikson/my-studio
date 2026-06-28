@@ -12,8 +12,8 @@ const Home = () => {
   return (
     <>
       <SEO
-        title="XTOIC Studio – Creative Agency for Web, Branding & Digital Growth"
-        description="XTOIC Studio builds high-performing websites, stunning brand identities, and audience-first digital experiences designed to help brands grow organically and outperform competitors."
+        title="XTOIC Studio | Web Design & Digital Agency Edmonton, Alberta"
+        description="XTOIC Studio is an Edmonton-based digital agency specializing in high-performing websites, stunning brand identities, and audience-first digital experiences designed to help brands grow organically and outperform competitors."
         keywords="
           web design agency, 
           creative studio canada, 
