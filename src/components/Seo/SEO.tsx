@@ -7,8 +7,6 @@ interface SEOProps {
   canonical?: string;
   ogImage?: string;
   ogUrl?: string;
-  siteName?: string;
-  type?: 'website' | 'article' | 'profile';
 }
 
 export const SEO = ({ 
@@ -18,31 +16,49 @@ export const SEO = ({
   canonical,
   ogImage,
   ogUrl,
-  siteName = "XTOIC Studio",
-  type = "website"
 }: SEOProps) => {
+  const fullTitle = `${title} | Xtoic Studio`;
+
+  // THIS IS THE KEY FOR COMPANY RECOGNITION
+  const companySchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Xtoic Studio",
+    "url": "https://xtoicstudio.com",
+    "logo": "https://xtoicstudio.com/logo.png", // Replace with your actual logo URL
+    "sameAs": [
+      "https://www.instagram.com/xtoicstudio",
+      "https://www.linkedin.com/company/xtoicstudio",
+      "https://twitter.com/xtoicstudio"
+    ],
+    "description": "Xtoic Studio is a creative studio specializing in brand, design, and digital building."
+  };
+
   return (
     <>
-      {/* Basic SEO */}
-      <Title>{title}</Title>
+      <Title>{fullTitle}</Title>
       <Meta name="description" content={description} />
-      <Meta name="author" content="XTOIC Studio" />
       {keywords && <Meta name="keywords" content={keywords} />}
       {canonical && <Link rel="canonical" href={canonical} />}
       
-      {/* OpenGraph tags */}
-      <Meta property="og:title" content={title} />
+      {/* OpenGraph (Social Media) */}
+      <Meta property="og:title" content={fullTitle} />
       <Meta property="og:description" content={description} />
-      <Meta property="og:site_name" content={siteName} />
-      <Meta property="og:type" content={type} />
+      <Meta property="og:site_name" content="Xtoic Studio" />
+      <Meta property="og:type" content="website" />
       {ogImage && <Meta property="og:image" content={ogImage} />}
-      {ogUrl && <Meta property="og:url" content={ogUrl} />}
+      <Meta property="og:url" content={ogUrl || "https://xtoicstudio.com"} />
       
-      {/* Twitter Card tags */}
+      {/* Twitter Card */}
       <Meta name="twitter:card" content="summary_large_image" />
-      <Meta name="twitter:title" content={title} />
+      <Meta name="twitter:title" content={fullTitle} />
       <Meta name="twitter:description" content={description} />
       {ogImage && <Meta name="twitter:image" content={ogImage} />}
+
+      {/* JSON-LD Schema Script */}
+      <script type="application/ld+json">
+        {JSON.stringify(companySchema)}
+      </script>
     </>
   );
 };
