@@ -39,12 +39,24 @@ const Social = () => {
   ];
   return (
    <main className="flex flex-col overflow-x-hidden">
-          <SEO
-  title="Social Media Strategy, Content Creation & Growth Services | XTOIC Studio"
-  description="Grow your social presence with XTOIC Studio — offering content creation, social strategy, TikTok/Instagram management, paid & organic growth campaigns, and brand storytelling."
-  keywords="social media services, content creation, instagram marketing, tiktok marketing, social media management, social strategy, content agency, digital storytelling"
+<SEO
+  title="Social Media Marketing Agency Edmonton | Content & Growth | XTOIC Studio"
+  description="Scale your brand with Edmonton's premier social media agency. XTOIC Studio specializes in high-impact TikTok & Instagram content, social strategy, and organic growth for businesses across Alberta. Start your growth today."
+  keywords="
+    social media marketing Edmonton, 
+    content creation Edmonton, 
+    Alberta social media agency, 
+    YEG digital marketing, 
+    Instagram growth Edmonton, 
+    TikTok marketing Alberta, 
+    social media manager Edmonton, 
+    local business branding Alberta,
+    YEG content creator,
+    XTOIC Studio social services
+  "
   canonical="https://www.xtoicstudio.com/services/social"
   ogUrl="https://www.xtoicstudio.com/services/social"
+  ogImage="https://www.xtoicstudio.com/assets/social/Social_Cover.png" // Important: Use a high-quality preview image for social shares
   siteName="XTOIC Studio"
   type="website"
 />

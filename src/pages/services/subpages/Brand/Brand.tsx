@@ -41,16 +41,26 @@ const Brand = () => {
   ];
   return (
     <main className="flex flex-col overflow-x-hidden">
-       <SEO
-  title="Brand Identity, Strategy & Positioning Services | XTOIC Studio"
-  description="Build a memorable brand with XTOIC Studio — offering brand identity design, strategy, messaging, visual systems, and complete brand transformation for modern companies."
-  keywords="branding services, brand identity design, brand strategy, brand guidelines, logo design, visual identity, brand messaging, rebranding agency, brand consulting"
+ <SEO
+  title="Brand Identity Design & Strategy Services | XTOIC Studio | Edmonton, Alberta"
+  description="Build a high-impact brand identity with XTOIC Studio. We provide professional brand strategy, custom logos, business cards, brochures, and flyers for businesses in Edmonton and across Alberta."
+  keywords="
+    brand identity design, 
+    brand strategy edmonton, 
+    business card design alberta, 
+    brochure design edmonton, 
+    flyer design alberta, 
+    YEG branding agency, 
+    visual identity systems, 
+    graphic design edmonton, 
+    XTOIC Studio branding
+  "
   canonical="https://www.xtoicstudio.com/services/brand"
   ogUrl="https://www.xtoicstudio.com/services/brand"
+  ogImage="https://www.xtoicstudio.com/assets/brand/Branding_Cover.png" 
   siteName="XTOIC Studio"
   type="website"
 />
-     
             <ServiceHeader
                   leftTitle="Branding"
                   rightTitle="Services"

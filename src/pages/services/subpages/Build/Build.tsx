@@ -37,12 +37,23 @@ const Build = () => {
   ];
   return (
        <main className="flex flex-col overflow-x-hidden">
-          <SEO
-  title="Web Development, Next.js, App Development & Tech Build Services | XTOIC Studio"
-  description="XTOIC Studio builds high-performance websites and applications using modern technologies — including React, Next.js, TypeScript, WordPress, APIs, and custom full-stack solutions."
-  keywords="web development services, nextjs developer, react developer, website development, app development, full stack development, api development, wordpress development, frontend development"
+<SEO
+  title="Web Development & Startup Website Solutions | XTOIC Studio | Edmonton, Alberta"
+  description="High-performance Next.js websites for startups starting at just $500. Includes full SEO optimization, custom development, and free appointment booking setup for businesses in Edmonton and across Alberta."
+  keywords="
+    web development edmonton, 
+    startup websites alberta, 
+    next.js developer edmonton, 
+    affordable web design alberta, 
+    appointment booking website setup, 
+    SEO included websites, 
+    YEG web development, 
+    React developer alberta,
+    XTOIC Studio build services
+  "
   canonical="https://www.xtoicstudio.com/services/build"
   ogUrl="https://www.xtoicstudio.com/services/build"
+  ogImage="https://www.xtoicstudio.com/assets/build/Build_Cover.png" 
   siteName="XTOIC Studio"
   type="website"
 />

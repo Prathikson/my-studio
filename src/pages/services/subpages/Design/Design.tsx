@@ -39,12 +39,25 @@ const Design = () => {
   ];
   return (
        <main className="flex flex-col overflow-x-hidden">
-          <SEO
-  title="UI/UX Design, Web Design & Creative Visual Design Services | XTOIC Studio"
-  description="XTOIC Studio delivers premium UI/UX design, website layouts, mobile app design, wireframes, prototypes, design systems, and creative visuals using Figma and modern design tools."
-  keywords="ui ux design services, web design, app design, figma designer, ux strategy, user experience design, design systems, prototyping, visual design agency"
+ <SEO
+  title="Web Ui/UX Design & Professional Logo Design in Edmonton - Alberta | XTOIC Studio"
+  description="Elevate your brand with Edmonton's leading creative design studio. XTOIC Studio specializes in custom web design, professional logo design, and graphic design services for businesses across Alberta. We build visual identities that convert."
+  keywords="
+    web design edmonton, 
+    logo design edmonton, 
+    graphic design alberta, 
+    branding agency edmonton, 
+    YEG web designer, 
+    custom logo design alberta, 
+    UI UX design edmonton, 
+    website design company alberta, 
+    business branding YEG, 
+    Figma designer edmonton, 
+    XTOIC Studio design services
+  "
   canonical="https://www.xtoicstudio.com/services/design"
   ogUrl="https://www.xtoicstudio.com/services/design"
+  ogImage="https://www.xtoicstudio.com/assets/design/Design_Cover.png" 
   siteName="XTOIC Studio"
   type="website"
 />
