@@ -1,72 +1,36 @@
-import { useRef, useEffect, useState } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { Mail, Phone, Github, Youtube, Instagram, X, Facebook, Award, ChevronRight } from 'lucide-react';
+import { Github, Instagram, Facebook, Linkedin, MessageCircle } from 'lucide-react';
 import { useCookieConsentContext } from '../CookieConsent/cookieConsentContext';
 
 const footerSections = [
   {
-    title: 'Services',
-    gradient: ['#10b981', '#059669'],
+    title: 'Links',
     links: [
-      { name: 'Branding', path: '/services/brand' },
-      { name: 'Social', path: '/services/social' },
-      { name: 'Design', path: '/services/design' },
-      { name: 'Build', path: '/services/build' }
-    ],
-  },
-  {
-    title: 'About',
-    gradient: ['#60a5fa', '#3b82f6'],
-    links: [
-      { name: 'About Us', path: '/about' },
-      { name: 'Portfolio', path: '/portfolio' },
-      { name: 'Contact', path: '/contact' }
-    ],
-  },
-  {
-    title: 'Legal',
-    gradient: ['#f97316', '#ef4444'],
-    links: [
-      { name: 'Terms & Conditions', path: '/terms-&-conditions' },
-      { name: 'Privacy Policy', path: '/privacy-policy' },
-      { name: 'Cookie Preferences', path: "/", action: 'cookie' }, // Special action for cookie preferences
+      { name: 'Branding', path: '/services/brand', color: '#10b981' },
+      { name: 'Social', path: '/services/social', color: '#3b82f6' },
+      { name: 'Design', path: '/services/design', color: '#ec4899' },
+      { name: 'Build', path: '/services/build', color: '#f97316' },
+      { name: 'About', path: '/about', color: '#a78bfa' },
+      { name: 'Portfolio', path: '/portfolio', color: '#60a5fa' },
+      { name: 'Terms', path: '/terms-&-conditions', color: '#94a3b8' },
+      { name: 'Cookies', path: "/", action: 'cookie', color: '#f43f5e' },
     ],
   },
 ];
 
 const socialLinks = [
-  { name: 'GitHub', icon: Github, gradient: ['#f97316', '#ef4444'], url: 'https://github.com' },
-  { name: 'YouTube', icon: Youtube, gradient: ['#ef4444', '#dc2626'], url: 'https://youtube.com' },
-  { name: 'Instagram', icon: Instagram, gradient: ['#ec4899', '#be185d'], url: 'https://instagram.com' },
-  { name: 'Twitter', icon: X, gradient: ['#121212', '#f1f1f1'], url: 'https://twitter.com' },
-  { name: 'Facebook', icon: Facebook, gradient: ['#3b82f6', '#1d4ed8'], url: 'https://facebook.com' },
-  { name: 'Awwwards', icon: Award, gradient: ['#10b981', '#059669'], url: 'https://awwwards.com' },
+  { name: 'GitHub', icon: Github, url: 'https://github.com', gradient: 'from-orange-500 to-red-600' },
+  { name: 'Instagram', icon: Instagram, url: 'https://instagram.com', gradient: 'from-pink-500 to-purple-600' },
+  { name: 'Facebook', icon: Facebook, url: 'https://facebook.com', gradient: 'from-blue-600 to-cyan-500' },
+  { name: 'WhatsApp', icon: MessageCircle, url: 'https://whatsapp.com', gradient: 'from-green-400 to-emerald-600' },
+  { name: 'LinkedIn', icon: Linkedin, url: 'https://linkedin.com', gradient: 'from-blue-700 to-blue-500' },
 ];
 
 export default function MobileResponsiveFooter() {
-  const footerRef = useRef<HTMLDivElement | null>(null);
-  const isInView = useInView(footerRef, { once: true, amount: 0.2 });
-  const [hoveredSocial, setHoveredSocial] = useState<number | null>(null);
-  const [expandedSection, setExpandedSection] = useState<number | null>(null);
   const navigate = useNavigate();
   const { setShowModal: setCookieModalVisible } = useCookieConsentContext();
-
-  useEffect(() => {
-    if (!isInView) return;
-
-    // Simple fade-in animations for mobile
-    const elements = footerRef.current?.querySelectorAll('.animate-on-view');
-    elements?.forEach((el, index) => {
-      setTimeout(() => {
-        el.classList.add('opacity-100', 'translate-y-0');
-      }, index * 100);
-    });
-  }, [isInView]);
-
-  const handleScheduleClick = () => {
-    navigate('/contact');
-  };
+  const currentYear = new Date().getFullYear();
 
   const handleLinkClick = (path: string, action?: string) => {
     if (action === 'cookie') {
@@ -76,309 +40,72 @@ export default function MobileResponsiveFooter() {
     }
   };
 
-  const toggleSection = (index: number) => {
-    setExpandedSection(expandedSection === index ? null : index);
-  };
-
   return (
-    <footer ref={footerRef} className="bg-carbonGray text-white relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full blur-xl"></div>
-        <div className="absolute top-32 right-20 w-24 h-24 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-full blur-xl"></div>
-        <div className="absolute bottom-20 left-1/3 w-28 h-28 bg-gradient-to-br from-orange-500 to-red-600 rounded-full blur-xl"></div>
+    <footer className="bg-smoothBlack text-white overflow-hidden flex flex-col font-sans">
+      
+      {/* 1. TOP SECTION: Copyright & Navigation */}
+      <div className="pt-16 px-6 md:px-12 flex flex-col items-center">
+        {/* Dynamic Copyright */}
+        <p className="text-[10px] md:text-xs font-medium tracking-[0.2em] uppercase opacity-50 mb-10 text-center">
+          © 2025 — {currentYear} XTOIC STUDIO. ALL RIGHTS RESERVED.
+        </p>
+
+        {/* Clean Navigation Links with Color Hover */}
+        <nav className="flex flex-wrap justify-center gap-x-8 gap-y-5 max-w-4xl">
+          {footerSections[0].links.map((link) => (
+            <motion.button
+              key={link.name}
+              onClick={() => handleLinkClick(link.path, link.action)}
+              whileHover={{ scale: 1.05, color: link.color }}
+              className="text-[11px] md:text-sm font-bold uppercase tracking-widest transition-colors duration-300 opacity-70 hover:opacity-100"
+            >
+              {link.name}
+            </motion.button>
+          ))}
+          <motion.a 
+            href="mailto:info@xtoic.studio"
+            whileHover={{ scale: 1.05, color: '#fbbf24' }}
+            className="text-[11px] md:text-sm font-bold uppercase tracking-widest transition-colors duration-300 opacity-70 hover:opacity-100"
+          >
+            Email Us
+          </motion.a>
+        </nav>
       </div>
 
-      <div className="relative z-10">
-        {/* Desktop Layout */}
-        <div className="hidden lg:block">
-          <div className="container mx-auto px-8 py-16">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
-              {/* Logo */}
-              <div className="animate-on-view opacity-0 translate-y-10 transition-all duration-700">
-                <motion.div
-                  className="w-16 h-16  from-purple-600 to-pink-600 rounded-xl flex items-center justify-center mb-4 shadow-lg"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <img src="/x.svg" alt="logo" />
-                </motion.div>
-                <div className="flex items-center space-x-1 text-3xl font-bold">
-                  {['X', 'T', 'O', 'I', 'C'].map((letter, index) => (
-                    <span key={letter} className="inline-block" style={{ animationDelay: `${index * 100}ms` }}>
-                      {letter}
-                    </span>
-                  ))}
-                </div>
-              </div>
+      {/* 2. MIDDLE SECTION: Giant Typography with added Padding */}
+      <div className="flex-grow flex items-center justify-center pt-24 pb-32 md:pt-32 md:pb-40">
+        <h1 className="text-[24vw] leading-none font-bold tracking-tighter whitespace-nowrap select-none opacity-90 transition-all duration-700 hover:tracking-normal cursor-default">
+          XTOIC
+        </h1>
+      </div>
 
-              {/* Footer Sections */}
-              {footerSections.map((section, sectionIndex) => (
-                <div key={section.title} className="animate-on-view opacity-0 translate-y-10 transition-all duration-700" style={{ transitionDelay: `${(sectionIndex + 1) * 200}ms` }}>
-                  <motion.h3
-                    className="text-xl font-bold mb-6 bg-clip-text text-transparent"
-                    style={{ backgroundImage: `linear-gradient(135deg, ${section.gradient[0]}, ${section.gradient[1]})` }}
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    {section.title}.
-                  </motion.h3>
-                  <ul className="space-y-4">
-                    {section.links.map((link) => (
-                      <li key={`${section.title}-${link.name}`}>
-                        <motion.button
-                          onClick={() => handleLinkClick(link.path, link.action)}
-                          className="text-gray-300 hover:text-white transition-colors duration-300 block relative group text-left"
-                          whileHover={{ x: 10 }}
-                        >
-                          <span>{link.name}</span>
-                          <motion.div
-                            className="absolute bottom-0 left-0 h-0.5 rounded-full"
-                            style={{
-                              background: `linear-gradient(135deg, ${section.gradient[0]}, ${section.gradient[1]})`,
-                            }}
-                            initial={{ width: 0 }}
-                            whileHover={{ width: '100%' }}
-                            transition={{ duration: 0.3 }}
-                          />
-                        </motion.button>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-
-              {/* Contact */}
-              <div className="animate-on-view opacity-0 translate-y-10 transition-all duration-700" style={{ transitionDelay: '800ms' }}>
-                <motion.h3
-                  className="text-xl font-bold mb-6 bg-gradient-to-r bg-clip-text text-transparent"
-                  style={{ backgroundImage: `linear-gradient(135deg, #a78bfa, #ec4899)` }}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  Contact.
-                </motion.h3>
-
-                <div className="space-y-6">
-                  <motion.div className="flex items-center space-x-3" whileHover={{ x: 5 }}>
-                    <div className="p-2 bg-smoothBlack rounded-lg">
-                      <Mail className="w-4 h-4" />
-                    </div>
-                    <a href="mailto:hello@xtoic.studio" className="text-white hover:text-purple-400">
-                      info@xtoic.studio
-                    </a>
-                  </motion.div>
-
-                  <motion.div className="flex items-center space-x-3" whileHover={{ x: 5 }}>
-                    <div className="p-2 bg-smoothBlack rounded-lg">
-                      <Phone className="w-4 h-4" />
-                    </div>
-                    <a href="tel:+1234567890" className="text-white hover:text-pink-400">
-                      +1 (780) 667-4895
-                    </a>
-                  </motion.div>
-
-                  <div>
-                    <p className="text-gray-400 text-sm mb-4">Follow Us</p>
-                    <div className="grid grid-cols-3 gap-3">
-                      {socialLinks.map((social, index) => {
-                        const Icon = social.icon;
-                        return (
-                          <motion.a
-                            key={social.name}
-                            href={social.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-12 h-12 bg-smoothBlack rounded-xl flex items-center justify-center relative overflow-hidden"
-                            onMouseEnter={() => setHoveredSocial(index)}
-                            onMouseLeave={() => setHoveredSocial(null)}
-                            whileHover={{ scale: 1.1 }}
-                          >
-                            <motion.div
-                              className="absolute inset-0 rounded-xl"
-                              style={{
-                                background: `linear-gradient(135deg, ${social.gradient[0]}, ${social.gradient[1]})`,
-                              }}
-                              initial={{ scale: 0 }}
-                              animate={{ scale: hoveredSocial === index ? 1 : 0 }}
-                              transition={{ duration: 0.3 }}
-                            />
-                            <Icon className="relative z-10 w-5 h-5" />
-                          </motion.a>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Bottom */}
-            <div className="border-t border-lightGray mt-16 pt-8 animate-on-view opacity-0 translate-y-10 transition-all duration-700" style={{ transitionDelay: '1000ms' }}>
-              <div className="flex flex-col md:flex-row justify-between items-center">
-                <motion.button
-                  className="bg-smoothBlack hover:bg-white/10 px-6 py-3 rounded-full text-sm transition-colors"
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={handleScheduleClick}
-                >
-                  Let's Create Something Amazing Together! 🚀
-                </motion.button>
-
-                <div className="text-sm text-lightGray/80 mt-4 md:mt-0">
-                  © 2025 XTOIC STUDIO | All rights reserved
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile Layout - Unique Design */}
-        <div className="lg:hidden">
-          {/* Mobile Header */}
-          <div className="px-6 py-8 border-b border-gray-800">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-4">
-                <motion.div
-                  className="w-12 h-12  flex items-center justify-center shadow-lg"
-                  whileHover={{ scale: 1.01, rotate: 5 }}
-                >
-                  <img src="/x.svg" alt="" />
-                </motion.div>
-                <div className="text-2xl font-bold font-general">XTOIC</div>
-              </div>
-              <motion.button
-                className="bg-smoothBlack px-4 py-2 rounded-full text-sm font-medium"
-                whileHover={{ scale: 1.01 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={handleScheduleClick}
-              >
-                Let's Talk 🚀
-              </motion.button>
-            </div>
-          </div>
-
-          {/* Mobile Navigation Cards */}
-          <div className="px-6 py-6">
-            <div className="grid grid-cols-2 gap-4">
-              {/* Quick Contact Card */}
+      {/* 3. BOTTOM SECTION: Social Grid Bar with Vibrant Hover */}
+      <div className="grid grid-cols-5 border-t border-white/5">
+        {socialLinks.map((social) => {
+          const Icon = social.icon;
+          return (
+            <motion.a
+              key={social.name}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative py-10 md:py-14 flex items-center justify-center border-r border-white/5 last:border-r-0 overflow-hidden"
+            >
+              {/* Vibrant Background Hover Effect */}
               <motion.div 
-                className="bg-smoothBlack rounded-2xl p-4 col-span-2"
-                whileHover={{ scale: 1.01 }}
-              >
-                <h3 className="text-lg font-bold mb-3 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  Contact
-                </h3>
-                <div className="flex items-center justify-between">
-                  <div className="space-y-2">
-                    <a href="mailto:hello@xtoic.studio" className="flex items-center space-x-2 text-sm">
-                      <Mail className="w-4 h-4 text-purple-400" />
-                      <span>hello@xtoic.studio</span>
-                    </a>
-                    <a href="tel:7806674895" className="flex items-center space-x-2 text-sm">
-                      <Phone className="w-4 h-4 text-pink-400" />
-                      <span>+1 (780) 667-4895</span>
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Navigation Sections */}
-              {footerSections.map((section, index) => (
-                <motion.div
-                  key={section.title}
-                  className={`bg-smoothBlack rounded-2xl p-4 ${section.title === 'Legal' ? 'col-span-2' : ''}`}
-                  whileHover={{ scale: 1.01 }}
-                >
-                  <button
-                    onClick={() => toggleSection(index)}
-                    className="flex items-center justify-between w-full text-left"
-                  >
-                    <h3 
-                      className="font-bold bg-clip-text text-transparent"
-                      style={{ backgroundImage: `linear-gradient(135deg, ${section.gradient[0]}, ${section.gradient[1]})` }}
-                    >
-                      {section.title}.
-                    </h3>
-                    <motion.div
-                      animate={{ rotate: expandedSection === index ? 90 : 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <ChevronRight className="w-4 h-4" />
-                    </motion.div>
-                  </button>
-                  
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ 
-                      height: expandedSection === index ? 'auto' : 0,
-                      opacity: expandedSection === index ? 1 : 0
-                    }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
-                  >
-                    <div className="space-y-2 mt-3">
-                      {section.links.map((link) => (
-                        <button
-                          key={`${section.title}-${link.name}`}
-                          onClick={() => handleLinkClick(link.path, link.action)}
-                          className="block text-sm text-gray-300 hover:text-white transition-colors w-full text-left py-1"
-                        >
-                          {link.name}
-                        </button>
-                      ))}
-                    </div>
-                  </motion.div>
-                </motion.div>
-              ))}
-
-              {/* More Social Links */}
+                className={`absolute inset-0 bg-gradient-to-br ${social.gradient} opacity-0 transition-opacity duration-500 group-hover:opacity-20`}
+              />
+              
+              {/* Icon with Color Pulse on Hover */}
+              <Icon className="w-5 h-5 md:w-6 md:h-6 z-10 opacity-40 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" />
+              
+              {/* Subtle underline glow on hover */}
               <motion.div 
-                className="bg-smoothBlack rounded-2xl p-4 col-span-2"
-                whileHover={{ scale: 1.01 }}
-              >
-                <h3 className="font-bold mb-3 bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
-                  Follow Us
-                </h3>
-                <div className="grid grid-cols-6 gap-2">
-                  {socialLinks.map((social, index) => {
-                    const Icon = social.icon;
-                    return (
-                      <motion.a
-                        key={social.name}
-                        href={social.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 bg-carbonGray rounded-xl flex items-center justify-center relative overflow-hidden"
-                        whileHover={{ scale: 1.1 }}
-                        onMouseEnter={() => setHoveredSocial(index)}
-                        onMouseLeave={() => setHoveredSocial(null)}
-                      >
-                        <motion.div
-                          className="absolute inset-0 rounded-xl"
-                          style={{
-                            background: `linear-gradient(135deg, ${social.gradient[0]}, ${social.gradient[1]})`,
-                          }}
-                          initial={{ scale: 0 }}
-                          animate={{ scale: hoveredSocial === index ? 1 : 0 }}
-                          transition={{ duration: 0.3 }}
-                        />
-                        <Icon className="relative z-10 w-4 h-4" />
-                      </motion.a>
-                    );
-                  })}
-                </div>
-              </motion.div>
-            </div>
-          </div>
-
-          {/* Mobile Footer */}
-          <div className="border-t border-lightGray/80 px-6 py-6">
-            <div className="text-center">
-              <div className="text-sm text-text-lightGray/80">
-                © 2025 XTOIC STUDIO | All rights reserved
-              </div>
-            </div>
-          </div>
-        </div>
+                className={`absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r ${social.gradient} scale-x-0 group-hover:scale-x-100 transition-transform duration-500`}
+              />
+            </motion.a>
+          );
+        })}
       </div>
     </footer>
   );
