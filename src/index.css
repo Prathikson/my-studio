@@ -4,6 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body {
   overflow-x: hidden;
   @apply bg-lightGray text-carbonGray; /* change as needed */
@@ -68,7 +69,7 @@ body {
 }
 
 html {
-  scroll-behavior: smooth;
+  @apply antialiased;
 }
 
 /* Scrollbar styling (optional) */
@@ -353,4 +354,24 @@ html {
   to {
     transform: translateX(20%) translateY(20%) rotate(5deg);
   }
+}
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
